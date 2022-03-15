@@ -21,7 +21,7 @@ public class TestController {
     @Autowired
     private UserService userInfoService;
 
-    @RequestMapping(value = "/test",method = RequestMethod.POST)
+    @RequestMapping(value = "/test",method = RequestMethod.GET)
     public CommonResult test() {
         return CommonResult.success("Test");
     }

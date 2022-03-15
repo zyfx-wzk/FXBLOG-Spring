@@ -1,8 +1,10 @@
-package com.example.fxblog.other;
+package com.example.fxblog.other.Interceptor;
 
 import cn.hutool.json.JSONUtil;
 import com.example.fxblog.annotation.PassToken;
+import com.example.fxblog.other.CommonResult;
 import com.example.fxblog.utils.JwtUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 
@@ -17,10 +19,11 @@ import java.lang.reflect.Method;
  * @Author 王志康
  * @Date 2022/3/7 12:50
  */
-public class TokenAuthentication implements HandlerInterceptor {
+@Slf4j
+public class TokenInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        String token = request.getHeader("token");
+        String token = request.getHeader("Token");
         //仅拦截方法
         if (!(handler instanceof HandlerMethod)) {
             return true;

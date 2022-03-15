@@ -17,9 +17,9 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public boolean login(String name, String password) {
+    public boolean login(String username, String password) {
         QueryWrapper<UserEntity> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("user_name", name);
+        queryWrapper.eq("user_username", username);
         queryWrapper.eq("user_password", password);
         long num = userMapper.selectCount(queryWrapper);
         return num != 0;

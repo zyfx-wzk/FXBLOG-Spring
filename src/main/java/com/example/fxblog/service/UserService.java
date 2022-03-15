@@ -10,5 +10,5 @@ import java.util.List;
  */
 public interface UserService {
     //用户登录
-    boolean login(String name,String password);
+    boolean login(String username,String password);
 }

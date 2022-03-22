@@ -19,9 +19,12 @@ public class UserEntity {
     @TableId
     private String userId;
 
-    @TableField("user_name")
+    @TableField("user_username")
     private String userName;
 
     @TableField("user_password")
     private String userPassword;
+
+    @TableField("user_salt")
+    private String userSalt;
 }

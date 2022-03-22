@@ -19,7 +19,11 @@ public enum ResultCode {
     /**
      * 未登录或者登录已失效
      */
-    NOT_LOGIN(401,"未登录或者登录已失效");
+    NOT_LOGIN(401,"未登录或者登录已失效"),
+    /**
+     * 账号或密码错误
+     */
+    ERROR_LOGIN(402,"账号或密码错误");
 
     public final int code;
     private final String message;

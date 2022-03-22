@@ -37,4 +37,8 @@ public class CommonResult<T> {
     public static <T> CommonResult notLogin() {
         return new CommonResult<>(ResultCode.NOT_LOGIN.getCode(), ResultCode.NOT_LOGIN.getMessage(), null);
     }
+
+    public static <T> CommonResult errorLogin() {
+        return new CommonResult<>(ResultCode.ERROR_LOGIN.getCode(), ResultCode.ERROR_LOGIN.getMessage(), null);
+    }
 }

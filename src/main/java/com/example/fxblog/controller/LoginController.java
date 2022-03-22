@@ -4,9 +4,13 @@ import com.example.fxblog.annotation.PassToken;
 import com.example.fxblog.other.CommonResult;
 import com.example.fxblog.service.UserService;
 import com.example.fxblog.utils.JwtUtil;
+import com.example.fxblog.utils.RsaUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
@@ -19,19 +23,24 @@ import java.util.Map;
 public class LoginController {
     @Autowired
     private UserService userService;
-    private Map<String, String> map;
 
     @PassToken
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public CommonResult login(@RequestBody Map<String, String> map) {
-        String username=map.get("username");
-        String password=map.get("password");
-        String remember=map.get("remember");
+        String username = map.get("username");
+        String password = map.get("password");
+        String remember = map.get("remember");
         if (userService.login(username, password)) {
             String token = JwtUtil.createToken(username, "true".equals(remember));
             return CommonResult.success(token);
         } else {
-            return CommonResult.fail();
+            return CommonResult.errorLogin();
         }
+    }
+
+    @PassToken
+    @RequestMapping(value = "/login/rsa", method = RequestMethod.POST)
+    public CommonResult getRsa() {
+        return CommonResult.success(RsaUtil.RSA_PUBLIC_KEY);
     }
 }

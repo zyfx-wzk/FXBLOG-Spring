@@ -67,7 +67,6 @@ public class JwtUtil {
         try {
             return getTokenClaims(token).getExpiration().before(new Date());
         } catch (Exception e) {
-            log.warn("用户使用伪造的Token进行登录");
             return true;
         }
 

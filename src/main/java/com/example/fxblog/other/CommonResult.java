@@ -26,19 +26,15 @@ public class CommonResult<T> {
 	生成一个本类对象并返回，根据不同的响应状态自行调用不同的方法，可以利用
 	上面写好的枚举类型填充返回状态码和返回信息，也可以自行传入返回状态码和
 	返回信息*/
-    public static <T> CommonResult success(T data) {
+    public static <T> CommonResult result(T data) {
         return new CommonResult<>(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMessage(), data);
     }
 
-    public static <T> CommonResult fail() {
-        return new CommonResult<>(ResultCode.FAIL.getCode(), ResultCode.FAIL.getMessage(), null);
+    public static <T> CommonResult surress() {
+        return new CommonResult<>(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMessage(),null);
     }
 
-    public static <T> CommonResult notLogin() {
-        return new CommonResult<>(ResultCode.NOT_LOGIN.getCode(), ResultCode.NOT_LOGIN.getMessage(), null);
-    }
-
-    public static <T> CommonResult errorLogin() {
-        return new CommonResult<>(ResultCode.ERROR_LOGIN.getCode(), ResultCode.ERROR_LOGIN.getMessage(), null);
+    public static <T> CommonResult error(ResultCode resultCode) {
+        return new CommonResult<>(resultCode.getCode(), resultCode.getMessage(),null);
     }
 }

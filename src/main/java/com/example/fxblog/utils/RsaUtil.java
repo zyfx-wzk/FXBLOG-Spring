@@ -1,6 +1,7 @@
 package com.example.fxblog.utils;
 
 import cn.hutool.crypto.SecureUtil;
+import cn.hutool.crypto.asymmetric.KeyType;
 import cn.hutool.crypto.asymmetric.RSA;
 import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +37,9 @@ public class RsaUtil {
             redisUtil.set(PUBLIC_KEY, RSA_PUBLIC_KEY, 3600 * 2400);
             redisUtil.set(PRIVATE_KEY, RSA_PRIVATE_KEY, 3600 * 2400);
         }
+    }
+
+    public String decrypt(String data){
+        return rsa.decryptStr(data, KeyType.PrivateKey);
     }
 }

@@ -14,7 +14,13 @@ spring:
     host: 127.0.0.1
     port: 6379
     # 连接超时时间
-    timeout: 3
+    timeout: 5000
+  # 静态资源配置
+  web:
+    resources:
+      static-locations: file:./json,
+  mvc:
+    static-path-pattern: /**
 
 logging:
   file:

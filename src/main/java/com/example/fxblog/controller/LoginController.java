@@ -26,7 +26,7 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
-    @RsaDecrypt
+    @RsaDecrypt(required = false)
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public CommonResult login(@RequestBody Map<String, String> map) {
         log.info(String.valueOf(map));

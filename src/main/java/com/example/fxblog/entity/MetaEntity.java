@@ -15,9 +15,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @TableName("fx_meta")
 public class MetaEntity {
-    @TableField("meat_key")
-    private String key;
+    @TableField("meta_key")
+    private String metaKey;
 
-    @TableField("meat_key")
-    private String value;
+    @TableField("meta_value")
+    private String metaValue;
 }

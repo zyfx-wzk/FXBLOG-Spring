@@ -1,13 +1,381 @@
-2022-04-03 21:31:27.262  INFO 8940 --- [main] com.example.fxblog.FxBlogApplication     : Starting FxBlogApplication using Java 1.8.0_301 on Computer-WZK with PID 8940 (D:\Work\JAVA\FxBlog\target\classes started by WZK in D:\Work\JAVA\FxBlog)
-2022-04-03 21:31:27.268  INFO 8940 --- [main] com.example.fxblog.FxBlogApplication     : No active profile set, falling back to default profiles: default
-2022-04-03 21:31:28.342  INFO 8940 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-04-03 21:31:28.345  INFO 8940 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-03 21:31:28.395  INFO 8940 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
-2022-04-03 21:31:29.198  INFO 8940 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-04-03 21:31:29.221  INFO 8940 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-03 21:31:29.221  INFO 8940 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
-2022-04-03 21:31:29.480  INFO 8940 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-03 21:31:29.481  INFO 8940 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2128 ms
-2022-04-03 21:31:29.687  INFO 8940 --- [main] com.example.fxblog.utils.ImageUtil       : 图片列表加载完成,当前共18张图片
-2022-04-03 21:31:33.913  INFO 8940 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-04-03 21:31:33.922  INFO 8940 --- [main] com.example.fxblog.FxBlogApplication     : Started FxBlogApplication in 7.65 seconds (JVM running for 14.94)
+2022-04-05 16:28:40.314  INFO 12780 --- [main] com.example.fxblog.FxBlogApplication     : Starting FxBlogApplication using Java 1.8.0_301 on Computer-WZK with PID 12780 (D:\Work\JAVA\FxBlog\target\classes started by WZK in D:\Work\JAVA\FxBlog)
+2022-04-05 16:28:40.342  INFO 12780 --- [main] com.example.fxblog.FxBlogApplication     : No active profile set, falling back to default profiles: default
+2022-04-05 16:28:41.653  INFO 12780 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-05 16:28:41.656  INFO 12780 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-05 16:28:41.739  INFO 12780 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2022-04-05 16:28:42.728  INFO 12780 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-05 16:28:42.753  INFO 12780 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-05 16:28:42.754  INFO 12780 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-04-05 16:28:43.293  INFO 12780 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-05 16:28:43.294  INFO 12780 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2788 ms
+2022-04-05 16:28:43.493  INFO 12780 --- [main] com.example.fxblog.utils.ImageUtil       : 图片列表加载完成,当前共18张图片
+2022-04-05 16:28:45.107  WARN 12780 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.fxblog.entity.MetaEntity".
+2022-04-05 16:28:45.107  WARN 12780 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.example.fxblog.entity.MetaEntity ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-04-05 16:28:47.713  INFO 12780 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-05 16:28:47.723  INFO 12780 --- [main] com.example.fxblog.FxBlogApplication     : Started FxBlogApplication in 8.674 seconds (JVM running for 13.348)
+2022-04-05 16:29:55.372  INFO 12780 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-05 16:29:55.373  INFO 12780 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-05 16:29:55.374  INFO 12780 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-05 16:29:55.568  INFO 12780 --- [http-nio-8080-exec-1] c.e.fxblog.controller.LoginController    : {username=root, password=123456, remember=true}
+2022-04-05 16:29:55.699  INFO 12780 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-05 16:29:56.150  INFO 12780 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-05 16:29:56.167 DEBUG 12780 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.UserMapper.selectList  : ==>  Preparing: SELECT user_id,user_username AS userName,user_password,user_salt FROM fx_user WHERE (user_username = ?)
+2022-04-05 16:29:56.450 DEBUG 12780 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.UserMapper.selectList  : ==> Parameters: root(String)
+2022-04-05 16:29:56.482 DEBUG 12780 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.UserMapper.selectList  : <==      Total: 1
+2022-04-05 16:29:56.494  INFO 12780 --- [http-nio-8080-exec-1] c.e.f.s.serviceImpl.UserServiceImpl      : a0e95940124a38f275a313f1cf7e2d20
+2022-04-05 16:30:03.869  WARN 12780 --- [http-nio-8080-exec-2] c.e.f.o.Interceptor.TokenInterceptor     : 未使用或使用篡改的token进行操作
+2022-04-05 16:30:07.036  INFO 12780 --- [http-nio-8080-exec-3] c.e.fxblog.controller.LoginController    : {username=root, password=123456, remember=true}
+2022-04-05 16:30:07.042 DEBUG 12780 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.UserMapper.selectList  : ==>  Preparing: SELECT user_id,user_username AS userName,user_password,user_salt FROM fx_user WHERE (user_username = ?)
+2022-04-05 16:30:07.043 DEBUG 12780 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.UserMapper.selectList  : ==> Parameters: root(String)
+2022-04-05 16:30:07.045 DEBUG 12780 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.UserMapper.selectList  : <==      Total: 1
+2022-04-05 16:30:07.046  INFO 12780 --- [http-nio-8080-exec-3] c.e.f.s.serviceImpl.UserServiceImpl      : a0e95940124a38f275a313f1cf7e2d20
+2022-04-05 16:32:00.139  INFO 12780 --- [http-nio-8080-exec-5] c.e.fxblog.controller.LoginController    : {username=root, password=123456, remember=true}
+2022-04-05 16:32:00.142 DEBUG 12780 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.UserMapper.selectList  : ==>  Preparing: SELECT user_id,user_username AS userName,user_password,user_salt FROM fx_user WHERE (user_username = ?)
+2022-04-05 16:32:00.142 DEBUG 12780 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.UserMapper.selectList  : ==> Parameters: root(String)
+2022-04-05 16:32:00.143 DEBUG 12780 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.UserMapper.selectList  : <==      Total: 1
+2022-04-05 16:32:00.144  INFO 12780 --- [http-nio-8080-exec-5] c.e.f.s.serviceImpl.UserServiceImpl      : a0e95940124a38f275a313f1cf7e2d20
+2022-04-05 16:33:49.058  INFO 12780 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-04-05 16:33:49.086  INFO 12780 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-04-05 16:33:55.877  INFO 12004 --- [main] com.example.fxblog.FxBlogApplication     : Starting FxBlogApplication using Java 1.8.0_301 on Computer-WZK with PID 12004 (D:\Work\JAVA\FxBlog\target\classes started by WZK in D:\Work\JAVA\FxBlog)
+2022-04-05 16:33:55.881  INFO 12004 --- [main] com.example.fxblog.FxBlogApplication     : No active profile set, falling back to default profiles: default
+2022-04-05 16:33:56.775  INFO 12004 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-05 16:33:56.778  INFO 12004 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-05 16:33:56.821  INFO 12004 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2022-04-05 16:33:57.713  INFO 12004 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-05 16:33:57.735  INFO 12004 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-05 16:33:57.736  INFO 12004 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-04-05 16:33:57.858  INFO 12004 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-05 16:33:57.858  INFO 12004 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1902 ms
+2022-04-05 16:33:58.015  INFO 12004 --- [main] com.example.fxblog.utils.ImageUtil       : 图片列表加载完成,当前共18张图片
+2022-04-05 16:33:59.414  WARN 12004 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.fxblog.entity.MetaEntity".
+2022-04-05 16:33:59.414  WARN 12004 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.example.fxblog.entity.MetaEntity ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-04-05 16:34:01.561  INFO 12004 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-05 16:34:01.572  INFO 12004 --- [main] com.example.fxblog.FxBlogApplication     : Started FxBlogApplication in 6.596 seconds (JVM running for 11.062)
+2022-04-05 16:34:06.883  INFO 12004 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-05 16:34:06.883  INFO 12004 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-05 16:34:06.884  INFO 12004 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-05 16:35:23.455  INFO 12004 --- [http-nio-8080-exec-1] c.e.fxblog.controller.LoginController    : {username=root, password=123456, remember=true}
+2022-04-05 16:35:24.227  INFO 12004 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-05 16:35:27.363  INFO 12004 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-05 16:35:27.642 DEBUG 12004 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.UserMapper.selectList  : ==>  Preparing: SELECT user_id,user_username AS userName,user_password,user_salt FROM fx_user WHERE (user_username = ?)
+2022-04-05 16:35:28.629 DEBUG 12004 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.UserMapper.selectList  : ==> Parameters: root(String)
+2022-04-05 16:35:29.393 DEBUG 12004 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.UserMapper.selectList  : <==      Total: 1
+2022-04-05 16:35:29.441  INFO 12004 --- [http-nio-8080-exec-1] c.e.f.s.serviceImpl.UserServiceImpl      : a0e95940124a38f275a313f1cf7e2d20
+2022-04-05 16:36:08.954  INFO 12004 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-04-05 16:36:08.965  INFO 12004 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-04-05 16:36:14.243  INFO 15368 --- [main] com.example.fxblog.FxBlogApplication     : Starting FxBlogApplication using Java 1.8.0_301 on Computer-WZK with PID 15368 (D:\Work\JAVA\FxBlog\target\classes started by WZK in D:\Work\JAVA\FxBlog)
+2022-04-05 16:36:14.246  INFO 15368 --- [main] com.example.fxblog.FxBlogApplication     : No active profile set, falling back to default profiles: default
+2022-04-05 16:36:15.147  INFO 15368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-05 16:36:15.150  INFO 15368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-05 16:36:15.203  INFO 15368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2022-04-05 16:36:15.983  INFO 15368 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-05 16:36:16.172  INFO 15368 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-05 16:36:16.172  INFO 15368 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-04-05 16:36:16.284  INFO 15368 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-05 16:36:16.284  INFO 15368 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1955 ms
+2022-04-05 16:36:16.468  INFO 15368 --- [main] com.example.fxblog.utils.ImageUtil       : 图片列表加载完成,当前共18张图片
+2022-04-05 16:36:17.467  WARN 15368 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.fxblog.entity.MetaEntity".
+2022-04-05 16:36:17.468  WARN 15368 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.example.fxblog.entity.MetaEntity ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-04-05 16:36:19.395  INFO 15368 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-05 16:36:19.405  INFO 15368 --- [main] com.example.fxblog.FxBlogApplication     : Started FxBlogApplication in 6.101 seconds (JVM running for 9.541)
+2022-04-05 16:36:38.173  INFO 15368 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-05 16:36:38.173  INFO 15368 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-05 16:36:38.174  INFO 15368 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-05 16:39:07.221  INFO 12096 --- [main] com.example.fxblog.FxBlogApplication     : Starting FxBlogApplication using Java 1.8.0_301 on Computer-WZK with PID 12096 (D:\Work\JAVA\FxBlog\target\classes started by WZK in D:\Work\JAVA\FxBlog)
+2022-04-05 16:39:07.224  INFO 12096 --- [main] com.example.fxblog.FxBlogApplication     : No active profile set, falling back to default profiles: default
+2022-04-05 16:39:08.344  INFO 12096 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-05 16:39:08.348  INFO 12096 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-05 16:39:08.403  INFO 12096 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2022-04-05 16:39:09.508  INFO 12096 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-05 16:39:09.540  INFO 12096 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-05 16:39:09.540  INFO 12096 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-04-05 16:39:09.680  INFO 12096 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-05 16:39:09.680  INFO 12096 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2378 ms
+2022-04-05 16:39:09.916  INFO 12096 --- [main] com.example.fxblog.utils.ImageUtil       : 图片列表加载完成,当前共18张图片
+2022-04-05 16:39:10.993  WARN 12096 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.fxblog.entity.MetaEntity".
+2022-04-05 16:39:10.993  WARN 12096 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.example.fxblog.entity.MetaEntity ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-04-05 16:39:13.173  WARN 12096 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2022-04-05 16:39:13.406  INFO 12096 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-04-05 16:39:13.419  INFO 12096 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-04-05 16:39:13.513 ERROR 12096 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2022-04-05 16:39:25.838  INFO 676 --- [main] com.example.fxblog.FxBlogApplication     : Starting FxBlogApplication using Java 1.8.0_301 on Computer-WZK with PID 676 (D:\Work\JAVA\FxBlog\target\classes started by WZK in D:\Work\JAVA\FxBlog)
+2022-04-05 16:39:25.841  INFO 676 --- [main] com.example.fxblog.FxBlogApplication     : No active profile set, falling back to default profiles: default
+2022-04-05 16:39:26.917  INFO 676 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-05 16:39:26.921  INFO 676 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-05 16:39:26.974  INFO 676 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2022-04-05 16:39:28.028  INFO 676 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-05 16:39:28.059  INFO 676 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-05 16:39:28.060  INFO 676 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-04-05 16:39:28.183  INFO 676 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-05 16:39:28.183  INFO 676 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2264 ms
+2022-04-05 16:39:28.465  INFO 676 --- [main] com.example.fxblog.utils.ImageUtil       : 图片列表加载完成,当前共18张图片
+2022-04-05 16:39:29.527  WARN 676 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.fxblog.entity.MetaEntity".
+2022-04-05 16:39:29.527  WARN 676 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.example.fxblog.entity.MetaEntity ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-04-05 16:39:31.720  WARN 676 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2022-04-05 16:39:31.855  INFO 676 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-04-05 16:39:31.868  INFO 676 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-04-05 16:39:31.894 ERROR 676 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2022-04-05 16:39:40.309  INFO 15368 --- [http-nio-8080-exec-1] c.e.fxblog.controller.LoginController    : {username=root, password=123456, remember=true}
+2022-04-05 16:39:40.391  INFO 15368 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-05 16:39:40.622  INFO 15368 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-05 16:39:40.636 DEBUG 15368 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.UserMapper.selectList  : ==>  Preparing: SELECT user_id,user_username AS userName,user_password,user_salt FROM fx_user WHERE (user_username = ?)
+2022-04-05 16:39:40.677 DEBUG 15368 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.UserMapper.selectList  : ==> Parameters: root(String)
+2022-04-05 16:39:40.708 DEBUG 15368 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.UserMapper.selectList  : <==      Total: 1
+2022-04-05 16:39:40.716  INFO 15368 --- [http-nio-8080-exec-1] c.e.f.s.serviceImpl.UserServiceImpl      : a0e95940124a38f275a313f1cf7e2d20
+2022-04-05 16:39:41.165  INFO 15368 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-04-05 16:39:41.179  INFO 15368 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-04-05 16:39:49.527  INFO 9696 --- [main] com.example.fxblog.FxBlogApplication     : Starting FxBlogApplication using Java 1.8.0_301 on Computer-WZK with PID 9696 (D:\Work\JAVA\FxBlog\target\classes started by WZK in D:\Work\JAVA\FxBlog)
+2022-04-05 16:39:49.529  INFO 9696 --- [main] com.example.fxblog.FxBlogApplication     : No active profile set, falling back to default profiles: default
+2022-04-05 16:39:50.375  INFO 9696 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-05 16:39:50.377  INFO 9696 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-05 16:39:50.420  INFO 9696 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2022-04-05 16:39:51.245  INFO 9696 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-05 16:39:51.266  INFO 9696 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-05 16:39:51.266  INFO 9696 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-04-05 16:39:51.357  INFO 9696 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-05 16:39:51.357  INFO 9696 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1754 ms
+2022-04-05 16:39:51.475  INFO 9696 --- [main] com.example.fxblog.utils.ImageUtil       : 图片列表加载完成,当前共18张图片
+2022-04-05 16:39:52.392  WARN 9696 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.fxblog.entity.MetaEntity".
+2022-04-05 16:39:52.392  WARN 9696 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.example.fxblog.entity.MetaEntity ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-04-05 16:39:54.039  INFO 9696 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-05 16:39:54.049  INFO 9696 --- [main] com.example.fxblog.FxBlogApplication     : Started FxBlogApplication in 5.362 seconds (JVM running for 8.298)
+2022-04-05 16:39:56.971  INFO 9696 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-05 16:39:56.971  INFO 9696 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-05 16:39:56.972  INFO 9696 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-05 16:39:57.040  WARN 9696 --- [http-nio-8080-exec-1] c.e.f.other.Interceptor.RsaInterceptor   : 加密数据疑似被篡改,无法进行解码
+2022-04-05 16:40:17.408  WARN 9696 --- [http-nio-8080-exec-2] c.e.f.other.Interceptor.RsaInterceptor   : 加密数据疑似被篡改,无法进行解码
+2022-04-05 16:40:22.365  WARN 9696 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected end-of-input: expected close marker for Object (start marker at [Source: (PushbackInputStream); line: 1, column: 1]); nested exception is com.fasterxml.jackson.core.io.JsonEOFException: Unexpected end-of-input: expected close marker for Object (start marker at [Source: (PushbackInputStream); line: 1, column: 1])<EOL> at [Source: (PushbackInputStream); line: 1, column: 2]]
+2022-04-05 16:41:22.505  INFO 9696 --- [http-nio-8080-exec-4] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-05 16:41:22.529  INFO 9696 --- [http-nio-8080-exec-4] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+2022-04-05 16:43:20.928  WARN 9696 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected end-of-input: expected close marker for Object (start marker at [Source: (PushbackInputStream); line: 1, column: 1]); nested exception is com.fasterxml.jackson.core.io.JsonEOFException: Unexpected end-of-input: expected close marker for Object (start marker at [Source: (PushbackInputStream); line: 1, column: 1])<EOL> at [Source: (PushbackInputStream); line: 1, column: 2]]
+2022-04-05 16:45:34.156  INFO 6324 --- [main] com.example.fxblog.FxBlogApplication     : Starting FxBlogApplication using Java 1.8.0_301 on Computer-WZK with PID 6324 (D:\Work\JAVA\FxBlog\target\classes started by WZK in D:\Work\JAVA\FxBlog)
+2022-04-05 16:45:34.159  INFO 6324 --- [main] com.example.fxblog.FxBlogApplication     : No active profile set, falling back to default profiles: default
+2022-04-05 16:45:34.905  INFO 6324 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-05 16:45:34.907  INFO 6324 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-05 16:45:34.942  INFO 6324 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2022-04-05 16:45:35.541  INFO 6324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-05 16:45:35.559  INFO 6324 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-05 16:45:35.559  INFO 6324 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-04-05 16:45:35.778  INFO 6324 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-05 16:45:35.778  INFO 6324 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1562 ms
+2022-04-05 16:45:35.903  INFO 6324 --- [main] com.example.fxblog.utils.ImageUtil       : 图片列表加载完成,当前共18张图片
+2022-04-05 16:45:36.787  WARN 6324 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.fxblog.entity.MetaEntity".
+2022-04-05 16:45:36.787  WARN 6324 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.example.fxblog.entity.MetaEntity ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-04-05 16:45:38.336  INFO 6324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-05 16:45:38.344  INFO 6324 --- [main] com.example.fxblog.FxBlogApplication     : Started FxBlogApplication in 4.958 seconds (JVM running for 7.837)
+2022-04-05 16:45:41.990  INFO 6324 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-05 16:45:41.990  INFO 6324 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-05 16:45:41.991  INFO 6324 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-05 16:45:42.065  INFO 6324 --- [http-nio-8080-exec-1] c.e.fxblog.controller.LoginController    : {username=root, password=123456, remember=true}
+2022-04-05 16:45:42.123  INFO 6324 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-05 16:45:42.264  INFO 6324 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-05 16:45:42.272 DEBUG 6324 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.UserMapper.selectList  : ==>  Preparing: SELECT user_id,user_username AS userName,user_password,user_salt FROM fx_user WHERE (user_username = ?)
+2022-04-05 16:45:42.296 DEBUG 6324 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.UserMapper.selectList  : ==> Parameters: root(String)
+2022-04-05 16:45:42.318 DEBUG 6324 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.UserMapper.selectList  : <==      Total: 1
+2022-04-05 16:45:42.325  INFO 6324 --- [http-nio-8080-exec-1] c.e.f.s.serviceImpl.UserServiceImpl      : a0e95940124a38f275a313f1cf7e2d20
+2022-04-05 16:46:26.200 DEBUG 6324 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 16:46:26.201 DEBUG 6324 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 16:47:05.565 DEBUG 6324 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 16:47:05.566 DEBUG 6324 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 16:47:06.446 DEBUG 6324 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 16:47:06.447 DEBUG 6324 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 16:47:09.000 DEBUG 6324 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 16:47:09.000 DEBUG 6324 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 16:47:09.976 DEBUG 6324 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 16:47:09.976 DEBUG 6324 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 16:47:36.248  INFO 6324 --- [http-nio-8080-exec-8] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-05 16:47:36.277  INFO 6324 --- [http-nio-8080-exec-8] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 0 Redis repository interfaces.
+2022-04-05 16:47:36.410  INFO 6324 --- [http-nio-8080-exec-8] c.e.fxblog.controller.MetaController     : {type=list, key=my_website}
+2022-04-05 16:47:36.420 DEBUG 6324 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 16:47:36.420 DEBUG 6324 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 16:48:04.304  INFO 6324 --- [http-nio-8080-exec-9] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-05 16:48:04.329  INFO 6324 --- [http-nio-8080-exec-9] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+2022-04-05 16:48:04.398 DEBUG 6324 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 16:48:04.399 DEBUG 6324 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 16:49:11.511  INFO 6324 --- [http-nio-8080-exec-1] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-05 16:49:11.535  INFO 6324 --- [http-nio-8080-exec-1] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+2022-04-05 16:49:11.610 DEBUG 6324 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 16:49:11.611 DEBUG 6324 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 16:49:14.215 DEBUG 6324 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 16:49:14.215 DEBUG 6324 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 16:49:16.615 DEBUG 6324 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 16:49:16.616 DEBUG 6324 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 16:49:25.134  INFO 6324 --- [http-nio-8080-exec-4] c.e.fxblog.controller.LoginController    : {username=root, password=123456, remember=true}
+2022-04-05 16:49:25.135 DEBUG 6324 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.UserMapper.selectList  : ==>  Preparing: SELECT user_id,user_username AS userName,user_password,user_salt FROM fx_user WHERE (user_username = ?)
+2022-04-05 16:49:25.135 DEBUG 6324 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.UserMapper.selectList  : ==> Parameters: root(String)
+2022-04-05 16:49:25.137 DEBUG 6324 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.UserMapper.selectList  : <==      Total: 1
+2022-04-05 16:49:25.137  INFO 6324 --- [http-nio-8080-exec-4] c.e.f.s.serviceImpl.UserServiceImpl      : a0e95940124a38f275a313f1cf7e2d20
+2022-04-05 16:54:07.646  INFO 6324 --- [http-nio-8080-exec-7] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-05 16:54:07.668  INFO 6324 --- [http-nio-8080-exec-7] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2022-04-05 16:54:07.733 DEBUG 6324 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 16:54:07.734 DEBUG 6324 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 16:54:10.832 DEBUG 6324 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 16:54:10.833 DEBUG 6324 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 16:54:15.849 DEBUG 6324 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 16:54:15.850 DEBUG 6324 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 16:54:18.648  INFO 6324 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-04-05 16:54:18.659  INFO 6324 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-04-05 16:54:22.802  INFO 3788 --- [main] com.example.fxblog.FxBlogApplication     : Starting FxBlogApplication using Java 1.8.0_301 on Computer-WZK with PID 3788 (D:\Work\JAVA\FxBlog\target\classes started by WZK in D:\Work\JAVA\FxBlog)
+2022-04-05 16:54:22.804  INFO 3788 --- [main] com.example.fxblog.FxBlogApplication     : No active profile set, falling back to default profiles: default
+2022-04-05 16:54:23.579  INFO 3788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-05 16:54:23.581  INFO 3788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-05 16:54:23.617  INFO 3788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2022-04-05 16:54:24.200  INFO 3788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-05 16:54:24.218  INFO 3788 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-05 16:54:24.218  INFO 3788 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-04-05 16:54:24.437  INFO 3788 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-05 16:54:24.438  INFO 3788 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1574 ms
+2022-04-05 16:54:24.539  INFO 3788 --- [main] com.example.fxblog.utils.ImageUtil       : 图片列表加载完成,当前共18张图片
+2022-04-05 16:54:25.400  WARN 3788 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.fxblog.entity.MetaEntity".
+2022-04-05 16:54:25.401  WARN 3788 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.example.fxblog.entity.MetaEntity ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-04-05 16:54:26.886  INFO 3788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-05 16:54:26.894  INFO 3788 --- [main] com.example.fxblog.FxBlogApplication     : Started FxBlogApplication in 4.826 seconds (JVM running for 7.477)
+2022-04-05 16:54:30.347  INFO 3788 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-05 16:54:30.347  INFO 3788 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-05 16:54:30.348  INFO 3788 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-05 16:54:30.466  INFO 3788 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-05 16:54:30.595  INFO 3788 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-05 16:54:30.604 DEBUG 3788 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key AS key,meta_value AS value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 16:54:30.640 DEBUG 3788 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 16:55:36.201 DEBUG 3788 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key AS key,meta_value AS value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 16:55:36.201 DEBUG 3788 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 16:58:14.165  INFO 3788 --- [http-nio-8080-exec-5] c.e.fxblog.controller.LoginController    : {username=root, password=123456, remember=true}
+2022-04-05 16:58:14.170 DEBUG 3788 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.UserMapper.selectList  : ==>  Preparing: SELECT user_id,user_username AS userName,user_password,user_salt FROM fx_user WHERE (user_username = ?)
+2022-04-05 16:58:14.170 DEBUG 3788 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.UserMapper.selectList  : ==> Parameters: root(String)
+2022-04-05 16:58:14.215 DEBUG 3788 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.UserMapper.selectList  : <==      Total: 1
+2022-04-05 16:58:14.220  INFO 3788 --- [http-nio-8080-exec-5] c.e.f.s.serviceImpl.UserServiceImpl      : a0e95940124a38f275a313f1cf7e2d20
+2022-04-05 16:58:29.015 DEBUG 3788 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key AS key,meta_value AS value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 16:58:29.015 DEBUG 3788 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 17:00:14.917  INFO 3788 --- [http-nio-8080-exec-9] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-05 17:00:14.927  INFO 3788 --- [http-nio-8080-exec-9] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2022-04-05 17:00:15.030  INFO 3788 --- [http-nio-8080-exec-9] c.e.fxblog.controller.LoginController    : {username=root, password=123456, remember=true}
+2022-04-05 17:00:15.043 DEBUG 3788 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.UserMapper.selectList  : ==>  Preparing: SELECT user_id,user_username AS userName,user_password,user_salt FROM fx_user WHERE (user_username = ?)
+2022-04-05 17:00:15.043 DEBUG 3788 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.UserMapper.selectList  : ==> Parameters: root(String)
+2022-04-05 17:00:15.045 DEBUG 3788 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.UserMapper.selectList  : <==      Total: 1
+2022-04-05 17:00:15.045  INFO 3788 --- [http-nio-8080-exec-9] c.e.f.s.serviceImpl.UserServiceImpl      : a0e95940124a38f275a313f1cf7e2d20
+2022-04-05 17:01:22.245  INFO 3788 --- [http-nio-8080-exec-1] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-05 17:01:22.255  INFO 3788 --- [http-nio-8080-exec-1] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2022-04-05 17:01:22.304 DEBUG 3788 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key AS key,meta_value AS value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 17:01:22.304 DEBUG 3788 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 17:03:28.953  INFO 3788 --- [http-nio-8080-exec-3] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-05 17:03:28.961  INFO 3788 --- [http-nio-8080-exec-3] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2022-04-05 17:03:29.011 DEBUG 3788 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key AS key,meta_value AS value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 17:03:29.011 DEBUG 3788 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 17:07:50.600  INFO 3788 --- [http-nio-8080-exec-5] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-05 17:07:50.608  INFO 3788 --- [http-nio-8080-exec-5] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2022-04-05 17:07:50.661 DEBUG 3788 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key AS key,meta_value AS value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 17:07:50.662 DEBUG 3788 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 17:07:59.304  INFO 3788 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-04-05 17:07:59.315  INFO 3788 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-04-05 17:08:01.295  INFO 8676 --- [main] com.example.fxblog.FxBlogApplication     : Starting FxBlogApplication using Java 1.8.0_301 on Computer-WZK with PID 8676 (D:\Work\JAVA\FxBlog\target\classes started by WZK in D:\Work\JAVA\FxBlog)
+2022-04-05 17:08:01.297  INFO 8676 --- [main] com.example.fxblog.FxBlogApplication     : No active profile set, falling back to default profiles: default
+2022-04-05 17:08:01.772  INFO 8676 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-05 17:08:01.774  INFO 8676 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-05 17:08:01.792  INFO 8676 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2022-04-05 17:08:02.137  INFO 8676 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-05 17:08:02.142  INFO 8676 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-05 17:08:02.142  INFO 8676 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-04-05 17:08:02.210  INFO 8676 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-05 17:08:02.210  INFO 8676 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 880 ms
+2022-04-05 17:08:02.280  INFO 8676 --- [main] com.example.fxblog.utils.ImageUtil       : 图片列表加载完成,当前共18张图片
+2022-04-05 17:08:03.059  WARN 8676 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.fxblog.entity.MetaEntity".
+2022-04-05 17:08:03.059  WARN 8676 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.example.fxblog.entity.MetaEntity ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-04-05 17:08:04.591  INFO 8676 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-05 17:08:04.598  INFO 8676 --- [main] com.example.fxblog.FxBlogApplication     : Started FxBlogApplication in 3.631 seconds (JVM running for 4.499)
+2022-04-05 17:08:06.323  INFO 8676 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-05 17:08:06.324  INFO 8676 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-05 17:08:06.325  INFO 8676 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-05 17:08:06.409  INFO 8676 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-05 17:08:06.676  INFO 8676 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-05 17:08:06.682 DEBUG 8676 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 17:08:06.699 DEBUG 8676 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 17:08:06.713 DEBUG 8676 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
+2022-04-05 17:08:06.717  INFO 8676 --- [http-nio-8080-exec-1] c.e.f.s.serviceImpl.MetaServiceImpl      : [MetaEntity(metaKey=my_website, metaValue=Gitee https://gitee.com/zhuiyifanxing), MetaEntity(metaKey=my_website, metaValue=BilBil https://space.bilibili.com/434012764)]
+2022-04-05 17:08:17.999  INFO 8676 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-04-05 17:08:18.010  INFO 8676 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-04-05 17:08:22.238  INFO 12744 --- [main] com.example.fxblog.FxBlogApplication     : Starting FxBlogApplication using Java 1.8.0_301 on Computer-WZK with PID 12744 (D:\Work\JAVA\FxBlog\target\classes started by WZK in D:\Work\JAVA\FxBlog)
+2022-04-05 17:08:22.240  INFO 12744 --- [main] com.example.fxblog.FxBlogApplication     : No active profile set, falling back to default profiles: default
+2022-04-05 17:08:23.101  INFO 12744 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-05 17:08:23.103  INFO 12744 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-05 17:08:23.140  INFO 12744 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2022-04-05 17:08:23.727  INFO 12744 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-05 17:08:23.744  INFO 12744 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-05 17:08:23.744  INFO 12744 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-04-05 17:08:23.950  INFO 12744 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-05 17:08:23.950  INFO 12744 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1651 ms
+2022-04-05 17:08:24.054  INFO 12744 --- [main] com.example.fxblog.utils.ImageUtil       : 图片列表加载完成,当前共18张图片
+2022-04-05 17:08:24.902  WARN 12744 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.fxblog.entity.MetaEntity".
+2022-04-05 17:08:24.903  WARN 12744 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.example.fxblog.entity.MetaEntity ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-04-05 17:08:26.353  INFO 12744 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-05 17:08:26.362  INFO 12744 --- [main] com.example.fxblog.FxBlogApplication     : Started FxBlogApplication in 4.853 seconds (JVM running for 7.642)
+2022-04-05 17:08:27.605  INFO 12744 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-05 17:08:27.605  INFO 12744 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-05 17:08:27.606  INFO 12744 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-05 17:08:27.722  INFO 12744 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-05 17:08:27.850  INFO 12744 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-05 17:08:27.859 DEBUG 12744 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 17:08:27.896 DEBUG 12744 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 17:08:27.921 DEBUG 12744 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
+2022-04-05 17:08:27.926  INFO 12744 --- [http-nio-8080-exec-1] c.e.f.s.serviceImpl.MetaServiceImpl      : [MetaEntity(metaKey=my_website, metaValue=Gitee https://gitee.com/zhuiyifanxing), MetaEntity(metaKey=my_website, metaValue=BilBil https://space.bilibili.com/434012764)]
+2022-04-05 17:09:03.076  INFO 12744 --- [http-nio-8080-exec-2] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-05 17:09:03.145  INFO 12744 --- [http-nio-8080-exec-2] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 0 Redis repository interfaces.
+2022-04-05 17:09:03.301 DEBUG 12744 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 17:09:03.302 DEBUG 12744 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 17:09:03.304 DEBUG 12744 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
+2022-04-05 17:09:23.949  INFO 12744 --- [http-nio-8080-exec-3] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-05 17:09:23.974  INFO 12744 --- [http-nio-8080-exec-3] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+2022-04-05 17:09:24.045 DEBUG 12744 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 17:09:24.046 DEBUG 12744 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 17:09:24.047 DEBUG 12744 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
+2022-04-05 17:09:36.041 DEBUG 12744 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 17:09:36.042 DEBUG 12744 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 17:09:36.044 DEBUG 12744 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
+2022-04-05 17:09:41.392 DEBUG 12744 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 17:09:41.393 DEBUG 12744 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 17:09:41.395 DEBUG 12744 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
+2022-04-05 17:09:41.395  INFO 12744 --- [http-nio-8080-exec-5] c.e.f.s.serviceImpl.MetaServiceImpl      : {}
+2022-04-05 17:10:14.373  INFO 12744 --- [http-nio-8080-exec-6] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-05 17:10:14.394  INFO 12744 --- [http-nio-8080-exec-6] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2022-04-05 17:10:14.474 DEBUG 12744 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 17:10:14.474 DEBUG 12744 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 17:10:14.476 DEBUG 12744 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
+2022-04-05 17:10:14.476  INFO 12744 --- [http-nio-8080-exec-6] c.e.f.s.serviceImpl.MetaServiceImpl      : [Gitee https://gitee.com/zhuiyifanxing]
+2022-04-05 17:12:06.573  INFO 12744 --- [http-nio-8080-exec-8] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-05 17:12:06.595  INFO 12744 --- [http-nio-8080-exec-8] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
+2022-04-05 17:12:06.650 DEBUG 12744 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-05 17:12:06.650 DEBUG 12744 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-05 17:12:06.651 DEBUG 12744 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
+2022-04-05 17:12:06.652  INFO 12744 --- [http-nio-8080-exec-8] c.e.f.s.serviceImpl.MetaServiceImpl      : [Gitee, https://gitee.com/zhuiyifanxing]
+2022-04-05 17:12:06.652  INFO 12744 --- [http-nio-8080-exec-8] c.e.f.s.serviceImpl.MetaServiceImpl      : [BilBil, https://space.bilibili.com/434012764]
+2022-04-05 17:12:25.755  INFO 12744 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-04-05 17:12:25.765  INFO 12744 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -20,7 +20,12 @@ public class BodyRequsetWrapper extends HttpServletRequestWrapper {
         super(request);
         InputStream inputStream = request.getInputStream();
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
-        body = reader.readLine();
+        StringBuilder stringBuilder = new StringBuilder();
+        String str;
+        while ((str = reader.readLine()) != null) {
+            stringBuilder.append(str);
+        }
+        body = stringBuilder.toString();
     }
 
     @Override
@@ -41,6 +46,7 @@ public class BodyRequsetWrapper extends HttpServletRequestWrapper {
             public void setReadListener(ReadListener readListener) {
 
             }
+
             @Override
             public int read() {
                 return bytes.read();

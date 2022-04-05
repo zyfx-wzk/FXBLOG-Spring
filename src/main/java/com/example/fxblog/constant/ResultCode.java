@@ -18,7 +18,10 @@ public enum ResultCode {
      * 数据解码失败
      */
     DECODING_FAIL(301,"数据解码失败"),
-
+    /**
+     * 数据解码失败
+     */
+    GET_META_FAIL(302,"获取页面元数据失败"),
     /**
      * 未登录或者登录已失效
      */

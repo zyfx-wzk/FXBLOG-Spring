@@ -1,5 +1,7 @@
 package com.example.fxblog.service.serviceImpl;
 
+import cn.hutool.json.JSONObject;
+import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.fxblog.entity.MetaEntity;
 import com.example.fxblog.mapper.MetaMapper;
@@ -8,10 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @Author 王志康
@@ -30,20 +30,25 @@ public class MetaServiceImpl implements MetaService {
     }
 
     @Override
-    public Map<String, String> getMetaList(String key) {
+    public List<JSONObject> getMetaList(String key) {
         List<MetaEntity> list = metaMapper.selectList(getValue(key));
-        Map<String, String> result = new HashMap<>(list.size());
+        List<JSONObject> result = new ArrayList<>();
         for (MetaEntity meta : list) {
-            String[] str = meta.getMetaValue().split("@@@@@");
-            log.info(Arrays.toString(str));
-            result.put(str[0], str[1]);
+            JSONObject str = JSONUtil.parseObj(meta.getMetaValue());
+            log.info(str.toString());
+            result.add(str);
         }
         return result;
     }
 
     @Override
-    public String getMeta(String key) {
-        MetaEntity meta = metaMapper.selectOne(getValue(key));
-        return meta.getMetaValue();
+    public JSONObject getMetaValue(String key) {
+        List<MetaEntity> list = metaMapper.selectList(getValue(key));
+        return JSONUtil.parseObj(list.get(0).getMetaValue());
+    }
+
+    @Override
+    public void setMetaValue(String key, String value) {
+        metaMapper.insert(new MetaEntity(key, value));
     }
 }

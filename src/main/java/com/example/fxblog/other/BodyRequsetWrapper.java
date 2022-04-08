@@ -1,5 +1,7 @@
 package com.example.fxblog.other;
 
+import lombok.extern.slf4j.Slf4j;
+
 import javax.servlet.ReadListener;
 import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +15,7 @@ import java.nio.charset.StandardCharsets;
  * @Author 王志康
  * @Date 2022/3/23 17:55
  */
+@Slf4j
 public class BodyRequsetWrapper extends HttpServletRequestWrapper {
     private String body;
 

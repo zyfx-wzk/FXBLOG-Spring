@@ -1,381 +1,615 @@
-2022-04-05 16:28:40.314  INFO 12780 --- [main] com.example.fxblog.FxBlogApplication     : Starting FxBlogApplication using Java 1.8.0_301 on Computer-WZK with PID 12780 (D:\Work\JAVA\FxBlog\target\classes started by WZK in D:\Work\JAVA\FxBlog)
-2022-04-05 16:28:40.342  INFO 12780 --- [main] com.example.fxblog.FxBlogApplication     : No active profile set, falling back to default profiles: default
-2022-04-05 16:28:41.653  INFO 12780 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-04-05 16:28:41.656  INFO 12780 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-05 16:28:41.739  INFO 12780 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
-2022-04-05 16:28:42.728  INFO 12780 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-04-05 16:28:42.753  INFO 12780 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-05 16:28:42.754  INFO 12780 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
-2022-04-05 16:28:43.293  INFO 12780 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-05 16:28:43.294  INFO 12780 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2788 ms
-2022-04-05 16:28:43.493  INFO 12780 --- [main] com.example.fxblog.utils.ImageUtil       : 图片列表加载完成,当前共18张图片
-2022-04-05 16:28:45.107  WARN 12780 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.fxblog.entity.MetaEntity".
-2022-04-05 16:28:45.107  WARN 12780 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.example.fxblog.entity.MetaEntity ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2022-04-05 16:28:47.713  INFO 12780 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-04-05 16:28:47.723  INFO 12780 --- [main] com.example.fxblog.FxBlogApplication     : Started FxBlogApplication in 8.674 seconds (JVM running for 13.348)
-2022-04-05 16:29:55.372  INFO 12780 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-04-05 16:29:55.373  INFO 12780 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-04-05 16:29:55.374  INFO 12780 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-04-05 16:29:55.568  INFO 12780 --- [http-nio-8080-exec-1] c.e.fxblog.controller.LoginController    : {username=root, password=123456, remember=true}
-2022-04-05 16:29:55.699  INFO 12780 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-04-05 16:29:56.150  INFO 12780 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-04-05 16:29:56.167 DEBUG 12780 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.UserMapper.selectList  : ==>  Preparing: SELECT user_id,user_username AS userName,user_password,user_salt FROM fx_user WHERE (user_username = ?)
-2022-04-05 16:29:56.450 DEBUG 12780 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.UserMapper.selectList  : ==> Parameters: root(String)
-2022-04-05 16:29:56.482 DEBUG 12780 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.UserMapper.selectList  : <==      Total: 1
-2022-04-05 16:29:56.494  INFO 12780 --- [http-nio-8080-exec-1] c.e.f.s.serviceImpl.UserServiceImpl      : a0e95940124a38f275a313f1cf7e2d20
-2022-04-05 16:30:03.869  WARN 12780 --- [http-nio-8080-exec-2] c.e.f.o.Interceptor.TokenInterceptor     : 未使用或使用篡改的token进行操作
-2022-04-05 16:30:07.036  INFO 12780 --- [http-nio-8080-exec-3] c.e.fxblog.controller.LoginController    : {username=root, password=123456, remember=true}
-2022-04-05 16:30:07.042 DEBUG 12780 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.UserMapper.selectList  : ==>  Preparing: SELECT user_id,user_username AS userName,user_password,user_salt FROM fx_user WHERE (user_username = ?)
-2022-04-05 16:30:07.043 DEBUG 12780 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.UserMapper.selectList  : ==> Parameters: root(String)
-2022-04-05 16:30:07.045 DEBUG 12780 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.UserMapper.selectList  : <==      Total: 1
-2022-04-05 16:30:07.046  INFO 12780 --- [http-nio-8080-exec-3] c.e.f.s.serviceImpl.UserServiceImpl      : a0e95940124a38f275a313f1cf7e2d20
-2022-04-05 16:32:00.139  INFO 12780 --- [http-nio-8080-exec-5] c.e.fxblog.controller.LoginController    : {username=root, password=123456, remember=true}
-2022-04-05 16:32:00.142 DEBUG 12780 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.UserMapper.selectList  : ==>  Preparing: SELECT user_id,user_username AS userName,user_password,user_salt FROM fx_user WHERE (user_username = ?)
-2022-04-05 16:32:00.142 DEBUG 12780 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.UserMapper.selectList  : ==> Parameters: root(String)
-2022-04-05 16:32:00.143 DEBUG 12780 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.UserMapper.selectList  : <==      Total: 1
-2022-04-05 16:32:00.144  INFO 12780 --- [http-nio-8080-exec-5] c.e.f.s.serviceImpl.UserServiceImpl      : a0e95940124a38f275a313f1cf7e2d20
-2022-04-05 16:33:49.058  INFO 12780 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-04-05 16:33:49.086  INFO 12780 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-04-05 16:33:55.877  INFO 12004 --- [main] com.example.fxblog.FxBlogApplication     : Starting FxBlogApplication using Java 1.8.0_301 on Computer-WZK with PID 12004 (D:\Work\JAVA\FxBlog\target\classes started by WZK in D:\Work\JAVA\FxBlog)
-2022-04-05 16:33:55.881  INFO 12004 --- [main] com.example.fxblog.FxBlogApplication     : No active profile set, falling back to default profiles: default
-2022-04-05 16:33:56.775  INFO 12004 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-04-05 16:33:56.778  INFO 12004 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-05 16:33:56.821  INFO 12004 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
-2022-04-05 16:33:57.713  INFO 12004 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-04-05 16:33:57.735  INFO 12004 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-05 16:33:57.736  INFO 12004 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
-2022-04-05 16:33:57.858  INFO 12004 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-05 16:33:57.858  INFO 12004 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1902 ms
-2022-04-05 16:33:58.015  INFO 12004 --- [main] com.example.fxblog.utils.ImageUtil       : 图片列表加载完成,当前共18张图片
-2022-04-05 16:33:59.414  WARN 12004 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.fxblog.entity.MetaEntity".
-2022-04-05 16:33:59.414  WARN 12004 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.example.fxblog.entity.MetaEntity ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2022-04-05 16:34:01.561  INFO 12004 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-04-05 16:34:01.572  INFO 12004 --- [main] com.example.fxblog.FxBlogApplication     : Started FxBlogApplication in 6.596 seconds (JVM running for 11.062)
-2022-04-05 16:34:06.883  INFO 12004 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-04-05 16:34:06.883  INFO 12004 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-04-05 16:34:06.884  INFO 12004 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-04-05 16:35:23.455  INFO 12004 --- [http-nio-8080-exec-1] c.e.fxblog.controller.LoginController    : {username=root, password=123456, remember=true}
-2022-04-05 16:35:24.227  INFO 12004 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-04-05 16:35:27.363  INFO 12004 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-04-05 16:35:27.642 DEBUG 12004 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.UserMapper.selectList  : ==>  Preparing: SELECT user_id,user_username AS userName,user_password,user_salt FROM fx_user WHERE (user_username = ?)
-2022-04-05 16:35:28.629 DEBUG 12004 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.UserMapper.selectList  : ==> Parameters: root(String)
-2022-04-05 16:35:29.393 DEBUG 12004 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.UserMapper.selectList  : <==      Total: 1
-2022-04-05 16:35:29.441  INFO 12004 --- [http-nio-8080-exec-1] c.e.f.s.serviceImpl.UserServiceImpl      : a0e95940124a38f275a313f1cf7e2d20
-2022-04-05 16:36:08.954  INFO 12004 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-04-05 16:36:08.965  INFO 12004 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-04-05 16:36:14.243  INFO 15368 --- [main] com.example.fxblog.FxBlogApplication     : Starting FxBlogApplication using Java 1.8.0_301 on Computer-WZK with PID 15368 (D:\Work\JAVA\FxBlog\target\classes started by WZK in D:\Work\JAVA\FxBlog)
-2022-04-05 16:36:14.246  INFO 15368 --- [main] com.example.fxblog.FxBlogApplication     : No active profile set, falling back to default profiles: default
-2022-04-05 16:36:15.147  INFO 15368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-04-05 16:36:15.150  INFO 15368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-05 16:36:15.203  INFO 15368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
-2022-04-05 16:36:15.983  INFO 15368 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-04-05 16:36:16.172  INFO 15368 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-05 16:36:16.172  INFO 15368 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
-2022-04-05 16:36:16.284  INFO 15368 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-05 16:36:16.284  INFO 15368 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1955 ms
-2022-04-05 16:36:16.468  INFO 15368 --- [main] com.example.fxblog.utils.ImageUtil       : 图片列表加载完成,当前共18张图片
-2022-04-05 16:36:17.467  WARN 15368 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.fxblog.entity.MetaEntity".
-2022-04-05 16:36:17.468  WARN 15368 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.example.fxblog.entity.MetaEntity ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2022-04-05 16:36:19.395  INFO 15368 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-04-05 16:36:19.405  INFO 15368 --- [main] com.example.fxblog.FxBlogApplication     : Started FxBlogApplication in 6.101 seconds (JVM running for 9.541)
-2022-04-05 16:36:38.173  INFO 15368 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-04-05 16:36:38.173  INFO 15368 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-04-05 16:36:38.174  INFO 15368 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-04-05 16:39:07.221  INFO 12096 --- [main] com.example.fxblog.FxBlogApplication     : Starting FxBlogApplication using Java 1.8.0_301 on Computer-WZK with PID 12096 (D:\Work\JAVA\FxBlog\target\classes started by WZK in D:\Work\JAVA\FxBlog)
-2022-04-05 16:39:07.224  INFO 12096 --- [main] com.example.fxblog.FxBlogApplication     : No active profile set, falling back to default profiles: default
-2022-04-05 16:39:08.344  INFO 12096 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-04-05 16:39:08.348  INFO 12096 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-05 16:39:08.403  INFO 12096 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
-2022-04-05 16:39:09.508  INFO 12096 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-04-05 16:39:09.540  INFO 12096 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-05 16:39:09.540  INFO 12096 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
-2022-04-05 16:39:09.680  INFO 12096 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-05 16:39:09.680  INFO 12096 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2378 ms
-2022-04-05 16:39:09.916  INFO 12096 --- [main] com.example.fxblog.utils.ImageUtil       : 图片列表加载完成,当前共18张图片
-2022-04-05 16:39:10.993  WARN 12096 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.fxblog.entity.MetaEntity".
-2022-04-05 16:39:10.993  WARN 12096 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.example.fxblog.entity.MetaEntity ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2022-04-05 16:39:13.173  WARN 12096 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
-2022-04-05 16:39:13.406  INFO 12096 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2022-04-05 16:39:13.419  INFO 12096 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2022-04-05 16:39:13.513 ERROR 12096 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Web server failed to start. Port 8080 was already in use.
-
-Action:
-
-Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
-
-2022-04-05 16:39:25.838  INFO 676 --- [main] com.example.fxblog.FxBlogApplication     : Starting FxBlogApplication using Java 1.8.0_301 on Computer-WZK with PID 676 (D:\Work\JAVA\FxBlog\target\classes started by WZK in D:\Work\JAVA\FxBlog)
-2022-04-05 16:39:25.841  INFO 676 --- [main] com.example.fxblog.FxBlogApplication     : No active profile set, falling back to default profiles: default
-2022-04-05 16:39:26.917  INFO 676 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-04-05 16:39:26.921  INFO 676 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-05 16:39:26.974  INFO 676 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
-2022-04-05 16:39:28.028  INFO 676 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-04-05 16:39:28.059  INFO 676 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-05 16:39:28.060  INFO 676 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
-2022-04-05 16:39:28.183  INFO 676 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-05 16:39:28.183  INFO 676 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2264 ms
-2022-04-05 16:39:28.465  INFO 676 --- [main] com.example.fxblog.utils.ImageUtil       : 图片列表加载完成,当前共18张图片
-2022-04-05 16:39:29.527  WARN 676 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.fxblog.entity.MetaEntity".
-2022-04-05 16:39:29.527  WARN 676 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.example.fxblog.entity.MetaEntity ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2022-04-05 16:39:31.720  WARN 676 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
-2022-04-05 16:39:31.855  INFO 676 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2022-04-05 16:39:31.868  INFO 676 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2022-04-05 16:39:31.894 ERROR 676 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Web server failed to start. Port 8080 was already in use.
-
-Action:
-
-Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
-
-2022-04-05 16:39:40.309  INFO 15368 --- [http-nio-8080-exec-1] c.e.fxblog.controller.LoginController    : {username=root, password=123456, remember=true}
-2022-04-05 16:39:40.391  INFO 15368 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-04-05 16:39:40.622  INFO 15368 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-04-05 16:39:40.636 DEBUG 15368 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.UserMapper.selectList  : ==>  Preparing: SELECT user_id,user_username AS userName,user_password,user_salt FROM fx_user WHERE (user_username = ?)
-2022-04-05 16:39:40.677 DEBUG 15368 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.UserMapper.selectList  : ==> Parameters: root(String)
-2022-04-05 16:39:40.708 DEBUG 15368 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.UserMapper.selectList  : <==      Total: 1
-2022-04-05 16:39:40.716  INFO 15368 --- [http-nio-8080-exec-1] c.e.f.s.serviceImpl.UserServiceImpl      : a0e95940124a38f275a313f1cf7e2d20
-2022-04-05 16:39:41.165  INFO 15368 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-04-05 16:39:41.179  INFO 15368 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-04-05 16:39:49.527  INFO 9696 --- [main] com.example.fxblog.FxBlogApplication     : Starting FxBlogApplication using Java 1.8.0_301 on Computer-WZK with PID 9696 (D:\Work\JAVA\FxBlog\target\classes started by WZK in D:\Work\JAVA\FxBlog)
-2022-04-05 16:39:49.529  INFO 9696 --- [main] com.example.fxblog.FxBlogApplication     : No active profile set, falling back to default profiles: default
-2022-04-05 16:39:50.375  INFO 9696 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-04-05 16:39:50.377  INFO 9696 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-05 16:39:50.420  INFO 9696 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
-2022-04-05 16:39:51.245  INFO 9696 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-04-05 16:39:51.266  INFO 9696 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-05 16:39:51.266  INFO 9696 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
-2022-04-05 16:39:51.357  INFO 9696 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-05 16:39:51.357  INFO 9696 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1754 ms
-2022-04-05 16:39:51.475  INFO 9696 --- [main] com.example.fxblog.utils.ImageUtil       : 图片列表加载完成,当前共18张图片
-2022-04-05 16:39:52.392  WARN 9696 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.fxblog.entity.MetaEntity".
-2022-04-05 16:39:52.392  WARN 9696 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.example.fxblog.entity.MetaEntity ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2022-04-05 16:39:54.039  INFO 9696 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-04-05 16:39:54.049  INFO 9696 --- [main] com.example.fxblog.FxBlogApplication     : Started FxBlogApplication in 5.362 seconds (JVM running for 8.298)
-2022-04-05 16:39:56.971  INFO 9696 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-04-05 16:39:56.971  INFO 9696 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-04-05 16:39:56.972  INFO 9696 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-04-05 16:39:57.040  WARN 9696 --- [http-nio-8080-exec-1] c.e.f.other.Interceptor.RsaInterceptor   : 加密数据疑似被篡改,无法进行解码
-2022-04-05 16:40:17.408  WARN 9696 --- [http-nio-8080-exec-2] c.e.f.other.Interceptor.RsaInterceptor   : 加密数据疑似被篡改,无法进行解码
-2022-04-05 16:40:22.365  WARN 9696 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected end-of-input: expected close marker for Object (start marker at [Source: (PushbackInputStream); line: 1, column: 1]); nested exception is com.fasterxml.jackson.core.io.JsonEOFException: Unexpected end-of-input: expected close marker for Object (start marker at [Source: (PushbackInputStream); line: 1, column: 1])<EOL> at [Source: (PushbackInputStream); line: 1, column: 2]]
-2022-04-05 16:41:22.505  INFO 9696 --- [http-nio-8080-exec-4] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-05 16:41:22.529  INFO 9696 --- [http-nio-8080-exec-4] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
-2022-04-05 16:43:20.928  WARN 9696 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected end-of-input: expected close marker for Object (start marker at [Source: (PushbackInputStream); line: 1, column: 1]); nested exception is com.fasterxml.jackson.core.io.JsonEOFException: Unexpected end-of-input: expected close marker for Object (start marker at [Source: (PushbackInputStream); line: 1, column: 1])<EOL> at [Source: (PushbackInputStream); line: 1, column: 2]]
-2022-04-05 16:45:34.156  INFO 6324 --- [main] com.example.fxblog.FxBlogApplication     : Starting FxBlogApplication using Java 1.8.0_301 on Computer-WZK with PID 6324 (D:\Work\JAVA\FxBlog\target\classes started by WZK in D:\Work\JAVA\FxBlog)
-2022-04-05 16:45:34.159  INFO 6324 --- [main] com.example.fxblog.FxBlogApplication     : No active profile set, falling back to default profiles: default
-2022-04-05 16:45:34.905  INFO 6324 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-04-05 16:45:34.907  INFO 6324 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-05 16:45:34.942  INFO 6324 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
-2022-04-05 16:45:35.541  INFO 6324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-04-05 16:45:35.559  INFO 6324 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-05 16:45:35.559  INFO 6324 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
-2022-04-05 16:45:35.778  INFO 6324 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-05 16:45:35.778  INFO 6324 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1562 ms
-2022-04-05 16:45:35.903  INFO 6324 --- [main] com.example.fxblog.utils.ImageUtil       : 图片列表加载完成,当前共18张图片
-2022-04-05 16:45:36.787  WARN 6324 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.fxblog.entity.MetaEntity".
-2022-04-05 16:45:36.787  WARN 6324 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.example.fxblog.entity.MetaEntity ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2022-04-05 16:45:38.336  INFO 6324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-04-05 16:45:38.344  INFO 6324 --- [main] com.example.fxblog.FxBlogApplication     : Started FxBlogApplication in 4.958 seconds (JVM running for 7.837)
-2022-04-05 16:45:41.990  INFO 6324 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-04-05 16:45:41.990  INFO 6324 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-04-05 16:45:41.991  INFO 6324 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-04-05 16:45:42.065  INFO 6324 --- [http-nio-8080-exec-1] c.e.fxblog.controller.LoginController    : {username=root, password=123456, remember=true}
-2022-04-05 16:45:42.123  INFO 6324 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-04-05 16:45:42.264  INFO 6324 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-04-05 16:45:42.272 DEBUG 6324 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.UserMapper.selectList  : ==>  Preparing: SELECT user_id,user_username AS userName,user_password,user_salt FROM fx_user WHERE (user_username = ?)
-2022-04-05 16:45:42.296 DEBUG 6324 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.UserMapper.selectList  : ==> Parameters: root(String)
-2022-04-05 16:45:42.318 DEBUG 6324 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.UserMapper.selectList  : <==      Total: 1
-2022-04-05 16:45:42.325  INFO 6324 --- [http-nio-8080-exec-1] c.e.f.s.serviceImpl.UserServiceImpl      : a0e95940124a38f275a313f1cf7e2d20
-2022-04-05 16:46:26.200 DEBUG 6324 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 16:46:26.201 DEBUG 6324 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 16:47:05.565 DEBUG 6324 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 16:47:05.566 DEBUG 6324 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 16:47:06.446 DEBUG 6324 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 16:47:06.447 DEBUG 6324 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 16:47:09.000 DEBUG 6324 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 16:47:09.000 DEBUG 6324 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 16:47:09.976 DEBUG 6324 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 16:47:09.976 DEBUG 6324 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 16:47:36.248  INFO 6324 --- [http-nio-8080-exec-8] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-05 16:47:36.277  INFO 6324 --- [http-nio-8080-exec-8] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 0 Redis repository interfaces.
-2022-04-05 16:47:36.410  INFO 6324 --- [http-nio-8080-exec-8] c.e.fxblog.controller.MetaController     : {type=list, key=my_website}
-2022-04-05 16:47:36.420 DEBUG 6324 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 16:47:36.420 DEBUG 6324 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 16:48:04.304  INFO 6324 --- [http-nio-8080-exec-9] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-05 16:48:04.329  INFO 6324 --- [http-nio-8080-exec-9] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
-2022-04-05 16:48:04.398 DEBUG 6324 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 16:48:04.399 DEBUG 6324 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 16:49:11.511  INFO 6324 --- [http-nio-8080-exec-1] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-05 16:49:11.535  INFO 6324 --- [http-nio-8080-exec-1] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
-2022-04-05 16:49:11.610 DEBUG 6324 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 16:49:11.611 DEBUG 6324 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 16:49:14.215 DEBUG 6324 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 16:49:14.215 DEBUG 6324 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 16:49:16.615 DEBUG 6324 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 16:49:16.616 DEBUG 6324 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 16:49:25.134  INFO 6324 --- [http-nio-8080-exec-4] c.e.fxblog.controller.LoginController    : {username=root, password=123456, remember=true}
-2022-04-05 16:49:25.135 DEBUG 6324 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.UserMapper.selectList  : ==>  Preparing: SELECT user_id,user_username AS userName,user_password,user_salt FROM fx_user WHERE (user_username = ?)
-2022-04-05 16:49:25.135 DEBUG 6324 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.UserMapper.selectList  : ==> Parameters: root(String)
-2022-04-05 16:49:25.137 DEBUG 6324 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.UserMapper.selectList  : <==      Total: 1
-2022-04-05 16:49:25.137  INFO 6324 --- [http-nio-8080-exec-4] c.e.f.s.serviceImpl.UserServiceImpl      : a0e95940124a38f275a313f1cf7e2d20
-2022-04-05 16:54:07.646  INFO 6324 --- [http-nio-8080-exec-7] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-05 16:54:07.668  INFO 6324 --- [http-nio-8080-exec-7] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
-2022-04-05 16:54:07.733 DEBUG 6324 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 16:54:07.734 DEBUG 6324 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 16:54:10.832 DEBUG 6324 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 16:54:10.833 DEBUG 6324 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 16:54:15.849 DEBUG 6324 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meat_key AS key,meat_value AS value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 16:54:15.850 DEBUG 6324 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 16:54:18.648  INFO 6324 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-04-05 16:54:18.659  INFO 6324 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-04-05 16:54:22.802  INFO 3788 --- [main] com.example.fxblog.FxBlogApplication     : Starting FxBlogApplication using Java 1.8.0_301 on Computer-WZK with PID 3788 (D:\Work\JAVA\FxBlog\target\classes started by WZK in D:\Work\JAVA\FxBlog)
-2022-04-05 16:54:22.804  INFO 3788 --- [main] com.example.fxblog.FxBlogApplication     : No active profile set, falling back to default profiles: default
-2022-04-05 16:54:23.579  INFO 3788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-04-05 16:54:23.581  INFO 3788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-05 16:54:23.617  INFO 3788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
-2022-04-05 16:54:24.200  INFO 3788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-04-05 16:54:24.218  INFO 3788 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-05 16:54:24.218  INFO 3788 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
-2022-04-05 16:54:24.437  INFO 3788 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-05 16:54:24.438  INFO 3788 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1574 ms
-2022-04-05 16:54:24.539  INFO 3788 --- [main] com.example.fxblog.utils.ImageUtil       : 图片列表加载完成,当前共18张图片
-2022-04-05 16:54:25.400  WARN 3788 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.fxblog.entity.MetaEntity".
-2022-04-05 16:54:25.401  WARN 3788 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.example.fxblog.entity.MetaEntity ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2022-04-05 16:54:26.886  INFO 3788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-04-05 16:54:26.894  INFO 3788 --- [main] com.example.fxblog.FxBlogApplication     : Started FxBlogApplication in 4.826 seconds (JVM running for 7.477)
-2022-04-05 16:54:30.347  INFO 3788 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-04-05 16:54:30.347  INFO 3788 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-04-05 16:54:30.348  INFO 3788 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-04-05 16:54:30.466  INFO 3788 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-04-05 16:54:30.595  INFO 3788 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-04-05 16:54:30.604 DEBUG 3788 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key AS key,meta_value AS value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 16:54:30.640 DEBUG 3788 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 16:55:36.201 DEBUG 3788 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key AS key,meta_value AS value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 16:55:36.201 DEBUG 3788 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 16:58:14.165  INFO 3788 --- [http-nio-8080-exec-5] c.e.fxblog.controller.LoginController    : {username=root, password=123456, remember=true}
-2022-04-05 16:58:14.170 DEBUG 3788 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.UserMapper.selectList  : ==>  Preparing: SELECT user_id,user_username AS userName,user_password,user_salt FROM fx_user WHERE (user_username = ?)
-2022-04-05 16:58:14.170 DEBUG 3788 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.UserMapper.selectList  : ==> Parameters: root(String)
-2022-04-05 16:58:14.215 DEBUG 3788 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.UserMapper.selectList  : <==      Total: 1
-2022-04-05 16:58:14.220  INFO 3788 --- [http-nio-8080-exec-5] c.e.f.s.serviceImpl.UserServiceImpl      : a0e95940124a38f275a313f1cf7e2d20
-2022-04-05 16:58:29.015 DEBUG 3788 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key AS key,meta_value AS value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 16:58:29.015 DEBUG 3788 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 17:00:14.917  INFO 3788 --- [http-nio-8080-exec-9] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-05 17:00:14.927  INFO 3788 --- [http-nio-8080-exec-9] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
-2022-04-05 17:00:15.030  INFO 3788 --- [http-nio-8080-exec-9] c.e.fxblog.controller.LoginController    : {username=root, password=123456, remember=true}
-2022-04-05 17:00:15.043 DEBUG 3788 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.UserMapper.selectList  : ==>  Preparing: SELECT user_id,user_username AS userName,user_password,user_salt FROM fx_user WHERE (user_username = ?)
-2022-04-05 17:00:15.043 DEBUG 3788 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.UserMapper.selectList  : ==> Parameters: root(String)
-2022-04-05 17:00:15.045 DEBUG 3788 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.UserMapper.selectList  : <==      Total: 1
-2022-04-05 17:00:15.045  INFO 3788 --- [http-nio-8080-exec-9] c.e.f.s.serviceImpl.UserServiceImpl      : a0e95940124a38f275a313f1cf7e2d20
-2022-04-05 17:01:22.245  INFO 3788 --- [http-nio-8080-exec-1] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-05 17:01:22.255  INFO 3788 --- [http-nio-8080-exec-1] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
-2022-04-05 17:01:22.304 DEBUG 3788 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key AS key,meta_value AS value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 17:01:22.304 DEBUG 3788 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 17:03:28.953  INFO 3788 --- [http-nio-8080-exec-3] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-05 17:03:28.961  INFO 3788 --- [http-nio-8080-exec-3] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
-2022-04-05 17:03:29.011 DEBUG 3788 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key AS key,meta_value AS value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 17:03:29.011 DEBUG 3788 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 17:07:50.600  INFO 3788 --- [http-nio-8080-exec-5] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-05 17:07:50.608  INFO 3788 --- [http-nio-8080-exec-5] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
-2022-04-05 17:07:50.661 DEBUG 3788 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key AS key,meta_value AS value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 17:07:50.662 DEBUG 3788 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 17:07:59.304  INFO 3788 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-04-05 17:07:59.315  INFO 3788 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-04-05 17:08:01.295  INFO 8676 --- [main] com.example.fxblog.FxBlogApplication     : Starting FxBlogApplication using Java 1.8.0_301 on Computer-WZK with PID 8676 (D:\Work\JAVA\FxBlog\target\classes started by WZK in D:\Work\JAVA\FxBlog)
-2022-04-05 17:08:01.297  INFO 8676 --- [main] com.example.fxblog.FxBlogApplication     : No active profile set, falling back to default profiles: default
-2022-04-05 17:08:01.772  INFO 8676 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-04-05 17:08:01.774  INFO 8676 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-05 17:08:01.792  INFO 8676 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
-2022-04-05 17:08:02.137  INFO 8676 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-04-05 17:08:02.142  INFO 8676 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-05 17:08:02.142  INFO 8676 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
-2022-04-05 17:08:02.210  INFO 8676 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-05 17:08:02.210  INFO 8676 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 880 ms
-2022-04-05 17:08:02.280  INFO 8676 --- [main] com.example.fxblog.utils.ImageUtil       : 图片列表加载完成,当前共18张图片
-2022-04-05 17:08:03.059  WARN 8676 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.fxblog.entity.MetaEntity".
-2022-04-05 17:08:03.059  WARN 8676 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.example.fxblog.entity.MetaEntity ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2022-04-05 17:08:04.591  INFO 8676 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-04-05 17:08:04.598  INFO 8676 --- [main] com.example.fxblog.FxBlogApplication     : Started FxBlogApplication in 3.631 seconds (JVM running for 4.499)
-2022-04-05 17:08:06.323  INFO 8676 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-04-05 17:08:06.324  INFO 8676 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-04-05 17:08:06.325  INFO 8676 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-04-05 17:08:06.409  INFO 8676 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-04-05 17:08:06.676  INFO 8676 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-04-05 17:08:06.682 DEBUG 8676 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 17:08:06.699 DEBUG 8676 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 17:08:06.713 DEBUG 8676 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
-2022-04-05 17:08:06.717  INFO 8676 --- [http-nio-8080-exec-1] c.e.f.s.serviceImpl.MetaServiceImpl      : [MetaEntity(metaKey=my_website, metaValue=Gitee https://gitee.com/zhuiyifanxing), MetaEntity(metaKey=my_website, metaValue=BilBil https://space.bilibili.com/434012764)]
-2022-04-05 17:08:17.999  INFO 8676 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-04-05 17:08:18.010  INFO 8676 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-04-05 17:08:22.238  INFO 12744 --- [main] com.example.fxblog.FxBlogApplication     : Starting FxBlogApplication using Java 1.8.0_301 on Computer-WZK with PID 12744 (D:\Work\JAVA\FxBlog\target\classes started by WZK in D:\Work\JAVA\FxBlog)
-2022-04-05 17:08:22.240  INFO 12744 --- [main] com.example.fxblog.FxBlogApplication     : No active profile set, falling back to default profiles: default
-2022-04-05 17:08:23.101  INFO 12744 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-04-05 17:08:23.103  INFO 12744 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-05 17:08:23.140  INFO 12744 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
-2022-04-05 17:08:23.727  INFO 12744 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-04-05 17:08:23.744  INFO 12744 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-05 17:08:23.744  INFO 12744 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
-2022-04-05 17:08:23.950  INFO 12744 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-05 17:08:23.950  INFO 12744 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1651 ms
-2022-04-05 17:08:24.054  INFO 12744 --- [main] com.example.fxblog.utils.ImageUtil       : 图片列表加载完成,当前共18张图片
-2022-04-05 17:08:24.902  WARN 12744 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.fxblog.entity.MetaEntity".
-2022-04-05 17:08:24.903  WARN 12744 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.example.fxblog.entity.MetaEntity ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2022-04-05 17:08:26.353  INFO 12744 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-04-05 17:08:26.362  INFO 12744 --- [main] com.example.fxblog.FxBlogApplication     : Started FxBlogApplication in 4.853 seconds (JVM running for 7.642)
-2022-04-05 17:08:27.605  INFO 12744 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-04-05 17:08:27.605  INFO 12744 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-04-05 17:08:27.606  INFO 12744 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-04-05 17:08:27.722  INFO 12744 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-04-05 17:08:27.850  INFO 12744 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-04-05 17:08:27.859 DEBUG 12744 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 17:08:27.896 DEBUG 12744 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 17:08:27.921 DEBUG 12744 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
-2022-04-05 17:08:27.926  INFO 12744 --- [http-nio-8080-exec-1] c.e.f.s.serviceImpl.MetaServiceImpl      : [MetaEntity(metaKey=my_website, metaValue=Gitee https://gitee.com/zhuiyifanxing), MetaEntity(metaKey=my_website, metaValue=BilBil https://space.bilibili.com/434012764)]
-2022-04-05 17:09:03.076  INFO 12744 --- [http-nio-8080-exec-2] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-05 17:09:03.145  INFO 12744 --- [http-nio-8080-exec-2] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 0 Redis repository interfaces.
-2022-04-05 17:09:03.301 DEBUG 12744 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 17:09:03.302 DEBUG 12744 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 17:09:03.304 DEBUG 12744 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
-2022-04-05 17:09:23.949  INFO 12744 --- [http-nio-8080-exec-3] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-05 17:09:23.974  INFO 12744 --- [http-nio-8080-exec-3] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
-2022-04-05 17:09:24.045 DEBUG 12744 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 17:09:24.046 DEBUG 12744 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 17:09:24.047 DEBUG 12744 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
-2022-04-05 17:09:36.041 DEBUG 12744 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 17:09:36.042 DEBUG 12744 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 17:09:36.044 DEBUG 12744 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
-2022-04-05 17:09:41.392 DEBUG 12744 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 17:09:41.393 DEBUG 12744 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 17:09:41.395 DEBUG 12744 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
-2022-04-05 17:09:41.395  INFO 12744 --- [http-nio-8080-exec-5] c.e.f.s.serviceImpl.MetaServiceImpl      : {}
-2022-04-05 17:10:14.373  INFO 12744 --- [http-nio-8080-exec-6] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-05 17:10:14.394  INFO 12744 --- [http-nio-8080-exec-6] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
-2022-04-05 17:10:14.474 DEBUG 12744 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 17:10:14.474 DEBUG 12744 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 17:10:14.476 DEBUG 12744 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
-2022-04-05 17:10:14.476  INFO 12744 --- [http-nio-8080-exec-6] c.e.f.s.serviceImpl.MetaServiceImpl      : [Gitee https://gitee.com/zhuiyifanxing]
-2022-04-05 17:12:06.573  INFO 12744 --- [http-nio-8080-exec-8] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-05 17:12:06.595  INFO 12744 --- [http-nio-8080-exec-8] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
-2022-04-05 17:12:06.650 DEBUG 12744 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
-2022-04-05 17:12:06.650 DEBUG 12744 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-05 17:12:06.651 DEBUG 12744 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
-2022-04-05 17:12:06.652  INFO 12744 --- [http-nio-8080-exec-8] c.e.f.s.serviceImpl.MetaServiceImpl      : [Gitee, https://gitee.com/zhuiyifanxing]
-2022-04-05 17:12:06.652  INFO 12744 --- [http-nio-8080-exec-8] c.e.f.s.serviceImpl.MetaServiceImpl      : [BilBil, https://space.bilibili.com/434012764]
-2022-04-05 17:12:25.755  INFO 12744 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-04-05 17:12:25.765  INFO 12744 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-04-09 18:37:37.192  INFO 3820 --- [main] com.example.fxblog.FxBlogApplication     : Starting FxBlogApplication using Java 1.8.0_301 on Computer-WZK with PID 3820 (D:\Work\JAVA\FxBlog\target\classes started by WZK in D:\Work\JAVA\FxBlog)
+2022-04-09 18:37:37.197  INFO 3820 --- [main] com.example.fxblog.FxBlogApplication     : No active profile set, falling back to default profiles: default
+2022-04-09 18:37:38.542  INFO 3820 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-09 18:37:38.547  INFO 3820 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-09 18:37:38.609  INFO 3820 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2022-04-09 18:37:39.550  INFO 3820 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-09 18:37:39.578  INFO 3820 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-09 18:37:39.579  INFO 3820 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-04-09 18:37:39.889  INFO 3820 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-09 18:37:39.890  INFO 3820 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2600 ms
+2022-04-09 18:37:40.117  INFO 3820 --- [main] com.example.fxblog.utils.ImageUtil       : 图片列表加载完成,当前共18张图片
+2022-04-09 18:37:41.812  WARN 3820 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.example.fxblog.entity.MetaEntity".
+2022-04-09 18:37:41.812  WARN 3820 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.example.fxblog.entity.MetaEntity ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2022-04-09 18:37:44.730  INFO 3820 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-09 18:37:44.745  INFO 3820 --- [main] com.example.fxblog.FxBlogApplication     : Started FxBlogApplication in 9.04 seconds (JVM running for 14.873)
+2022-04-09 18:38:50.240  INFO 3820 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-09 18:38:50.240  INFO 3820 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-09 18:38:50.241  INFO 3820 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-09 18:38:50.253  INFO 3820 --- [http-nio-8080-exec-3] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:38:50.253  INFO 3820 --- [http-nio-8080-exec-2] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:38:50.253  INFO 3820 --- [http-nio-8080-exec-1] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:38:50.472  INFO 3820 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-09 18:38:50.497  INFO 3820 --- [http-nio-8080-exec-4] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:38:50.942  INFO 3820 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-09 18:38:50.952 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 18:38:50.988 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 18:38:51.029 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 18:38:56.957  INFO 3820 --- [http-nio-8080-exec-5] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:38:57.262  INFO 3820 --- [http-nio-8080-exec-6] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:38:57.262  INFO 3820 --- [http-nio-8080-exec-7] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:38:57.271 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 18:38:57.272  INFO 3820 --- [http-nio-8080-exec-8] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:38:57.272 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 18:38:57.272 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 18:42:02.916  INFO 3820 --- [http-nio-8080-exec-4] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:42:03.223  INFO 3820 --- [http-nio-8080-exec-3] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:42:03.227  INFO 3820 --- [http-nio-8080-exec-5] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:42:13.665  INFO 3820 --- [http-nio-8080-exec-6] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:42:13.667  INFO 3820 --- [http-nio-8080-exec-8] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:42:13.682 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 18:42:13.683 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 18:42:13.684 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 18:42:38.676  INFO 3820 --- [http-nio-8080-exec-7] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:42:38.678 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 18:42:38.678 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 18:42:38.679 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 18:42:41.827  INFO 3820 --- [http-nio-8080-exec-9] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:42:42.130  INFO 3820 --- [http-nio-8080-exec-2] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:42:42.130  INFO 3820 --- [http-nio-8080-exec-1] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:42:42.133 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 18:42:42.133 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 18:42:42.135 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 18:42:42.135  INFO 3820 --- [http-nio-8080-exec-10] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:42:50.623  INFO 3820 --- [http-nio-8080-exec-4] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:42:50.627 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 18:42:50.627 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 18:42:50.629 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 18:45:04.367  INFO 3820 --- [http-nio-8080-exec-6] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:45:04.694  INFO 3820 --- [http-nio-8080-exec-7] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:45:04.696  INFO 3820 --- [http-nio-8080-exec-9] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:45:04.699  INFO 3820 --- [http-nio-8080-exec-1] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:45:04.700 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 18:45:04.700 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 18:45:04.702 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 18:45:10.507  INFO 3820 --- [http-nio-8080-exec-10] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:45:10.843  INFO 3820 --- [http-nio-8080-exec-2] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:45:10.844  INFO 3820 --- [http-nio-8080-exec-4] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:45:10.846 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 18:45:10.846  INFO 3820 --- [http-nio-8080-exec-5] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:45:10.847 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 18:45:10.849 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 18:50:21.231  INFO 3820 --- [http-nio-8080-exec-7] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:50:21.540  INFO 3820 --- [http-nio-8080-exec-1] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:50:21.541  INFO 3820 --- [http-nio-8080-exec-9] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:50:21.544 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 18:50:21.544  INFO 3820 --- [http-nio-8080-exec-10] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:50:21.544 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 18:50:21.546 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 18:50:25.901  INFO 3820 --- [http-nio-8080-exec-2] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:50:26.185  INFO 3820 --- [http-nio-8080-exec-5] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:50:26.185  INFO 3820 --- [http-nio-8080-exec-4] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:50:26.189 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 18:50:26.189  INFO 3820 --- [http-nio-8080-exec-8] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:50:26.189 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 18:50:26.191 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 18:50:37.317  INFO 3820 --- [http-nio-8080-exec-3] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:50:37.618  INFO 3820 --- [http-nio-8080-exec-6] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:50:37.619  INFO 3820 --- [http-nio-8080-exec-7] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:50:37.620  INFO 3820 --- [http-nio-8080-exec-1] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:50:37.620 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 18:50:37.621 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 18:50:37.622 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 18:51:43.356  INFO 3820 --- [http-nio-8080-exec-8] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:51:43.356  INFO 3820 --- [http-nio-8080-exec-5] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:51:43.358 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 18:51:43.359 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 18:51:43.359  INFO 3820 --- [http-nio-8080-exec-4] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:51:43.360 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 18:52:34.600  INFO 3820 --- [http-nio-8080-exec-3] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:52:34.890  INFO 3820 --- [http-nio-8080-exec-6] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:52:34.890  INFO 3820 --- [http-nio-8080-exec-1] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:52:34.893 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 18:52:34.893  INFO 3820 --- [http-nio-8080-exec-7] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:52:34.893 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 18:52:34.895 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 18:55:36.855  INFO 3820 --- [http-nio-8080-exec-5] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:55:36.855  INFO 3820 --- [http-nio-8080-exec-4] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:55:36.858 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 18:55:36.858 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 18:55:36.859  INFO 3820 --- [http-nio-8080-exec-8] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:55:36.860 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 18:56:00.870  INFO 3820 --- [http-nio-8080-exec-3] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:56:00.870  INFO 3820 --- [http-nio-8080-exec-6] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:56:00.873  INFO 3820 --- [http-nio-8080-exec-7] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:56:00.875 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 18:56:00.875 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 18:56:00.877 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 18:56:25.243  INFO 3820 --- [http-nio-8080-exec-1] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:56:25.570  INFO 3820 --- [http-nio-8080-exec-2] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:56:25.571  INFO 3820 --- [http-nio-8080-exec-9] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:56:25.574  INFO 3820 --- [http-nio-8080-exec-10] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:56:25.576 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 18:56:25.577 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 18:56:25.581 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 18:57:01.700  INFO 3820 --- [http-nio-8080-exec-5] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:57:02.007  INFO 3820 --- [http-nio-8080-exec-4] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:57:02.007  INFO 3820 --- [http-nio-8080-exec-8] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:57:02.010 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 18:57:02.012  INFO 3820 --- [http-nio-8080-exec-3] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:57:02.012 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 18:57:02.014 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 18:58:20.750  INFO 3820 --- [http-nio-8080-exec-2] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:58:21.046  INFO 3820 --- [http-nio-8080-exec-10] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:58:21.046  INFO 3820 --- [http-nio-8080-exec-9] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:58:21.050 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 18:58:21.050 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 18:58:21.050  INFO 3820 --- [http-nio-8080-exec-5] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:58:21.052 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 18:58:23.316  INFO 3820 --- [http-nio-8080-exec-8] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:58:23.604  INFO 3820 --- [http-nio-8080-exec-3] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:58:23.605  INFO 3820 --- [http-nio-8080-exec-4] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:58:23.608 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 18:58:23.608  INFO 3820 --- [http-nio-8080-exec-7] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 18:58:23.609 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 18:58:23.610 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:00:17.009  INFO 3820 --- [http-nio-8080-exec-10] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:00:17.009  INFO 3820 --- [http-nio-8080-exec-5] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:00:17.012 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:00:17.013 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:00:17.013  INFO 3820 --- [http-nio-8080-exec-9] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:00:17.014 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:05:51.753  INFO 3820 --- [http-nio-8080-exec-1] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:05:51.753  INFO 3820 --- [http-nio-8080-exec-4] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:05:51.756 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:05:51.756 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:05:51.758  INFO 3820 --- [http-nio-8080-exec-6] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:05:51.758 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:05:54.362  INFO 3820 --- [http-nio-8080-exec-2] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:05:54.670  INFO 3820 --- [http-nio-8080-exec-10] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:05:54.670  INFO 3820 --- [http-nio-8080-exec-9] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:05:54.673 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:05:54.673 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:05:54.673  INFO 3820 --- [http-nio-8080-exec-5] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:05:54.675 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:06:24.522  INFO 3820 --- [http-nio-8080-exec-8] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:06:24.522  INFO 3820 --- [http-nio-8080-exec-7] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:06:24.525 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:06:24.525  INFO 3820 --- [http-nio-8080-exec-3] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:06:24.526 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:06:24.527 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:06:26.252  INFO 3820 --- [http-nio-8080-exec-4] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:06:26.558  INFO 3820 --- [http-nio-8080-exec-6] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:06:26.558  INFO 3820 --- [http-nio-8080-exec-1] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:06:26.562  INFO 3820 --- [http-nio-8080-exec-2] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:06:26.562 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:06:26.563 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:06:26.564 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:09:49.812  INFO 3820 --- [http-nio-8080-exec-3] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:09:49.812  INFO 3820 --- [http-nio-8080-exec-8] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:09:49.816 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:09:49.816 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:09:49.816  INFO 3820 --- [http-nio-8080-exec-7] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:09:49.817 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:09:52.423  INFO 3820 --- [http-nio-8080-exec-4] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:09:52.730  INFO 3820 --- [http-nio-8080-exec-2] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:09:52.730  INFO 3820 --- [http-nio-8080-exec-6] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:09:52.733  INFO 3820 --- [http-nio-8080-exec-1] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:09:52.736 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:09:52.736 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:09:52.738 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:11:22.265  INFO 3820 --- [http-nio-8080-exec-8] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:11:22.265  INFO 3820 --- [http-nio-8080-exec-7] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:11:22.268 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:11:22.268 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:11:22.269  INFO 3820 --- [http-nio-8080-exec-3] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:11:22.270 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:12:14.532  INFO 3820 --- [http-nio-8080-exec-6] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:12:14.532  INFO 3820 --- [http-nio-8080-exec-4] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:12:14.535 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:12:14.535 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:12:14.535  INFO 3820 --- [http-nio-8080-exec-1] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:12:14.536 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:15:00.974  INFO 3820 --- [http-nio-8080-exec-9] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:15:00.977  INFO 3820 --- [http-nio-8080-exec-8] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:15:00.978  INFO 3820 --- [http-nio-8080-exec-3] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:15:00.979 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:15:00.980 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:15:00.981 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:15:51.683  INFO 3820 --- [http-nio-8080-exec-7] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:15:51.683  INFO 3820 --- [http-nio-8080-exec-4] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:15:51.685  INFO 3820 --- [http-nio-8080-exec-1] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:15:51.686 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:15:51.687 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:15:51.689 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:15:53.747  INFO 3820 --- [http-nio-8080-exec-6] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:15:54.090  INFO 3820 --- [http-nio-8080-exec-2] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:15:54.090  INFO 3820 --- [http-nio-8080-exec-10] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:15:54.093 DEBUG 3820 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:15:54.093 DEBUG 3820 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:15:54.095  INFO 3820 --- [http-nio-8080-exec-5] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:15:54.096 DEBUG 3820 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:15:58.522  INFO 3820 --- [http-nio-8080-exec-9] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:15:58.802  INFO 3820 --- [http-nio-8080-exec-8] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:15:58.802  INFO 3820 --- [http-nio-8080-exec-3] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:15:58.805 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:15:58.805  INFO 3820 --- [http-nio-8080-exec-7] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:15:58.806 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:15:58.808 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:16:57.900  INFO 3820 --- [http-nio-8080-exec-1] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:16:57.900  INFO 3820 --- [http-nio-8080-exec-4] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:16:57.902 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:16:57.902  INFO 3820 --- [http-nio-8080-exec-6] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:16:57.902 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:16:57.904 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:17:11.160  INFO 3820 --- [http-nio-8080-exec-2] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:17:11.160  INFO 3820 --- [http-nio-8080-exec-5] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:17:11.162 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:17:11.162 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:17:11.164  INFO 3820 --- [http-nio-8080-exec-10] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:17:11.164 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:17:14.345  INFO 3820 --- [http-nio-8080-exec-9] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:17:14.652  INFO 3820 --- [http-nio-8080-exec-3] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:17:14.653  INFO 3820 --- [http-nio-8080-exec-7] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:17:14.654  INFO 3820 --- [http-nio-8080-exec-8] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:17:14.656 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:17:14.656 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:17:14.658 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:17:55.090  INFO 3820 --- [http-nio-8080-exec-1] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:17:55.090  INFO 3820 --- [http-nio-8080-exec-6] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:17:55.092 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:17:55.092 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:17:55.092  INFO 3820 --- [http-nio-8080-exec-4] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:17:55.094 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:17:56.874  INFO 3820 --- [http-nio-8080-exec-2] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:17:57.178  INFO 3820 --- [http-nio-8080-exec-10] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:17:57.179  INFO 3820 --- [http-nio-8080-exec-5] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:17:57.183  INFO 3820 --- [http-nio-8080-exec-10] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:17:57.184 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:17:57.184 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:17:57.185 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:17:58.401  INFO 3820 --- [http-nio-8080-exec-3] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:17:58.685  INFO 3820 --- [http-nio-8080-exec-8] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:17:58.685  INFO 3820 --- [http-nio-8080-exec-7] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:17:58.689 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:17:58.689  INFO 3820 --- [http-nio-8080-exec-1] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:17:58.690 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:17:58.691 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:17:59.773  INFO 3820 --- [http-nio-8080-exec-4] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:18:00.072  INFO 3820 --- [http-nio-8080-exec-6] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:18:00.072  INFO 3820 --- [http-nio-8080-exec-2] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:18:00.075  INFO 3820 --- [http-nio-8080-exec-9] c.e.fxblog.other.BodyRequsetWrapper      : 
+2022-04-09 19:18:00.075 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:18:00.075 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:18:00.076 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:19:02.586  INFO 3820 --- [http-nio-8080-exec-8] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-09 19:19:02.620  INFO 3820 --- [http-nio-8080-exec-8] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 0 Redis repository interfaces.
+2022-04-09 19:19:02.906 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:19:02.907 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:19:02.908 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:20:24.821 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:20:24.822 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:20:24.825 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:20:49.240 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:20:49.241 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:20:49.243 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:20:49.334 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:20:49.335 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:20:49.338 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:20:52.912 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:20:52.912 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:20:52.914 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:22:49.745 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:22:49.746 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:22:49.748 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:28:51.351 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:28:51.351 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:28:51.353 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:30:00.658 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:30:00.658 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:30:00.660 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:30:04.912 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:30:04.913 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:30:04.915 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:31:18.822 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:31:18.822 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:31:18.824 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:32:26.735 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:32:26.735 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:32:26.737 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:34:31.520 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:34:31.520 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:34:31.522 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:35:51.497 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:35:51.498 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:35:51.500 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:36:16.997 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:36:16.998 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:36:16.999 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:56:25.112 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.insert      : ==>  Preparing: INSERT INTO fx_meta ( meta_key, meta_value ) VALUES ( ?, ? )
+2022-04-09 19:56:25.130 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.insert      : ==> Parameters: my_website(String), {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}(String)
+2022-04-09 19:56:25.235 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.insert      : <==    Updates: 1
+2022-04-09 19:57:16.257 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:57:16.259 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:57:16.261 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:58:35.348 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:58:35.348 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 19:58:35.349 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 19:58:35.349 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 19:58:35.351 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:58:35.351 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 19:58:35.352  INFO 3820 --- [http-nio-8080-exec-5] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:00:29.939 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:00:29.942 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:00:29.942 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:00:29.943 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:00:29.944 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:00:29.944 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:00:29.944  INFO 3820 --- [http-nio-8080-exec-4] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:01:33.749 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:01:33.749 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:01:33.750 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:01:33.750 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:01:33.751 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:01:33.751 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:01:33.753  INFO 3820 --- [http-nio-8080-exec-9] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:01:42.298 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:01:42.298 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:01:42.299 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:01:42.299 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:01:42.299 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:01:42.299  INFO 3820 --- [http-nio-8080-exec-5] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:01:42.299 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:02:34.159 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:02:34.159 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:02:34.159 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:02:34.159 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:02:34.161 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:02:34.161 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:02:34.172  INFO 3820 --- [http-nio-8080-exec-2] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:02:40.230 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:02:40.230 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:02:40.231 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:02:40.231 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:02:40.232 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:02:40.233 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:02:40.233  INFO 3820 --- [http-nio-8080-exec-4] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:02:44.906 DEBUG 3820 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:02:44.906 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:02:44.908 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:02:44.908 DEBUG 3820 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:02:44.910 DEBUG 3820 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:02:44.910 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:02:44.910  INFO 3820 --- [http-nio-8080-exec-10] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:02:54.913 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:02:54.913 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:02:54.922 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:02:54.922 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:02:54.923 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:02:54.923 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:02:54.923  INFO 3820 --- [http-nio-8080-exec-9] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:04:09.354 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.insert      : ==>  Preparing: INSERT INTO fx_meta ( meta_key, meta_value ) VALUES ( ?, ? )
+2022-04-09 20:04:09.355 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.insert      : ==> Parameters: my_website(String), {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}(String)
+2022-04-09 20:04:09.388 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.insert      : <==    Updates: 1
+2022-04-09 20:04:18.390 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:04:18.391 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:04:18.391 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:04:18.393 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
+2022-04-09 20:04:18.390 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:04:18.407  INFO 3820 --- [http-nio-8080-exec-3] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:04:18.407  INFO 3820 --- [http-nio-8080-exec-3] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:04:18.408 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:06:42.536 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:06:42.537 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:06:42.537 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:06:42.537 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:06:42.537 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:06:42.538 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
+2022-04-09 20:06:42.538  INFO 3820 --- [http-nio-8080-exec-6] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:06:42.538  INFO 3820 --- [http-nio-8080-exec-6] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:07:22.004 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:07:22.006 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:07:22.006 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
+2022-04-09 20:07:22.006  INFO 3820 --- [http-nio-8080-exec-3] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:07:22.006  INFO 3820 --- [http-nio-8080-exec-3] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:07:22.023 DEBUG 3820 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:07:22.024 DEBUG 3820 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:07:22.024 DEBUG 3820 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:07:36.365 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:07:36.366 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:07:36.367 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:07:36.367 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:07:36.367 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:07:36.378 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
+2022-04-09 20:07:36.378  INFO 3820 --- [http-nio-8080-exec-9] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:07:36.379  INFO 3820 --- [http-nio-8080-exec-9] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:08:08.180 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:08:08.180 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:08:08.181 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:08:08.181 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:08:08.182 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:08:08.182 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
+2022-04-09 20:08:08.183  INFO 3820 --- [http-nio-8080-exec-7] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:08:08.183  INFO 3820 --- [http-nio-8080-exec-7] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:08:17.055 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:08:17.055 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:08:17.064 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:08:17.064 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:08:17.065 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:08:17.066 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
+2022-04-09 20:08:17.067  INFO 3820 --- [http-nio-8080-exec-1] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:08:17.067  INFO 3820 --- [http-nio-8080-exec-1] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:08:30.150 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:08:30.151 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:08:30.152 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:08:30.152 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:08:30.153 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
+2022-04-09 20:08:30.153 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:08:30.153  INFO 3820 --- [http-nio-8080-exec-6] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:08:30.153  INFO 3820 --- [http-nio-8080-exec-6] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:08:45.140 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:08:45.140 DEBUG 3820 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:08:45.140 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:08:45.140 DEBUG 3820 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:08:45.141 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:08:45.141 DEBUG 3820 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
+2022-04-09 20:08:45.141  INFO 3820 --- [http-nio-8080-exec-10] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:08:45.141  INFO 3820 --- [http-nio-8080-exec-10] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:09:35.386 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:09:35.386 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:09:35.386 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:09:35.386 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:09:35.387 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
+2022-04-09 20:09:35.387 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:09:35.388  INFO 3820 --- [http-nio-8080-exec-9] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:09:35.389  INFO 3820 --- [http-nio-8080-exec-9] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:10:19.490 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:10:19.491 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:10:19.492 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:10:19.492 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:10:19.492 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:10:19.494 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
+2022-04-09 20:10:19.495  INFO 3820 --- [http-nio-8080-exec-7] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:10:19.495  INFO 3820 --- [http-nio-8080-exec-7] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:10:34.668 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:10:34.669 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:10:34.670 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:10:34.675 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:10:34.676 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:10:34.678 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
+2022-04-09 20:10:34.679  INFO 3820 --- [http-nio-8080-exec-1] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:10:34.679  INFO 3820 --- [http-nio-8080-exec-1] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:10:46.677 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:10:46.678 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:10:46.679 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
+2022-04-09 20:10:46.680  INFO 3820 --- [http-nio-8080-exec-6] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:10:46.680  INFO 3820 --- [http-nio-8080-exec-6] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:10:46.681 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:10:46.682 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:10:46.683 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:10:55.002 DEBUG 3820 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:10:55.002 DEBUG 3820 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:10:55.004 DEBUG 3820 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:10:55.006 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:10:55.006 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:10:55.008 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
+2022-04-09 20:10:55.009  INFO 3820 --- [http-nio-8080-exec-3] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:10:55.009  INFO 3820 --- [http-nio-8080-exec-3] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:12:11.873 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:12:11.873 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:12:11.874 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:12:11.874 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:12:11.875 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:12:11.875 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
+2022-04-09 20:12:11.876  INFO 3820 --- [http-nio-8080-exec-7] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:12:11.876  INFO 3820 --- [http-nio-8080-exec-7] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:12:17.507 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:12:17.508 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:12:17.508 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:12:17.516 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:12:17.516 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:12:17.517 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
+2022-04-09 20:12:17.518  INFO 3820 --- [http-nio-8080-exec-2] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:12:17.518  INFO 3820 --- [http-nio-8080-exec-2] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:13:35.644 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:13:35.645 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:13:35.646 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:13:35.649 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:13:35.649 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:13:35.650 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 2
+2022-04-09 20:13:35.651  INFO 3820 --- [http-nio-8080-exec-8] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:13:35.651  INFO 3820 --- [http-nio-8080-exec-8] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:15:19.322 DEBUG 3820 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.insert      : ==>  Preparing: INSERT INTO fx_meta ( meta_key, meta_value ) VALUES ( ?, ? )
+2022-04-09 20:15:19.323 DEBUG 3820 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.insert      : ==> Parameters: my_website(String), {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/steam.png","name":"Steam","href":"https://steamcommunity.com/profiles/76561198992038654/"}(String)
+2022-04-09 20:15:19.326 DEBUG 3820 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.insert      : <==    Updates: 1
+2022-04-09 20:15:34.607 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:15:34.607 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:15:34.607 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:15:34.607 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:15:34.608 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:15:34.609 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-04-09 20:15:34.612  INFO 3820 --- [http-nio-8080-exec-7] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:15:34.613  INFO 3820 --- [http-nio-8080-exec-7] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:15:34.613  INFO 3820 --- [http-nio-8080-exec-7] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/steam.png","name":"Steam","href":"https://steamcommunity.com/profiles/76561198992038654/"}
+2022-04-09 20:15:39.107 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:15:39.108 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:15:39.122 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-04-09 20:15:39.123  INFO 3820 --- [http-nio-8080-exec-1] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:15:39.123  INFO 3820 --- [http-nio-8080-exec-1] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:15:39.123  INFO 3820 --- [http-nio-8080-exec-1] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/steam.png","name":"Steam","href":"https://steamcommunity.com/profiles/76561198992038654/"}
+2022-04-09 20:15:39.123 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:15:39.124 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:15:39.125 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:15:41.216 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:15:41.216 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:15:41.216 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:15:41.216 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:15:41.217 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:15:41.217 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-04-09 20:15:41.217  INFO 3820 --- [http-nio-8080-exec-9] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:15:41.217  INFO 3820 --- [http-nio-8080-exec-9] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:15:41.218  INFO 3820 --- [http-nio-8080-exec-9] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/steam.png","name":"Steam","href":"https://steamcommunity.com/profiles/76561198992038654/"}
+2022-04-09 20:17:23.487 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:17:23.488 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:17:23.488 DEBUG 3820 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:17:23.536 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:17:23.536 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:17:23.537 DEBUG 3820 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-04-09 20:17:23.538  INFO 3820 --- [http-nio-8080-exec-3] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:17:23.538  INFO 3820 --- [http-nio-8080-exec-3] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:17:23.538  INFO 3820 --- [http-nio-8080-exec-3] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/steam.png","name":"Steam","href":"https://steamcommunity.com/profiles/76561198992038654/"}
+2022-04-09 20:18:10.957 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:18:10.957 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:18:10.958 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:18:10.958 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:18:10.959 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:18:10.959 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-04-09 20:18:10.959  INFO 3820 --- [http-nio-8080-exec-7] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:18:10.959  INFO 3820 --- [http-nio-8080-exec-7] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:18:10.959  INFO 3820 --- [http-nio-8080-exec-7] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/steam.png","name":"Steam","href":"https://steamcommunity.com/profiles/76561198992038654/"}
+2022-04-09 20:19:06.830 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:19:06.830 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:19:06.830 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:19:06.830 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:19:06.831 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:19:06.831 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-04-09 20:19:06.832  INFO 3820 --- [http-nio-8080-exec-5] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:19:06.832  INFO 3820 --- [http-nio-8080-exec-5] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:19:06.832  INFO 3820 --- [http-nio-8080-exec-5] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/steam.png","name":"Steam","href":"https://steamcommunity.com/profiles/76561198992038654/"}
+2022-04-09 20:19:32.614 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:19:32.614 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:19:32.614 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:19:32.615 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:19:32.615 DEBUG 3820 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:19:32.616 DEBUG 3820 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-04-09 20:19:32.617  INFO 3820 --- [http-nio-8080-exec-6] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:19:32.617  INFO 3820 --- [http-nio-8080-exec-6] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:19:32.617  INFO 3820 --- [http-nio-8080-exec-6] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/steam.png","name":"Steam","href":"https://steamcommunity.com/profiles/76561198992038654/"}
+2022-04-09 20:19:46.278 DEBUG 3820 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:19:46.278 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:19:46.279 DEBUG 3820 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:19:46.279 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:19:46.280 DEBUG 3820 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:19:46.280 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-04-09 20:19:46.280  INFO 3820 --- [http-nio-8080-exec-8] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:19:46.280  INFO 3820 --- [http-nio-8080-exec-8] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:19:46.280  INFO 3820 --- [http-nio-8080-exec-8] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/steam.png","name":"Steam","href":"https://steamcommunity.com/profiles/76561198992038654/"}
+2022-04-09 20:21:41.260 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:21:41.261 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:21:41.261 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:21:41.280 DEBUG 3820 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:21:41.280 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:21:41.281 DEBUG 3820 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-04-09 20:21:41.281  INFO 3820 --- [http-nio-8080-exec-7] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:21:41.281  INFO 3820 --- [http-nio-8080-exec-7] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:21:41.282  INFO 3820 --- [http-nio-8080-exec-7] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/steam.png","name":"Steam","href":"https://steamcommunity.com/profiles/76561198992038654/"}
+2022-04-09 20:21:53.314 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:21:53.314 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:21:53.314 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:21:53.314 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:21:53.315 DEBUG 3820 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:21:53.315 DEBUG 3820 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-04-09 20:21:53.315  INFO 3820 --- [http-nio-8080-exec-5] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:21:53.315  INFO 3820 --- [http-nio-8080-exec-5] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:21:53.315  INFO 3820 --- [http-nio-8080-exec-5] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/steam.png","name":"Steam","href":"https://steamcommunity.com/profiles/76561198992038654/"}
+2022-04-09 20:23:00.843 DEBUG 3820 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:23:00.843 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-04-09 20:23:00.843 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-04-09 20:23:00.843 DEBUG 3820 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-04-09 20:23:00.844 DEBUG 3820 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-04-09 20:23:00.844 DEBUG 3820 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-04-09 20:23:00.845  INFO 3820 --- [http-nio-8080-exec-8] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/bilibili.png","name":"BilBil","href":"https://space.bilibili.com/434012764"}
+2022-04-09 20:23:00.845  INFO 3820 --- [http-nio-8080-exec-8] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/github.png","name":"Github","href":"https://github.com/zyfx-wzk"}
+2022-04-09 20:23:00.845  INFO 3820 --- [http-nio-8080-exec-8] c.e.f.s.serviceImpl.MetaServiceImpl      : {"icon":"https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/theme/icon/steam.png","name":"Steam","href":"https://steamcommunity.com/profiles/76561198992038654/"}
+2022-04-09 20:23:49.706  INFO 3820 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-04-09 20:23:49.716  INFO 3820 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

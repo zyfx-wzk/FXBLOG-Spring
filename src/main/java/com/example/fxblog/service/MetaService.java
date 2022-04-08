@@ -1,5 +1,7 @@
 package com.example.fxblog.service;
 
+import cn.hutool.json.JSONObject;
+
 import java.util.List;
 import java.util.Map;
 
@@ -8,7 +10,9 @@ import java.util.Map;
  * @Date 2022/4/3 21:32
  */
 public interface MetaService {
-    Map<String,String> getMetaList(String key);
+    List<JSONObject> getMetaList(String key);
 
-    String getMeta(String key);
+    JSONObject getMetaValue(String key);
+
+    void setMetaValue(String key,String value);
 }

@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CommonResult<T> {
     //状态码
-    private Integer code;
+    private Integer status;
     //返回信息
     private String message;
     //实际数据

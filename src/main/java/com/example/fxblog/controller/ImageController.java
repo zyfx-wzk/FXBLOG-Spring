@@ -23,7 +23,7 @@ public class ImageController {
 
     @RequestMapping(value = "/get/image", method = RequestMethod.GET)
     public CommonResult getImageUrl() {
-        return CommonResult.result(imageService.getImage());
+        return CommonResult.surress(imageService.getImage());
     }
 
     @RequestMapping(value = "/see/image", method = RequestMethod.GET)

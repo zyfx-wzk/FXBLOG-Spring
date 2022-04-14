@@ -21,18 +21,31 @@ public class JwtUtil {
     public static final String TOKEN_HEADER = "Authorization";
     public static final String TOKEN_PREFIX = "Bearer ";
 
-    //私钥
+    /**
+     * 私钥
+     */
     private static final String SECRET = "zyfx_wzk";
-    //签发者
+    /**
+     * 签发者
+     */
     private static final String ISS = "FXBLOG";
 
-    // 过期时间是3600秒，既是1个小时
+    /**
+     * 过期时间是3600秒，既是1个小时
+     */
     private static final long EXPIRATION_TIME = 3600L;
 
-    // 选择了记住我之后的过期时间为7天
+    /**
+     * 选择了记住我之后的过期时间为7天
+     */
     private static final long EXPIRATION_TIME_REMEMBER = 604800L;
 
-    //获取Token
+    /**
+     * 选择了记住我之后的过期时间为7天
+     * @param userName 用户标识
+     * @param isRemember token是否长期有效
+     * @return token值
+     */
     public static String createToken(String userName, boolean isRemember) {
         long expirationTime = isRemember ? EXPIRATION_TIME_REMEMBER : EXPIRATION_TIME;
         return Jwts.builder()
@@ -44,7 +57,11 @@ public class JwtUtil {
                 .compact();
     }
 
-    //获取Token对象
+    /**
+     * 获取Jwt实例对象,方便后期处理
+     * @param token token值
+     * @return claim对象
+     */
     private static Claims getTokenClaims(String token) {
         return Jwts.parser()
                 .setSigningKey(SECRET)
@@ -52,7 +69,11 @@ public class JwtUtil {
                 .getBody();
     }
 
-    //获取Token中的用户名
+    /**
+     * 获取token中保存的用户凭证
+     * @param token token值
+     * @return 用户凭证
+     */
     public static String getUserName(String token) {
         try {
             return getTokenClaims(token).getSubject();
@@ -62,13 +83,16 @@ public class JwtUtil {
         }
     }
 
-    //检查是否已过期
+    /**
+     * 检查token是否过期
+     * @param token token值
+     * @return true-已过期 false-未过期
+     */
     public static boolean isExpiration(String token) {
         try {
             return getTokenClaims(token).getExpiration().before(new Date());
         } catch (Exception e) {
             return true;
         }
-
     }
 }

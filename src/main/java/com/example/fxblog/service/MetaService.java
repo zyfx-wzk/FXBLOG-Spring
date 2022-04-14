@@ -15,4 +15,6 @@ public interface MetaService {
     JSONObject getMetaValue(String key);
 
     void setMetaValue(String key,String value);
+
+    void delMetaValue(String key,String value);
 }

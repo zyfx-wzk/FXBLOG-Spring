@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
+ * 用户实体类
  * @Author 王志康
  * @Date 2022/2/25 23:03
  */

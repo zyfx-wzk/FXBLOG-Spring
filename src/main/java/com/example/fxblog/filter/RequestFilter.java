@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 /**
+ * 拦截所有请求,使用BodyReaderRequsetWrapper替换默认请求类,实现多次读取body数据
+ *
  * @Author 王志康
  * @Date 2022/3/23 18:09
  */
@@ -19,9 +21,12 @@ public class RequestFilter implements Filter {
     }
 
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+    public void doFilter(ServletRequest servletRequest,
+                         ServletResponse servletResponse,
+                         FilterChain filterChain) throws IOException, ServletException {
         //使用自己定义的BodyReaderRequsetWrapper进行替换,以实现对body的修改和重复读取
-        BodyRequsetWrapper bodyReaderRequsetWrapper = new BodyRequsetWrapper((HttpServletRequest) servletRequest);
+        BodyRequsetWrapper bodyReaderRequsetWrapper =
+                new BodyRequsetWrapper((HttpServletRequest) servletRequest);
         filterChain.doFilter(bodyReaderRequsetWrapper, servletResponse);
     }
 

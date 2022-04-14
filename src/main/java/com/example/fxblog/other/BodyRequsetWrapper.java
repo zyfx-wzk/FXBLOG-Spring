@@ -19,6 +19,11 @@ import java.nio.charset.StandardCharsets;
 public class BodyRequsetWrapper extends HttpServletRequestWrapper {
     private String body;
 
+    /**
+     * 提前读取传输流,并保存body数据
+     *
+     * @param request 网络请求
+     */
     public BodyRequsetWrapper(HttpServletRequest request) throws IOException {
         super(request);
         InputStream inputStream = request.getInputStream();

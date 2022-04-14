@@ -16,26 +16,44 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CommonResult<T> {
-    //状态码
+    /**
+     * 状态码
+     */
     private Integer status;
-    //返回信息
+    /**
+     * 返回信息
+     */
     private String message;
-    //实际数据
+    /**
+     * 实际数据
+     */
     private T data;
 
-    /*以下为静态方法，作用是利用本类的构造方法将三个元素组装在一起
-	生成一个本类对象并返回，根据不同的响应状态自行调用不同的方法，可以利用
-	上面写好的枚举类型填充返回状态码和返回信息，也可以自行传入返回状态码和
-	返回信息*/
-    public static <T> CommonResult result(T data) {
+    /**
+     * 请求成功,返回正常请求数据
+     */
+    public static <T> CommonResult surress(T data) {
         return new CommonResult<>(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMessage(), data);
     }
 
+    /**
+     * 请求成功,但无需返回数据
+     */
     public static <T> CommonResult surress() {
-        return new CommonResult<>(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMessage(),null);
+        return new CommonResult<>(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMessage(), null);
     }
 
+    /**
+     * 请求失败,返回默认失败信息
+     */
+    public static <T> CommonResult error() {
+        return new CommonResult<>(ResultCode.ERROR.getCode(), ResultCode.ERROR.getMessage(), null);
+    }
+
+    /**
+     * 请求失败,返回自定义失败信息
+     */
     public static <T> CommonResult error(ResultCode resultCode) {
-        return new CommonResult<>(resultCode.getCode(), resultCode.getMessage(),null);
+        return new CommonResult<>(resultCode.getCode(), resultCode.getMessage(), null);
     }
 }

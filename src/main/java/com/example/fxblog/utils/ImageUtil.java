@@ -27,6 +27,9 @@ public class ImageUtil {
         getImageList();
     }
 
+    /**
+     * 加载图片json数据到内存中,并定时根据json数据更新图片列表
+     */
     @Scheduled(cron = "0 0 0/1 * * ?")
     public void getImageList() throws FileNotFoundException {
         File file = new File(ResourceUtils.getURL("classpath:").getPath());

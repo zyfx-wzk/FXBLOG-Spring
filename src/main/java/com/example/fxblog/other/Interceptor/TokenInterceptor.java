@@ -2,8 +2,8 @@ package com.example.fxblog.other.Interceptor;
 
 import com.example.fxblog.constant.ResultCode;
 import com.example.fxblog.other.CommonResult;
+import com.example.fxblog.other.Exception.ReturnException;
 import com.example.fxblog.other.annotation.NeedToken;
-import com.example.fxblog.utils.ErrorUtil;
 import com.example.fxblog.utils.JwtUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +22,8 @@ import java.lang.reflect.Method;
  */
 @Slf4j
 public class TokenInterceptor implements HandlerInterceptor {
-    @Autowired
-    private ErrorUtil errorUtil;
-
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         String token = request.getHeader("Token");
         //仅拦截方法
         if (!(handler instanceof HandlerMethod)) {
@@ -38,9 +35,7 @@ public class TokenInterceptor implements HandlerInterceptor {
             NeedToken needToken = method.getAnnotation(NeedToken.class);
             if (needToken.required()) {
                 if (token == null || JwtUtil.isExpiration(token)) {
-                    errorUtil.writerError(response, CommonResult.error(ResultCode.NOT_LOGIN));
-                    log.warn("未使用或使用篡改的token进行操作");
-                    return false;
+                    throw new ReturnException("用户使用伪造的token进行登录",ResultCode.LOGIN_NOT);
                 }
                 String userName = JwtUtil.getUserName(token);
                 request.setAttribute("userName", userName);

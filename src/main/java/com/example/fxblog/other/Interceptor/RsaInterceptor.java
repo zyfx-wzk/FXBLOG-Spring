@@ -5,8 +5,8 @@ import cn.hutool.json.JSONUtil;
 import com.example.fxblog.constant.ResultCode;
 import com.example.fxblog.other.BodyRequsetWrapper;
 import com.example.fxblog.other.CommonResult;
+import com.example.fxblog.other.Exception.ReturnException;
 import com.example.fxblog.other.annotation.RsaDecrypt;
-import com.example.fxblog.utils.ErrorUtil;
 import com.example.fxblog.utils.RsaUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,11 +29,8 @@ public class RsaInterceptor implements HandlerInterceptor {
     @Autowired
     private RsaUtil rsaUtil;
 
-    @Autowired
-    private ErrorUtil errorUtil;
-
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         //仅拦截POST请求
         if (!HttpMethod.POST.toString().equals(request.getMethod())) {
             return true;
@@ -51,11 +48,8 @@ public class RsaInterceptor implements HandlerInterceptor {
                     log.info(data);
                     requsetWrapper.setBody(data);
                 } catch (Exception e) {
-                    errorUtil.writerError(response, CommonResult.error(ResultCode.DECODING_FAIL));
-                    log.warn("加密数据疑似被篡改,无法进行解码");
-                    return false;
+                    throw new ReturnException("加密数据疑似被篡改,无法进行解码",ResultCode.DECODING_ERROR);
                 }
-
             }
         }
         return true;

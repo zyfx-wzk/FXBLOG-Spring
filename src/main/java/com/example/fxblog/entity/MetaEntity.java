@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
+ * 元数据实体类
  * @Author 王志康
  * @Date 2022/4/3 21:21
  */

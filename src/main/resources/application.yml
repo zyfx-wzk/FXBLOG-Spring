@@ -23,12 +23,12 @@ spring:
     static-path-pattern: /**
 
 logging:
-  file:
-    # 日志路径
-    path: D:/Work/JAVA/FxBlog/log
   level:
     # 将mapper接口所在包的logger等级改为debug,以打印sql语句
     com.example.fxblog.mapper: debug
+  file:
+    # 日志路径
+    path: D:/Work/JAVA/FxBlog/log
 
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml

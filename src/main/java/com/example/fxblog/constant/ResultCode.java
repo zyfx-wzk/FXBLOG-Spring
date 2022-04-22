@@ -23,7 +23,7 @@ public enum ResultCode {
     /**
      * 无法获取页面元数据
      */
-    META_ERROR(302,"无法获取页面元数据"),
+    META_ERROR(302,"页面元数据操作失败"),
     /**
      * 未登录或登录已失效
      */

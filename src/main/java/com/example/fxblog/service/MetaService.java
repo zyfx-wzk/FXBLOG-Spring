@@ -10,11 +10,13 @@ import java.util.Map;
  * @Date 2022/4/3 21:32
  */
 public interface MetaService {
-    List<JSONObject> getMetaList(String key);
+    List<JSONObject> getMetaJsonList(String key);
+
+    List<String> getMetaStringList(String key);
 
     JSONObject getMetaValue(String key);
 
-    void setMetaValue(String key,String value);
+    void addMetaValue(String key, List<String> list);
 
-    void delMetaValue(String key,String value);
+    void delMetaValue(String key, String value);
 }

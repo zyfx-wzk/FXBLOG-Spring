@@ -1,6 +1,8 @@
 package com.example.fxblog.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,9 +18,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @TableName("fx_meta")
 public class MetaEntity {
+    @TableId(type = IdType.AUTO)
+    private Integer metaUuid;
+
     @TableField("meta_key")
     private String metaKey;
 
     @TableField("meta_value")
     private String metaValue;
+
+    public MetaEntity(String metaKey, String metaValue) {
+        this.metaKey = metaKey;
+        this.metaValue = metaValue;
+    }
 }

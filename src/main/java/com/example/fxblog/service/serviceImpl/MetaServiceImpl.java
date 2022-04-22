@@ -41,14 +41,27 @@ public class MetaServiceImpl implements MetaService {
      * 获取元数据-JSON列表
      */
     @Override
-    public List<JSONObject> getMetaList(String key) {
+    public List<JSONObject> getMetaJsonList(String key) {
         List<MetaEntity> list = metaMapper.selectList(getValue(key));
         verifyList(list);
         List<JSONObject> result = new ArrayList<>();
         for (MetaEntity meta : list) {
             JSONObject str = JSONUtil.parseObj(meta.getMetaValue());
-            log.info(str.toString());
             result.add(str);
+        }
+        return result;
+    }
+
+    /**
+     * 获取元数据-String列表
+     */
+    @Override
+    public List<String> getMetaStringList(String key) {
+        List<MetaEntity> list = metaMapper.selectList(getValue(key));
+        verifyList(list);
+        List<String> result = new ArrayList<>();
+        for (MetaEntity meta : list) {
+            result.add(meta.getMetaValue());
         }
         return result;
     }
@@ -63,6 +76,11 @@ public class MetaServiceImpl implements MetaService {
         return JSONUtil.parseObj(list.get(0).getMetaValue());
     }
 
+    /**
+     * 删除元数据(若value为空,则直接匹配键值,删除所有数据)
+     * @param key 可以为空
+     * @param value 可以为空
+     */
     @Override
     public void delMetaValue(String key, String value) {
         QueryWrapper<MetaEntity> queryWrapper = new QueryWrapper<>();
@@ -76,10 +94,18 @@ public class MetaServiceImpl implements MetaService {
     }
 
 
+    /**
+     * 增加元数据
+     *
+     * @param key 键
+     * @param list 值列表
+     */
     @Override
-    public void setMetaValue(String key, String value) {
+    public void addMetaValue(String key, List<String> list) {
         //插入数据前,删除数据库中已有的数据,防止重复数据产生
-        delMetaValue(key, value);
-        metaMapper.insert(new MetaEntity(key, value));
+        for (String val : list) {
+            delMetaValue(key, val);
+            metaMapper.insert(new MetaEntity(key, val));
+        }
     }
 }

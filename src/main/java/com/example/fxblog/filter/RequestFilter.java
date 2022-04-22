@@ -1,6 +1,7 @@
 package com.example.fxblog.filter;
 
 import com.example.fxblog.other.BodyRequsetWrapper;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -13,6 +14,7 @@ import java.io.IOException;
  * @Author 王志康
  * @Date 2022/3/23 18:09
  */
+@Slf4j
 @WebFilter(filterName = "RequestFilter", urlPatterns = "/*")
 public class RequestFilter implements Filter {
     @Override

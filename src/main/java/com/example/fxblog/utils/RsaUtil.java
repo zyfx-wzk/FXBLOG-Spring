@@ -50,8 +50,8 @@ public class RsaUtil {
             rsa = new RSA();
             RSA_PUBLIC_KEY = rsa.getPublicKeyBase64();
             RSA_PRIVATE_KEY = rsa.getPrivateKeyBase64();
-            redisUtil.set(PUBLIC_KEY, RSA_PUBLIC_KEY, 3600 * 2400);
-            redisUtil.set(PRIVATE_KEY, RSA_PRIVATE_KEY, 3600 * 2400);
+            redisUtil.add(PUBLIC_KEY, RSA_PUBLIC_KEY, 3600 * 2400);
+            redisUtil.add(PRIVATE_KEY, RSA_PRIVATE_KEY, 3600 * 2400);
         }
     }
 

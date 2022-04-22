@@ -1,6 +1,7 @@
 package com.example.fxblog.controller;
 
 import cn.hutool.json.JSONObject;
+import cn.hutool.json.JSONUtil;
 import com.example.fxblog.constant.ResultCode;
 import com.example.fxblog.other.CommonResult;
 import com.example.fxblog.service.MetaService;
@@ -8,6 +9,8 @@ import com.example.fxblog.utils.RsaUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * 额外的小数据,以map方式存储
@@ -35,9 +38,10 @@ public class MetaController {
     @RequestMapping(value = "/insert/meta", method = RequestMethod.POST)
     public CommonResult setMetaData(@RequestBody JSONObject jsonMetaData) {
         String metaKey = jsonMetaData.getStr("key");
-        String metaValue = jsonMetaData.getStr("value");
+        String metaValue = jsonMetaData.getStr("list");
+        List<String> list = JSONUtil.toList(JSONUtil.parseArray(metaValue), String.class);
         try {
-            metaService.setMetaValue(metaKey, metaValue);
+            metaService.addMetaValue(metaKey,list);
         } catch (Exception e) {
             return CommonResult.error(ResultCode.META_ERROR);
         }
@@ -51,6 +55,7 @@ public class MetaController {
     public CommonResult delMetaData(@RequestBody JSONObject jsonMetaData) {
         String metaKey = jsonMetaData.getStr("key");
         String metaValue = jsonMetaData.getStr("value");
+        List<String> list = JSONUtil.toList(JSONUtil.parseArray(metaValue), String.class);
         try {
             metaService.delMetaValue(metaKey, metaValue);
         } catch (Exception e) {
@@ -68,7 +73,7 @@ public class MetaController {
         try {
             switch (type) {
                 case "list": {
-                    return CommonResult.surress(metaService.getMetaList(key));
+                    return CommonResult.surress(metaService.getMetaJsonList(key));
                 }
                 case "value": {
                     return CommonResult.surress(metaService.getMetaValue(key));

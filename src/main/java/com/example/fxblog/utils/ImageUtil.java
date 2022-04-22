@@ -1,18 +1,17 @@
 package com.example.fxblog.utils;
 
-import cn.hutool.core.io.file.FileReader;
-import cn.hutool.json.JSONArray;
-import cn.hutool.json.JSONUtil;
+import com.example.fxblog.service.MetaService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import org.springframework.util.ResourceUtils;
 
-import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
+ * 图片接口工具类
+ *
  * @Author 王志康
  * @Date 2021/12/17 16:20
  */
@@ -20,24 +19,64 @@ import java.util.List;
 @Slf4j
 @Component
 public class ImageUtil {
-    public List<String> imageList;
-    public int listLen;
+    public static final String IMAGE_URL_LIST = "Image_Url_List";
+    public static final String IMAGE_URL = "image_url";
 
-    ImageUtil() throws FileNotFoundException {
-        getImageList();
+    private final MetaService metaService;
+    private final RedisUtil redisUtil;
+
+    private long listLength = 0;
+
+    ImageUtil(RedisUtil redisUtil, MetaService metaService) {
+        this.redisUtil = redisUtil;
+        this.metaService = metaService;
+        setImageUrlList();
     }
 
     /**
-     * 加载图片json数据到内存中,并定时根据json数据更新图片列表
+     * 加载图片缓存
+     *
+     * @return 当前缓存数量
      */
-    @Scheduled(cron = "0 0 0/1 * * ?")
-    public void getImageList() throws FileNotFoundException {
-        File file = new File(ResourceUtils.getURL("classpath:").getPath());
-        String basePath = file.getParentFile().getParent();
-        FileReader fileReader = new FileReader(basePath + "\\json\\ImageList.json");
-        JSONArray array = JSONUtil.parseArray(fileReader.readString());
-        imageList = JSONUtil.toList(array, String.class);
-        listLen = imageList.size();
-        log.info("图片列表加载完成,当前共" + imageList.size() + "张图片");
+    public long setImageUrlList() {
+        delImageUrlList();
+        List<String> list = metaService.getMetaStringList(IMAGE_URL);
+        redisUtil.setAdd(IMAGE_URL_LIST, list.toArray());
+        listLength = redisUtil.setSize(IMAGE_URL_LIST);
+        log.info("图片列表加载完成,当前Redis缓存中共" + listLength + "张图片");
+        return listLength;
+    }
+
+    /**
+     * 删除图片缓存
+     */
+    public void delImageUrlList() {
+        redisUtil.remove(IMAGE_URL_LIST);
+    }
+
+    /**
+     * 获取随机图片
+     */
+    public String getImageUrl() {
+        return (String) redisUtil.setValue(IMAGE_URL_LIST);
+    }
+
+    /**
+     * 获取随机图片列表
+     */
+    public List<String> getImageUrlList(int count) {
+        List<String> result = new ArrayList<>();
+        if (count <= listLength) {
+            Set<Object> set = redisUtil.setValueSet(IMAGE_URL_LIST, count);
+            for (Object o : set) {
+                result.add((String) o);
+            }
+        } else {
+            List<Object> list = redisUtil.setValueList(IMAGE_URL_LIST, count);
+            for (Object o : list) {
+                result.add((String) o);
+            }
+        }
+        return result;
     }
 }

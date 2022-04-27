@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 /**
- * 登录和RSA密钥获取
+ * 登录
  *
  * @Author 王志康
  * @Date 2022/2/24 22:11

@@ -11,7 +11,7 @@ public enum ResultCode {
     /**
      * 操作成功
      */
-    SUCCESS(200,"请求成功"),
+    SUCCESS(200, "请求成功"),
     /**
      * 操作失败
      */
@@ -19,29 +19,34 @@ public enum ResultCode {
     /**
      * 数据解码失败
      */
-    DECODING_ERROR(301,"数据解码失败"),
+    DECODING_ERROR(301, "数据解码失败"),
     /**
      * 无法获取页面元数据
      */
-    META_ERROR(302,"页面元数据操作失败"),
+    META_ERROR(302, "页面元数据操作失败"),
+    /**
+     * 博客操作失败
+     */
+    BLOG_ERROR(303, "博客文章操作失败"),
     /**
      * 未登录或登录已失效
      */
-    LOGIN_NOT(401,"未登录或登录已失效"),
+    LOGIN_NOT(401, "未登录或登录已失效"),
     /**
      * 账号或密码错误
      */
-    LOGIN_ERROR(402,"账号或密码错误"),
+    LOGIN_ERROR(402, "账号或密码错误"),
     /**
      * 服务端错误
      */
-    SYSTEM_ERROR(500,"系统错误");
+    SYSTEM_ERROR(500, "系统错误");
 
     public final int code;
     private final String message;
-    ResultCode(int code,String message) {
+
+    ResultCode(int code, String message) {
         this.code = code;
-        this.message=message;
+        this.message = message;
     }
 
     public int getCode() {

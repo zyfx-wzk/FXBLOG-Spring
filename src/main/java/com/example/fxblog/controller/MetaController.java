@@ -41,8 +41,9 @@ public class MetaController {
         String metaValue = jsonMetaData.getStr("list");
         List<String> list = JSONUtil.toList(JSONUtil.parseArray(metaValue), String.class);
         try {
-            metaService.addMetaValue(metaKey,list);
+            metaService.addMetaValue(metaKey, list);
         } catch (Exception e) {
+            log.error(e.getMessage());
             return CommonResult.error(ResultCode.META_ERROR);
         }
         return CommonResult.surress();
@@ -59,13 +60,14 @@ public class MetaController {
         try {
             metaService.delMetaValue(metaKey, metaValue);
         } catch (Exception e) {
+            log.error(e.getMessage());
             return CommonResult.error(ResultCode.META_ERROR);
         }
         return CommonResult.surress();
     }
 
     /**
-     * 获取元数据-列表
+     * 获取元数据
      */
     @RequestMapping(value = "/get/meta", method = RequestMethod.GET)
     public CommonResult getMetaData(@RequestParam("key") String key,
@@ -81,8 +83,9 @@ public class MetaController {
                 default:
             }
         } catch (Exception e) {
+            log.error(e.getMessage());
             return CommonResult.error(ResultCode.META_ERROR);
         }
-        throw new RuntimeException("接口请求参数错误");
+        throw new RuntimeException("元数据请求接口参数出现错误");
     }
 }

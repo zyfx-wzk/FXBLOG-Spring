@@ -30,7 +30,7 @@ build/
 !**/src/test/**/build/
 
 ### 日志目录 ###
-.log/
+/log/
 
 ### VS Code ###
 .vscode/

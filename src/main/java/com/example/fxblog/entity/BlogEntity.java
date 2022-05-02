@@ -33,6 +33,9 @@ public class BlogEntity {
     @TableField("blog_title")
     private String blogTitle;
 
+    @TableField("blog_image")
+    private String blogImage;
+
     @TableField("blog_time")
     private Date blogTime;
 

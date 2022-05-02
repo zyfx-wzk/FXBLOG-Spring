@@ -29,5 +29,8 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+### 日志目录 ###
+/.log/
+
 ### VS Code ###
 .vscode/

@@ -1,1196 +1,876 @@
-2022-04-27 14:03:05.134  INFO 11708 --- [main] com.example.fxblog.FxBlogApplication     : Starting FxBlogApplication using Java 1.8.0_301 on Computer-WZK with PID 11708 (D:\Work\JAVA\FxBlog\target\classes started by WZK in D:\Work\JAVA\FxBlog)
-2022-04-27 14:03:05.142  INFO 11708 --- [main] com.example.fxblog.FxBlogApplication     : No active profile set, falling back to default profiles: default
-2022-04-27 14:03:06.586  INFO 11708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-04-27 14:03:06.589  INFO 11708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-27 14:03:06.656  INFO 11708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-2022-04-27 14:03:07.597  INFO 11708 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-04-27 14:03:07.789  INFO 11708 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-27 14:03:07.789  INFO 11708 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
-2022-04-27 14:03:07.962  INFO 11708 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-27 14:03:07.963  INFO 11708 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2715 ms
-2022-04-27 14:03:10.787  INFO 11708 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-04-27 14:03:11.126  INFO 11708 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-04-27 14:03:11.136 DEBUG 11708 --- [main] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
-2022-04-27 14:03:11.169 DEBUG 11708 --- [main] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: image_url(String)
-2022-04-27 14:03:11.262 DEBUG 11708 --- [main] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 6
-2022-04-27 14:03:11.290  INFO 11708 --- [main] com.example.fxblog.utils.ImageUtil       : 图片列表加载完成,当前Redis缓存中共6张图片
-2022-04-27 14:03:12.759  INFO 11708 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-04-27 14:03:12.789  INFO 11708 --- [main] com.example.fxblog.FxBlogApplication     : Started FxBlogApplication in 8.821 seconds (JVM running for 13.853)
-2022-04-27 14:03:39.160  INFO 11708 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-04-27 14:03:39.160  INFO 11708 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-04-27 14:03:39.163  INFO 11708 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2022-04-27 14:03:39.445 DEBUG 11708 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
-2022-04-27 14:03:39.445 DEBUG 11708 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
-2022-04-27 14:03:39.445 DEBUG 11708 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
-2022-04-27 14:03:39.446 DEBUG 11708 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
-2022-04-27 14:03:39.446 DEBUG 11708 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-27 14:03:39.446 DEBUG 11708 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
-2022-04-27 14:03:39.448 DEBUG 11708 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
-2022-04-27 14:03:39.448 DEBUG 11708 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
-2022-04-27 14:03:39.449 DEBUG 11708 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
-2022-04-27 14:03:50.487 DEBUG 11708 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectById  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_time,blog_count FROM fx_blog WHERE blog_uuid=?
-2022-04-27 14:03:50.488 DEBUG 11708 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectById  : ==> Parameters: 1002(Integer)
-2022-04-27 14:03:50.504 DEBUG 11708 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectById  : <==      Total: 1
-2022-04-27 14:03:50.506 DEBUG 11708 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.updateById  : ==>  Preparing: UPDATE fx_blog SET blog_text=?, blog_type=?, blog_title=?, blog_time=?, blog_count=? WHERE blog_uuid=?
-2022-04-27 14:03:50.511 DEBUG 11708 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.updateById  : ==> Parameters: ![2021-11-26](https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/img/2021-11-26.png)
-
-二叉搜索树满足如下性质：
-左子树所有节点的元素值均小于根的元素值；
-右子树所有节点的元素值均大于根的元素值。
-
-据此可以得到如下算法：
-若root 为空则返回空节点；
-若val=root.val，则返回root；
-若val<root.val，递归左子树；
-若val>root.val，递归右子树。
-
-```java
-public class Solution {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-
-    }
-
-    public TreeNode searchBST(TreeNode root, int val) {
-        if (root == null) {
-            return null;
-        }
-        if (root.val == val) {
-            return root;
-        }
-        return root.val < val ? searchBST(root.right, val) : searchBST(root.left, val);
-    }
-
-```
-
-(String), 尚未分组(String), 2022-04-26(String), 2022-04-26 14:17:39.0(Timestamp), 10(Integer), 1002(Integer)
-2022-04-27 14:03:50.559 DEBUG 11708 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.updateById  : <==    Updates: 1
-2022-04-27 14:03:54.699 DEBUG 11708 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
-2022-04-27 14:03:54.699 DEBUG 11708 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
-2022-04-27 14:03:54.700 DEBUG 11708 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
-2022-04-27 14:03:54.700 DEBUG 11708 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-27 14:03:54.703 DEBUG 11708 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
-2022-04-27 14:03:54.704 DEBUG 11708 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
-2022-04-27 14:05:00.531  INFO 11708 --- [http-nio-8080-exec-3] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-27 14:05:00.550  INFO 11708 --- [http-nio-8080-exec-3] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
-2022-04-27 14:05:00.732 DEBUG 11708 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
-2022-04-27 14:05:00.732 DEBUG 11708 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
-2022-04-27 14:05:00.732 DEBUG 11708 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
-2022-04-27 14:05:00.734 DEBUG 11708 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
-2022-04-27 14:05:00.735 DEBUG 11708 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
-2022-04-27 14:05:00.735 DEBUG 11708 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
-2022-04-27 14:05:00.738 DEBUG 11708 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
-2022-04-27 14:05:00.738 DEBUG 11708 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
-2022-04-27 14:05:00.738 DEBUG 11708 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
-2022-04-27 14:05:48.547  INFO 11708 --- [http-nio-8080-exec-1] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-27 14:05:48.557  INFO 11708 --- [http-nio-8080-exec-1] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
-2022-04-27 14:05:48.698 DEBUG 11708 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectById  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_time,blog_count FROM fx_blog WHERE blog_uuid=?
-2022-04-27 14:05:48.699 DEBUG 11708 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectById  : ==> Parameters: 1002(Integer)
-2022-04-27 14:05:48.700 DEBUG 11708 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectById  : <==      Total: 1
-2022-04-27 14:05:48.703 DEBUG 11708 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.updateById  : ==>  Preparing: UPDATE fx_blog SET blog_text=?, blog_type=?, blog_title=?, blog_time=?, blog_count=? WHERE blog_uuid=?
-2022-04-27 14:05:48.705 DEBUG 11708 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.updateById  : ==> Parameters: ![2021-11-26](https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/img/2021-11-26.png)
-
-二叉搜索树满足如下性质：
-左子树所有节点的元素值均小于根的元素值；
-右子树所有节点的元素值均大于根的元素值。
-
-据此可以得到如下算法：
-若root 为空则返回空节点；
-若val=root.val，则返回root；
-若val<root.val，递归左子树；
-若val>root.val，递归右子树。
-
-```java
-public class Solution {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-
-    }
-
-    public TreeNode searchBST(TreeNode root, int val) {
-        if (root == null) {
-            return null;
-        }
-        if (root.val == val) {
-            return root;
-        }
-        return root.val < val ? searchBST(root.right, val) : searchBST(root.left, val);
-    }
-
-```
-
-(String), 尚未分组(String), 2022-04-26(String), 2022-04-26 14:17:39.0(Timestamp), 11(Integer), 1002(Integer)
-2022-04-27 14:05:48.754 DEBUG 11708 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.updateById  : <==    Updates: 1
-2022-04-27 14:31:14.260  INFO 11708 --- [http-nio-8080-exec-10] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-27 14:31:14.271  INFO 11708 --- [http-nio-8080-exec-10] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
-2022-04-27 14:31:14.508 DEBUG 11708 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.insert      : ==>  Preparing: INSERT INTO fx_blog ( blog_text, blog_title, blog_time ) VALUES ( ?, ?, ? )
-2022-04-27 14:31:14.510 DEBUG 11708 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.insert      : ==> Parameters: ![2021-11-26](https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/img/2021-11-26.png)
-
-二叉搜索树满足如下性质：
-左子树所有节点的元素值均小于根的元素值；
-右子树所有节点的元素值均大于根的元素值。
-
-据此可以得到如下算法：
-若root 为空则返回空节点；
-若val=root.val，则返回root；
-若val<root.val，递归左子树；
-若val>root.val，递归右子树。
-
-```java
-public class Solution {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-
-    }
-
-    public TreeNode searchBST(TreeNode root, int val) {
-        if (root == null) {
-            return null;
-        }
-        if (root.val == val) {
-            return root;
-        }
-        return root.val < val ? searchBST(root.right, val) : searchBST(root.left, val);
-    }
-
-```
-
-(String), 研压到此(String), 2022-04-27 14:31:14.505(Timestamp)
-2022-04-27 14:31:14.525 DEBUG 11708 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.insert      : <==    Updates: 1
-2022-04-27 14:31:16.054 DEBUG 11708 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.insert      : ==>  Preparing: INSERT INTO fx_blog ( blog_text, blog_title, blog_time ) VALUES ( ?, ?, ? )
-2022-04-27 14:31:16.055 DEBUG 11708 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.insert      : ==> Parameters: ![2021-11-26](https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/img/2021-11-26.png)
-
-二叉搜索树满足如下性质：
-左子树所有节点的元素值均小于根的元素值；
-右子树所有节点的元素值均大于根的元素值。
-
-据此可以得到如下算法：
-若root 为空则返回空节点；
-若val=root.val，则返回root；
-若val<root.val，递归左子树；
-若val>root.val，递归右子树。
-
-```java
-public class Solution {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-
-    }
-
-    public TreeNode searchBST(TreeNode root, int val) {
-        if (root == null) {
-            return null;
-        }
-        if (root.val == val) {
-            return root;
-        }
-        return root.val < val ? searchBST(root.right, val) : searchBST(root.left, val);
-    }
-
-```
-
-(String), 研压到此(String), 2022-04-27 14:31:16.053(Timestamp)
-2022-04-27 14:31:16.114 DEBUG 11708 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.insert      : <==    Updates: 1
-2022-04-27 14:31:17.046 DEBUG 11708 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.insert      : ==>  Preparing: INSERT INTO fx_blog ( blog_text, blog_title, blog_time ) VALUES ( ?, ?, ? )
-2022-04-27 14:31:17.047 DEBUG 11708 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.insert      : ==> Parameters: ![2021-11-26](https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/img/2021-11-26.png)
-
-二叉搜索树满足如下性质：
-左子树所有节点的元素值均小于根的元素值；
-右子树所有节点的元素值均大于根的元素值。
-
-据此可以得到如下算法：
-若root 为空则返回空节点；
-若val=root.val，则返回root；
-若val<root.val，递归左子树；
-若val>root.val，递归右子树。
-
-```java
-public class Solution {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-
-    }
-
-    public TreeNode searchBST(TreeNode root, int val) {
-        if (root == null) {
-            return null;
-        }
-        if (root.val == val) {
-            return root;
-        }
-        return root.val < val ? searchBST(root.right, val) : searchBST(root.left, val);
-    }
-
-```
-
-(String), 研压到此(String), 2022-04-27 14:31:17.045(Timestamp)
-2022-04-27 14:31:17.091 DEBUG 11708 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.insert      : <==    Updates: 1
-2022-04-27 14:31:17.803 DEBUG 11708 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.insert      : ==>  Preparing: INSERT INTO fx_blog ( blog_text, blog_title, blog_time ) VALUES ( ?, ?, ? )
-2022-04-27 14:31:17.804 DEBUG 11708 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.insert      : ==> Parameters: ![2021-11-26](https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/img/2021-11-26.png)
-
-二叉搜索树满足如下性质：
-左子树所有节点的元素值均小于根的元素值；
-右子树所有节点的元素值均大于根的元素值。
-
-据此可以得到如下算法：
-若root 为空则返回空节点；
-若val=root.val，则返回root；
-若val<root.val，递归左子树；
-若val>root.val，递归右子树。
-
-```java
-public class Solution {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-
-    }
-
-    public TreeNode searchBST(TreeNode root, int val) {
-        if (root == null) {
-            return null;
-        }
-        if (root.val == val) {
-            return root;
-        }
-        return root.val < val ? searchBST(root.right, val) : searchBST(root.left, val);
-    }
-
-```
-
-(String), 研压到此(String), 2022-04-27 14:31:17.801(Timestamp)
-2022-04-27 14:31:17.847 DEBUG 11708 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.insert      : <==    Updates: 1
-2022-04-27 14:31:18.496 DEBUG 11708 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.insert      : ==>  Preparing: INSERT INTO fx_blog ( blog_text, blog_title, blog_time ) VALUES ( ?, ?, ? )
-2022-04-27 14:31:18.496 DEBUG 11708 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.insert      : ==> Parameters: ![2021-11-26](https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/img/2021-11-26.png)
-
-二叉搜索树满足如下性质：
-左子树所有节点的元素值均小于根的元素值；
-右子树所有节点的元素值均大于根的元素值。
-
-据此可以得到如下算法：
-若root 为空则返回空节点；
-若val=root.val，则返回root；
-若val<root.val，递归左子树；
-若val>root.val，递归右子树。
-
-```java
-public class Solution {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-
-    }
-
-    public TreeNode searchBST(TreeNode root, int val) {
-        if (root == null) {
-            return null;
-        }
-        if (root.val == val) {
-            return root;
-        }
-        return root.val < val ? searchBST(root.right, val) : searchBST(root.left, val);
-    }
-
-```
-
-(String), 研压到此(String), 2022-04-27 14:31:18.494(Timestamp)
-2022-04-27 14:31:18.537 DEBUG 11708 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.insert      : <==    Updates: 1
-2022-04-27 14:31:19.108 DEBUG 11708 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.BlogMapper.insert      : ==>  Preparing: INSERT INTO fx_blog ( blog_text, blog_title, blog_time ) VALUES ( ?, ?, ? )
-2022-04-27 14:31:19.109 DEBUG 11708 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.BlogMapper.insert      : ==> Parameters: ![2021-11-26](https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/img/2021-11-26.png)
-
-二叉搜索树满足如下性质：
-左子树所有节点的元素值均小于根的元素值；
-右子树所有节点的元素值均大于根的元素值。
-
-据此可以得到如下算法：
-若root 为空则返回空节点；
-若val=root.val，则返回root；
-若val<root.val，递归左子树；
-若val>root.val，递归右子树。
-
-```java
-public class Solution {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-
-    }
-
-    public TreeNode searchBST(TreeNode root, int val) {
-        if (root == null) {
-            return null;
-        }
-        if (root.val == val) {
-            return root;
-        }
-        return root.val < val ? searchBST(root.right, val) : searchBST(root.left, val);
-    }
-
-```
-
-(String), 研压到此(String), 2022-04-27 14:31:19.107(Timestamp)
-2022-04-27 14:31:19.119 DEBUG 11708 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.BlogMapper.insert      : <==    Updates: 1
-2022-04-27 14:31:19.744 DEBUG 11708 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.insert      : ==>  Preparing: INSERT INTO fx_blog ( blog_text, blog_title, blog_time ) VALUES ( ?, ?, ? )
-2022-04-27 14:31:19.744 DEBUG 11708 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.insert      : ==> Parameters: ![2021-11-26](https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/img/2021-11-26.png)
-
-二叉搜索树满足如下性质：
-左子树所有节点的元素值均小于根的元素值；
-右子树所有节点的元素值均大于根的元素值。
-
-据此可以得到如下算法：
-若root 为空则返回空节点；
-若val=root.val，则返回root；
-若val<root.val，递归左子树；
-若val>root.val，递归右子树。
-
-```java
-public class Solution {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-
-    }
-
-    public TreeNode searchBST(TreeNode root, int val) {
-        if (root == null) {
-            return null;
-        }
-        if (root.val == val) {
-            return root;
-        }
-        return root.val < val ? searchBST(root.right, val) : searchBST(root.left, val);
-    }
-
-```
-
-(String), 研压到此(String), 2022-04-27 14:31:19.742(Timestamp)
-2022-04-27 14:31:19.787 DEBUG 11708 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.insert      : <==    Updates: 1
-2022-04-27 14:31:20.341 DEBUG 11708 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.insert      : ==>  Preparing: INSERT INTO fx_blog ( blog_text, blog_title, blog_time ) VALUES ( ?, ?, ? )
-2022-04-27 14:31:20.342 DEBUG 11708 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.insert      : ==> Parameters: ![2021-11-26](https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/img/2021-11-26.png)
-
-二叉搜索树满足如下性质：
-左子树所有节点的元素值均小于根的元素值；
-右子树所有节点的元素值均大于根的元素值。
-
-据此可以得到如下算法：
-若root 为空则返回空节点；
-若val=root.val，则返回root；
-若val<root.val，递归左子树；
-若val>root.val，递归右子树。
-
-```java
-public class Solution {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-
-    }
-
-    public TreeNode searchBST(TreeNode root, int val) {
-        if (root == null) {
-            return null;
-        }
-        if (root.val == val) {
-            return root;
-        }
-        return root.val < val ? searchBST(root.right, val) : searchBST(root.left, val);
-    }
-
-```
-
-(String), 研压到此(String), 2022-04-27 14:31:20.339(Timestamp)
-2022-04-27 14:31:20.383 DEBUG 11708 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.insert      : <==    Updates: 1
-2022-04-27 14:31:36.146 DEBUG 11708 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.selectById  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_time,blog_count FROM fx_blog WHERE blog_uuid=?
-2022-04-27 14:31:36.147 DEBUG 11708 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.selectById  : ==> Parameters: 1002(Integer)
-2022-04-27 14:31:36.148 DEBUG 11708 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.selectById  : <==      Total: 1
-2022-04-27 14:31:36.152 DEBUG 11708 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.updateById  : ==>  Preparing: UPDATE fx_blog SET blog_text=?, blog_type=?, blog_title=?, blog_time=?, blog_count=? WHERE blog_uuid=?
-2022-04-27 14:31:36.153 DEBUG 11708 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.updateById  : ==> Parameters: ![2021-11-26](https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/img/2021-11-26.png)
-
-二叉搜索树满足如下性质：
-左子树所有节点的元素值均小于根的元素值；
-右子树所有节点的元素值均大于根的元素值。
-
-据此可以得到如下算法：
-若root 为空则返回空节点；
-若val=root.val，则返回root；
-若val<root.val，递归左子树；
-若val>root.val，递归右子树。
-
-```java
-public class Solution {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-
-    }
-
-    public TreeNode searchBST(TreeNode root, int val) {
-        if (root == null) {
-            return null;
-        }
-        if (root.val == val) {
-            return root;
-        }
-        return root.val < val ? searchBST(root.right, val) : searchBST(root.left, val);
-    }
-
-```
-
-(String), 尚未分组(String), 2022-04-26(String), 2022-04-26 14:17:39.0(Timestamp), 12(Integer), 1002(Integer)
-2022-04-27 14:31:36.197 DEBUG 11708 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.updateById  : <==    Updates: 1
-2022-04-27 14:32:39.055 DEBUG 11708 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
-2022-04-27 14:32:39.055 DEBUG 11708 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
-2022-04-27 14:32:39.098 DEBUG 11708 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
-2022-04-27 14:32:39.107 DEBUG 11708 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_time,blog_count FROM fx_blog ORDER BY blog_time DESC LIMIT ?
-2022-04-27 14:32:39.107 DEBUG 11708 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
-2022-04-27 14:32:39.144 DEBUG 11708 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
-2022-04-27 14:32:39.144  INFO 11708 --- [http-nio-8080-exec-10] c.e.f.s.serviceImpl.BlogServiceImpl      : [BlogEntity(blogUuid=1009, blogText=![2021-11-26](https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/img/2021-11-26.png)
-
-二叉搜索树满足如下性质：
-左子树所有节点的元素值均小于根的元素值；
-右子树所有节点的元素值均大于根的元素值。
-
-据此可以得到如下算法：
-若root 为空则返回空节点；
-若val=root.val，则返回root；
-若val<root.val，递归左子树；
-若val>root.val，递归右子树。
-
-```java
-public class Solution {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-
-    }
-
-    public TreeNode searchBST(TreeNode root, int val) {
-        if (root == null) {
-            return null;
-        }
-        if (root.val == val) {
-            return root;
-        }
-        return root.val < val ? searchBST(root.right, val) : searchBST(root.left, val);
-    }
-
-```
-
-, blogType=尚未分组, blogTitle=研压到此, blogTime=Wed Apr 27 14:31:20 CST 2022, blogCount=0), BlogEntity(blogUuid=1010, blogText=![2021-11-26](https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/img/2021-11-26.png)
-
-二叉搜索树满足如下性质：
-左子树所有节点的元素值均小于根的元素值；
-右子树所有节点的元素值均大于根的元素值。
-
-据此可以得到如下算法：
-若root 为空则返回空节点；
-若val=root.val，则返回root；
-若val<root.val，递归左子树；
-若val>root.val，递归右子树。
-
-```java
-public class Solution {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-
-    }
-
-    public TreeNode searchBST(TreeNode root, int val) {
-        if (root == null) {
-            return null;
-        }
-        if (root.val == val) {
-            return root;
-        }
-        return root.val < val ? searchBST(root.right, val) : searchBST(root.left, val);
-    }
-
-```
-
-, blogType=尚未分组, blogTitle=研压到此, blogTime=Wed Apr 27 14:31:20 CST 2022, blogCount=0), BlogEntity(blogUuid=1008, blogText=![2021-11-26](https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/img/2021-11-26.png)
-
-二叉搜索树满足如下性质：
-左子树所有节点的元素值均小于根的元素值；
-右子树所有节点的元素值均大于根的元素值。
-
-据此可以得到如下算法：
-若root 为空则返回空节点；
-若val=root.val，则返回root；
-若val<root.val，递归左子树；
-若val>root.val，递归右子树。
-
-```java
-public class Solution {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-
-    }
-
-    public TreeNode searchBST(TreeNode root, int val) {
-        if (root == null) {
-            return null;
-        }
-        if (root.val == val) {
-            return root;
-        }
-        return root.val < val ? searchBST(root.right, val) : searchBST(root.left, val);
-    }
-
-```
-
-, blogType=尚未分组, blogTitle=研压到此, blogTime=Wed Apr 27 14:31:19 CST 2022, blogCount=0), BlogEntity(blogUuid=1006, blogText=![2021-11-26](https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/img/2021-11-26.png)
-
-二叉搜索树满足如下性质：
-左子树所有节点的元素值均小于根的元素值；
-右子树所有节点的元素值均大于根的元素值。
-
-据此可以得到如下算法：
-若root 为空则返回空节点；
-若val=root.val，则返回root；
-若val<root.val，递归左子树；
-若val>root.val，递归右子树。
-
-```java
-public class Solution {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-
-    }
-
-    public TreeNode searchBST(TreeNode root, int val) {
-        if (root == null) {
-            return null;
-        }
-        if (root.val == val) {
-            return root;
-        }
-        return root.val < val ? searchBST(root.right, val) : searchBST(root.left, val);
-    }
-
-```
-
-, blogType=尚未分组, blogTitle=研压到此, blogTime=Wed Apr 27 14:31:18 CST 2022, blogCount=0), BlogEntity(blogUuid=1007, blogText=![2021-11-26](https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/img/2021-11-26.png)
-
-二叉搜索树满足如下性质：
-左子树所有节点的元素值均小于根的元素值；
-右子树所有节点的元素值均大于根的元素值。
-
-据此可以得到如下算法：
-若root 为空则返回空节点；
-若val=root.val，则返回root；
-若val<root.val，递归左子树；
-若val>root.val，递归右子树。
-
-```java
-public class Solution {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-
-    }
-
-    public TreeNode searchBST(TreeNode root, int val) {
-        if (root == null) {
-            return null;
-        }
-        if (root.val == val) {
-            return root;
-        }
-        return root.val < val ? searchBST(root.right, val) : searchBST(root.left, val);
-    }
-
-```
-
-, blogType=尚未分组, blogTitle=研压到此, blogTime=Wed Apr 27 14:31:18 CST 2022, blogCount=0)]
-2022-04-27 14:33:20.613 DEBUG 11708 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
-2022-04-27 14:33:20.613 DEBUG 11708 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
-2022-04-27 14:33:20.615 DEBUG 11708 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
-2022-04-27 14:33:20.616 DEBUG 11708 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_time,blog_count FROM fx_blog ORDER BY blog_time DESC LIMIT ?,?
-2022-04-27 14:33:20.616 DEBUG 11708 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long), 5(Long)
-2022-04-27 14:33:20.619 DEBUG 11708 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 4
-2022-04-27 14:33:20.620  INFO 11708 --- [http-nio-8080-exec-8] c.e.f.s.serviceImpl.BlogServiceImpl      : [BlogEntity(blogUuid=1005, blogText=![2021-11-26](https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/img/2021-11-26.png)
-
-二叉搜索树满足如下性质：
-左子树所有节点的元素值均小于根的元素值；
-右子树所有节点的元素值均大于根的元素值。
-
-据此可以得到如下算法：
-若root 为空则返回空节点；
-若val=root.val，则返回root；
-若val<root.val，递归左子树；
-若val>root.val，递归右子树。
-
-```java
-public class Solution {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-
-    }
-
-    public TreeNode searchBST(TreeNode root, int val) {
-        if (root == null) {
-            return null;
-        }
-        if (root.val == val) {
-            return root;
-        }
-        return root.val < val ? searchBST(root.right, val) : searchBST(root.left, val);
-    }
-
-```
-
-, blogType=尚未分组, blogTitle=研压到此, blogTime=Wed Apr 27 14:31:17 CST 2022, blogCount=0), BlogEntity(blogUuid=1004, blogText=![2021-11-26](https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/img/2021-11-26.png)
-
-二叉搜索树满足如下性质：
-左子树所有节点的元素值均小于根的元素值；
-右子树所有节点的元素值均大于根的元素值。
-
-据此可以得到如下算法：
-若root 为空则返回空节点；
-若val=root.val，则返回root；
-若val<root.val，递归左子树；
-若val>root.val，递归右子树。
-
-```java
-public class Solution {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-
-    }
-
-    public TreeNode searchBST(TreeNode root, int val) {
-        if (root == null) {
-            return null;
-        }
-        if (root.val == val) {
-            return root;
-        }
-        return root.val < val ? searchBST(root.right, val) : searchBST(root.left, val);
-    }
-
-```
-
-, blogType=尚未分组, blogTitle=研压到此, blogTime=Wed Apr 27 14:31:16 CST 2022, blogCount=0), BlogEntity(blogUuid=1003, blogText=![2021-11-26](https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/img/2021-11-26.png)
-
-二叉搜索树满足如下性质：
-左子树所有节点的元素值均小于根的元素值；
-右子树所有节点的元素值均大于根的元素值。
-
-据此可以得到如下算法：
-若root 为空则返回空节点；
-若val=root.val，则返回root；
-若val<root.val，递归左子树；
-若val>root.val，递归右子树。
-
-```java
-public class Solution {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-
-    }
-
-    public TreeNode searchBST(TreeNode root, int val) {
-        if (root == null) {
-            return null;
-        }
-        if (root.val == val) {
-            return root;
-        }
-        return root.val < val ? searchBST(root.right, val) : searchBST(root.left, val);
-    }
-
-```
-
-, blogType=尚未分组, blogTitle=研压到此, blogTime=Wed Apr 27 14:31:15 CST 2022, blogCount=0), BlogEntity(blogUuid=1002, blogText=![2021-11-26](https://cdn.jsdelivr.net/gh/zyfx-wzk/Images/img/2021-11-26.png)
-
-二叉搜索树满足如下性质：
-左子树所有节点的元素值均小于根的元素值；
-右子树所有节点的元素值均大于根的元素值。
-
-据此可以得到如下算法：
-若root 为空则返回空节点；
-若val=root.val，则返回root；
-若val<root.val，递归左子树；
-若val>root.val，递归右子树。
-
-```java
-public class Solution {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-
-    }
-
-    public TreeNode searchBST(TreeNode root, int val) {
-        if (root == null) {
-            return null;
-        }
-        if (root.val == val) {
-            return root;
-        }
-        return root.val < val ? searchBST(root.right, val) : searchBST(root.left, val);
-    }
-
-```
-
-, blogType=尚未分组, blogTitle=2022-04-26, blogTime=Tue Apr 26 14:17:39 CST 2022, blogCount=12)]
-2022-04-27 14:33:49.630  INFO 11708 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-04-27 14:33:49.640  INFO 11708 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-04-27 14:33:59.758  INFO 8044 --- [main] com.example.fxblog.FxBlogApplication     : Starting FxBlogApplication using Java 1.8.0_301 on Computer-WZK with PID 8044 (D:\Work\JAVA\FxBlog\target\classes started by WZK in D:\Work\JAVA\FxBlog)
-2022-04-27 14:33:59.761  INFO 8044 --- [main] com.example.fxblog.FxBlogApplication     : No active profile set, falling back to default profiles: default
-2022-04-27 14:34:00.984  INFO 8044 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-04-27 14:34:00.987  INFO 8044 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-27 14:34:01.036  INFO 8044 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
-2022-04-27 14:34:02.080  INFO 8044 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-04-27 14:34:02.107  INFO 8044 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-27 14:34:02.107  INFO 8044 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
-2022-04-27 14:34:02.223  INFO 8044 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-27 14:34:02.223  INFO 8044 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2366 ms
-2022-04-27 14:34:04.907  INFO 8044 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-04-27 14:34:05.086  INFO 8044 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-04-27 14:34:05.095 DEBUG 8044 --- [main] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
-2022-04-27 14:34:05.129 DEBUG 8044 --- [main] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: image_url(String)
-2022-04-27 14:34:05.159 DEBUG 8044 --- [main] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 6
-2022-04-27 14:34:05.176  INFO 8044 --- [main] com.example.fxblog.utils.ImageUtil       : 图片列表加载完成,当前Redis缓存中共6张图片
-2022-04-27 14:34:05.918  INFO 8044 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-04-27 14:34:05.929  INFO 8044 --- [main] com.example.fxblog.FxBlogApplication     : Started FxBlogApplication in 7.398 seconds (JVM running for 12.703)
-2022-04-27 14:34:13.736  INFO 8044 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-04-27 14:34:13.736  INFO 8044 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-04-27 14:34:13.737  INFO 8044 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-04-27 14:35:11.476  WARN 8044 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m6s290ms561µs900ns).
-2022-04-27 14:35:11.791 DEBUG 8044 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
-2022-04-27 14:35:11.794 DEBUG 8044 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
-2022-04-27 14:35:11.803 DEBUG 8044 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
-2022-04-27 14:35:11.845 DEBUG 8044 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_time,blog_count FROM fx_blog ORDER BY blog_time DESC LIMIT ?,?
-2022-04-27 14:35:11.853 DEBUG 8044 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long), 5(Long)
-2022-04-27 14:35:11.899 DEBUG 8044 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 4
-2022-04-27 14:36:06.761  INFO 8044 --- [http-nio-8080-exec-2] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-27 14:36:06.778  INFO 8044 --- [http-nio-8080-exec-2] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
-2022-04-27 14:36:37.307  WARN 8044 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=47s38ms572µs900ns).
-2022-04-27 14:36:37.882 DEBUG 8044 --- [http-nio-8080-exec-2] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
-2022-04-27 14:36:37.888 DEBUG 8044 --- [http-nio-8080-exec-2] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
-2022-04-27 14:36:37.899 DEBUG 8044 --- [http-nio-8080-exec-2] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
-2022-04-27 14:36:37.909 DEBUG 8044 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?,?
-2022-04-27 14:36:37.922 DEBUG 8044 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long), 5(Long)
-2022-04-27 14:36:37.959 DEBUG 8044 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 4
-2022-04-27 14:48:06.812  INFO 8044 --- [http-nio-8080-exec-4] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-27 14:48:06.824  INFO 8044 --- [http-nio-8080-exec-4] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
-2022-04-27 14:48:06.931 DEBUG 8044 --- [http-nio-8080-exec-4] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
-2022-04-27 14:48:06.932 DEBUG 8044 --- [http-nio-8080-exec-4] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
-2022-04-27 14:48:06.933 DEBUG 8044 --- [http-nio-8080-exec-4] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
-2022-04-27 14:48:06.934 DEBUG 8044 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?,?
-2022-04-27 14:48:06.935 DEBUG 8044 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long), 5(Long)
-2022-04-27 14:48:06.937 DEBUG 8044 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 4
-2022-04-27 14:48:20.272 DEBUG 8044 --- [http-nio-8080-exec-5] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
-2022-04-27 14:48:20.273 DEBUG 8044 --- [http-nio-8080-exec-5] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
-2022-04-27 14:48:20.275 DEBUG 8044 --- [http-nio-8080-exec-5] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
-2022-04-27 14:48:20.276 DEBUG 8044 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
-2022-04-27 14:48:20.277 DEBUG 8044 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
-2022-04-27 14:48:20.280 DEBUG 8044 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
-2022-04-27 14:48:39.851 DEBUG 8044 --- [http-nio-8080-exec-6] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
-2022-04-27 14:48:39.852 DEBUG 8044 --- [http-nio-8080-exec-6] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
-2022-04-27 14:48:39.853 DEBUG 8044 --- [http-nio-8080-exec-6] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
-2022-04-27 14:48:39.854 DEBUG 8044 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
-2022-04-27 14:48:39.854 DEBUG 8044 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
-2022-04-27 14:48:39.859 DEBUG 8044 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
-2022-04-27 14:48:44.836 DEBUG 8044 --- [http-nio-8080-exec-7] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
-2022-04-27 14:48:44.836 DEBUG 8044 --- [http-nio-8080-exec-7] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
-2022-04-27 14:48:44.837 DEBUG 8044 --- [http-nio-8080-exec-7] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
-2022-04-27 14:48:44.839 DEBUG 8044 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
-2022-04-27 14:48:44.839 DEBUG 8044 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 3(Long)
-2022-04-27 14:48:44.841 DEBUG 8044 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 3
-2022-04-27 14:48:53.164 DEBUG 8044 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
-2022-04-27 14:48:53.165 DEBUG 8044 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
-2022-04-27 14:48:53.166 DEBUG 8044 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
-2022-04-27 14:48:53.167 DEBUG 8044 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
-2022-04-27 14:48:53.167 DEBUG 8044 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 1(Long)
-2022-04-27 14:48:53.206 DEBUG 8044 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 1
-2022-04-27 14:52:02.842  INFO 8044 --- [http-nio-8080-exec-10] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-27 14:52:02.852  INFO 8044 --- [http-nio-8080-exec-10] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
-2022-04-27 14:52:02.914 DEBUG 8044 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
-2022-04-27 14:52:02.916 DEBUG 8044 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
-2022-04-27 14:52:02.917 DEBUG 8044 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
-2022-04-27 14:52:02.919 DEBUG 8044 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
-2022-04-27 14:52:02.919 DEBUG 8044 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 1(Long)
-2022-04-27 14:52:02.922 DEBUG 8044 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 1
-2022-04-27 14:52:24.146 DEBUG 8044 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
-2022-04-27 14:52:24.146 DEBUG 8044 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
-2022-04-27 14:52:24.147 DEBUG 8044 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
-2022-04-27 14:52:24.149 DEBUG 8044 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
-2022-04-27 14:52:24.149 DEBUG 8044 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 3(Long)
-2022-04-27 14:52:24.152 DEBUG 8044 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 3
-2022-04-27 14:52:53.496  INFO 8044 --- [http-nio-8080-exec-2] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-27 14:52:53.503  INFO 8044 --- [http-nio-8080-exec-2] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
-2022-04-27 14:52:53.544 DEBUG 8044 --- [http-nio-8080-exec-2] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
-2022-04-27 14:52:53.545 DEBUG 8044 --- [http-nio-8080-exec-2] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
-2022-04-27 14:52:53.547 DEBUG 8044 --- [http-nio-8080-exec-2] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
-2022-04-27 14:52:53.548 DEBUG 8044 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
-2022-04-27 14:52:53.548 DEBUG 8044 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 3(Long)
-2022-04-27 14:52:53.551 DEBUG 8044 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 3
-2022-04-27 14:52:55.342 DEBUG 8044 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
-2022-04-27 14:52:55.343 DEBUG 8044 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
-2022-04-27 14:52:55.345 DEBUG 8044 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
-2022-04-27 14:52:55.347 DEBUG 8044 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
-2022-04-27 14:52:55.347 DEBUG 8044 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 3(Long)
-2022-04-27 14:52:55.349 DEBUG 8044 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 3
-2022-04-27 14:55:11.730  INFO 8044 --- [http-nio-8080-exec-5] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-27 14:55:11.740  INFO 8044 --- [http-nio-8080-exec-5] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
-2022-04-27 14:55:11.790 DEBUG 8044 --- [http-nio-8080-exec-5] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
-2022-04-27 14:55:11.791 DEBUG 8044 --- [http-nio-8080-exec-5] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
-2022-04-27 14:55:11.792 DEBUG 8044 --- [http-nio-8080-exec-5] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
-2022-04-27 14:55:11.792 DEBUG 8044 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
-2022-04-27 14:55:11.793 DEBUG 8044 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 3(Long)
-2022-04-27 14:55:11.796 DEBUG 8044 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 3
-2022-04-27 14:55:14.127 DEBUG 8044 --- [http-nio-8080-exec-6] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
-2022-04-27 14:55:14.128 DEBUG 8044 --- [http-nio-8080-exec-6] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
-2022-04-27 14:55:14.130 DEBUG 8044 --- [http-nio-8080-exec-6] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
-2022-04-27 14:55:14.132 DEBUG 8044 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
-2022-04-27 14:55:14.133 DEBUG 8044 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 3(Long)
-2022-04-27 14:55:14.136 DEBUG 8044 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 3
-2022-04-27 14:55:18.494 DEBUG 8044 --- [http-nio-8080-exec-7] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
-2022-04-27 14:55:18.496 DEBUG 8044 --- [http-nio-8080-exec-7] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
-2022-04-27 14:55:18.496 DEBUG 8044 --- [http-nio-8080-exec-7] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
-2022-04-27 14:55:18.497 DEBUG 8044 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
-2022-04-27 14:55:18.498 DEBUG 8044 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 3(Long)
-2022-04-27 14:55:18.499 DEBUG 8044 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 3
-2022-04-27 14:55:30.891  INFO 8044 --- [http-nio-8080-exec-8] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-27 14:55:30.894  INFO 8044 --- [http-nio-8080-exec-8] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
-2022-04-27 14:55:30.959 DEBUG 8044 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
-2022-04-27 14:55:30.959 DEBUG 8044 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
-2022-04-27 14:55:30.960 DEBUG 8044 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
-2022-04-27 14:55:30.961 DEBUG 8044 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
-2022-04-27 14:55:30.961 DEBUG 8044 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 3(Long)
-2022-04-27 14:55:30.963 DEBUG 8044 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 3
-2022-04-27 14:55:52.858  INFO 8044 --- [http-nio-8080-exec-9] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-27 14:55:52.869  INFO 8044 --- [http-nio-8080-exec-9] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
-2022-04-27 14:55:52.970 DEBUG 8044 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
-2022-04-27 14:55:52.971 DEBUG 8044 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
-2022-04-27 14:55:52.975 DEBUG 8044 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
-2022-04-27 14:55:52.978 DEBUG 8044 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
-2022-04-27 14:55:52.979 DEBUG 8044 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 3(Long)
-2022-04-27 14:55:52.983 DEBUG 8044 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 3
-2022-04-27 14:56:06.301  INFO 8044 --- [http-nio-8080-exec-10] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-27 14:56:06.309  INFO 8044 --- [http-nio-8080-exec-10] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
-2022-04-27 14:56:06.356 DEBUG 8044 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
-2022-04-27 14:56:06.356 DEBUG 8044 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
-2022-04-27 14:56:06.357 DEBUG 8044 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
-2022-04-27 14:56:06.358 DEBUG 8044 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
-2022-04-27 14:56:06.358 DEBUG 8044 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 3(Long)
-2022-04-27 14:56:06.359 DEBUG 8044 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 3
-2022-04-27 14:56:20.234  INFO 8044 --- [http-nio-8080-exec-1] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-27 14:56:20.239  INFO 8044 --- [http-nio-8080-exec-1] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
-2022-04-27 14:56:20.283 DEBUG 8044 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
-2022-04-27 14:56:20.283 DEBUG 8044 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
-2022-04-27 14:56:20.284 DEBUG 8044 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
-2022-04-27 14:56:20.285 DEBUG 8044 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
-2022-04-27 14:56:20.286 DEBUG 8044 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 3(Long)
-2022-04-27 14:56:20.288 DEBUG 8044 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 3
-2022-04-27 14:58:22.659  INFO 8044 --- [http-nio-8080-exec-3] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-27 14:58:22.666  INFO 8044 --- [http-nio-8080-exec-3] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
-2022-04-27 14:58:22.710 DEBUG 8044 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
-2022-04-27 14:58:22.711 DEBUG 8044 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
-2022-04-27 14:58:22.711 DEBUG 8044 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
-2022-04-27 14:58:22.713 DEBUG 8044 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
-2022-04-27 14:58:22.713 DEBUG 8044 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 3(Long)
-2022-04-27 14:58:22.714 DEBUG 8044 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 3
-2022-04-27 14:59:06.757  INFO 8044 --- [http-nio-8080-exec-4] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-27 14:59:06.766  INFO 8044 --- [http-nio-8080-exec-4] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
-2022-04-27 14:59:06.816 DEBUG 8044 --- [http-nio-8080-exec-4] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
-2022-04-27 14:59:06.817 DEBUG 8044 --- [http-nio-8080-exec-4] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
-2022-04-27 14:59:06.818 DEBUG 8044 --- [http-nio-8080-exec-4] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
-2022-04-27 14:59:06.819 DEBUG 8044 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
-2022-04-27 14:59:06.819 DEBUG 8044 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 3(Long)
-2022-04-27 14:59:06.821 DEBUG 8044 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 3
-2022-04-27 15:01:20.243  INFO 8044 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-04-27 15:01:20.254  INFO 8044 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-05-01 21:14:56.022  INFO 2952 --- [main] com.example.fxblog.FxBlogApplication     : Starting FxBlogApplication using Java 1.8.0_301 on Computer-WZK with PID 2952 (D:\Work\JAVA\FxBlog\target\classes started by WZK in D:\Work\JAVA\FxBlog)
+2022-05-01 21:14:56.029  INFO 2952 --- [main] com.example.fxblog.FxBlogApplication     : No active profile set, falling back to default profiles: default
+2022-05-01 21:14:56.955  INFO 2952 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-05-01 21:14:56.957  INFO 2952 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-05-01 21:14:56.987  INFO 2952 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2022-05-01 21:14:57.500  INFO 2952 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-05-01 21:14:57.508  INFO 2952 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-01 21:14:57.509  INFO 2952 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-05-01 21:14:57.940  INFO 2952 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-01 21:14:57.940  INFO 2952 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1860 ms
+2022-05-01 21:15:00.570  INFO 2952 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-01 21:15:05.125  INFO 2952 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-01 21:15:05.137 DEBUG 2952 --- [main] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:15:05.166 DEBUG 2952 --- [main] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: image_url(String)
+2022-05-01 21:15:05.210 DEBUG 2952 --- [main] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 6
+2022-05-01 21:15:05.229  INFO 2952 --- [main] com.example.fxblog.utils.ImageUtil       : 图片列表加载完成,当前Redis缓存中共6张图片
+2022-05-01 21:15:06.092  INFO 2952 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-01 21:15:06.101  INFO 2952 --- [main] com.example.fxblog.FxBlogApplication     : Started FxBlogApplication in 10.65 seconds (JVM running for 12.052)
+2022-05-01 21:27:37.126  INFO 2952 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-01 21:27:37.126  INFO 2952 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-01 21:27:37.127  INFO 2952 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-05-01 21:27:37.475 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:27:37.475 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:27:37.475 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:27:37.476 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 21:27:37.476 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 21:27:37.476 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 21:27:37.478 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 21:27:37.479 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 21:27:37.479 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 21:27:37.622 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:27:37.622 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:27:37.633 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:27:37.636 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:27:37.637 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:27:37.660 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:31:11.597 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:31:11.597 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:31:11.598 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:31:11.599 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:31:11.599 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:31:11.601 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:34:49.193 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:34:49.194 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:34:49.195 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:34:49.195 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:34:49.195 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:34:49.198 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:35:02.491 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:35:02.492 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:35:02.492 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:35:02.493 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:35:02.493 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:35:02.496 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:35:33.369 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:35:33.369 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 21:35:33.370 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:35:33.370 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 21:35:33.372 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 21:35:33.374 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 21:35:33.404 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:35:33.404 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:35:33.404 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 21:35:33.405 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 21:35:33.406 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:35:33.406 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 21:35:33.406 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:35:33.408 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 21:35:33.408 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:35:33.409 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:35:33.409 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:35:33.411 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:35:52.577 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:35:52.577 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:35:52.577 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 21:35:52.577 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 21:35:52.578 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 21:35:52.578 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 21:35:52.580 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:35:52.580 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 21:35:52.581 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:35:52.581 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 21:35:52.582 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:35:52.583 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:35:52.584 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:35:52.585 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:35:52.588 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:36:17.126 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:36:17.127 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 21:36:17.128 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:36:17.128 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:36:17.128 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 21:36:17.128 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 21:36:17.129 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 21:36:17.130 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 21:36:17.130 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 21:36:17.131 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:36:17.132 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:36:17.132 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:36:17.134 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:36:17.134 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:36:17.137 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:36:35.117 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:36:35.118 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 21:36:35.119 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:36:35.120 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 21:36:35.120 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 21:36:35.120 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:36:35.120 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 21:36:35.121 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 21:36:35.121 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:36:35.121 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:36:35.122 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 21:36:35.123 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:36:35.154 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:36:35.155 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:36:35.157 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:36:51.489 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:36:51.490 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:36:51.490 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 21:36:51.490 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 21:36:51.492 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 21:36:51.492 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 21:36:51.493 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:36:51.493 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 21:36:51.494 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:36:51.495 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 21:36:51.495 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:36:51.496 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:36:51.496 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:36:51.497 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:36:51.499 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:37:12.470 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:37:12.470 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:37:12.471 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:37:12.471 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:37:12.472 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:37:12.474 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:37:19.242 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:37:19.242 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:37:19.243 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:37:19.244 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:37:19.244 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:37:19.246 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:38:42.036 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:38:42.037 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 21:38:42.038 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:38:42.038 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 21:38:42.038 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 21:38:42.039 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:38:42.039 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 21:38:42.039 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 21:38:42.042 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 21:38:42.042 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:38:42.042 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:38:42.043 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:38:42.044 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:38:42.045 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:38:42.047 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:39:49.696 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:39:49.696 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:39:49.697 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:39:49.698 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:39:49.698 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:39:49.700 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:41:49.935 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:41:49.936 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:41:49.936 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:41:49.937 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:41:49.937 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:41:49.939 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:42:01.889 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:42:01.889 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 21:42:01.890 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 21:42:01.891 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:42:01.892 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 21:42:01.893 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:42:01.893 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 21:42:01.893 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 21:42:01.895 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:42:01.895 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 21:42:01.896 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:42:01.897 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:42:01.898 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:42:01.899 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:42:01.902 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:43:29.645 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:43:29.645 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:43:29.646 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:43:29.646 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:43:29.648 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:43:29.650 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:44:19.880 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:44:19.881 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:44:19.882 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:44:19.882 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:44:19.882 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:44:19.884 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:47:15.975 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:47:15.976 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:47:15.977 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:47:15.978 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:47:15.978 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:47:15.981 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:47:35.870 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:47:35.870 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:47:35.871 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:47:35.871 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:47:35.871 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:47:35.874 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:48:23.237 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:48:23.237 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:48:23.239 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:48:23.240 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:48:23.240 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:48:23.243 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:49:02.782 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:49:02.783 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:49:02.783 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:49:02.783 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:49:02.785 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:49:02.786 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:49:12.414 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:49:12.415 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:49:12.415 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:49:12.416 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:49:12.417 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:49:12.419 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:50:21.434 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:50:21.434 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:50:21.435 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:50:21.436 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:50:21.436 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:50:21.437 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:50:59.622 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:50:59.622 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 21:50:59.625 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:50:59.625 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 21:50:59.625 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 21:50:59.626 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 21:50:59.626 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 21:50:59.627 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 21:50:59.629 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 21:50:59.629 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:50:59.630 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:50:59.631 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:50:59.631 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:50:59.632 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:50:59.634 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:53:18.984 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:53:18.984 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:53:18.985 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:53:18.986 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:53:18.986 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:53:18.988 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:55:40.201 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:55:40.201 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:55:40.202 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:55:40.203 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:55:40.203 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:55:40.205 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:56:01.223 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:56:01.223 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:56:01.224 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:56:01.225 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:56:01.225 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:56:01.227 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:56:28.420 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:56:28.420 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:56:28.421 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:56:28.422 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:56:28.422 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:56:28.425 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:57:08.605 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:57:08.606 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:57:08.606 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:57:08.607 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:57:08.607 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:57:08.609 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 21:58:11.413 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 21:58:11.413 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 21:58:11.414 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 21:58:11.414 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 21:58:11.414 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 21:58:11.416 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:00:02.386 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:00:02.386 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:00:02.387 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:00:02.389 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:00:02.389 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:00:02.392 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:09:20.270 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:09:20.270 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:09:20.272 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:09:20.273 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:09:20.273 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:09:20.273 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:09:20.273 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:09:20.274 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:09:20.274 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:09:20.275 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:09:20.275 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:09:20.275 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:09:20.276 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:09:20.277 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:09:20.278 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:10:23.930 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:10:23.931 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:10:23.931 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:10:23.938 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:10:23.939 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:10:23.939 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:10:23.949 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:10:23.949 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:10:23.951 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:10:23.961 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:10:23.961 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:10:23.962 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:10:23.963 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:10:23.963 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:10:23.965 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:10:25.403 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:10:25.404 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:10:25.404 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:10:25.404 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:10:25.404 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:10:25.404 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:10:25.405 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:10:25.405 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:10:25.405 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:10:25.407 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:10:25.407 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:10:25.408 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:10:25.409 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:10:25.409 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:10:25.411 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:11:38.144 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:11:38.144 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:11:38.145 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:11:38.145 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:11:38.146 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:11:38.146 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:11:38.146 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:11:38.146 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:11:38.147 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:11:38.147 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:11:38.147 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:11:38.148 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:11:38.149 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:11:38.149 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:11:38.152 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:11:54.681 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:11:54.683 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:11:54.684 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:11:54.684 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:11:54.684 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:11:54.686 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:11:54.688 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:11:54.688 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:11:54.689 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:11:54.691 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:11:54.691 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:11:54.693 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:11:54.694 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:11:54.694 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:11:54.696 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:11:56.447 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:11:56.448 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:11:56.448 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:11:56.448 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:11:56.448 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:11:56.448 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:11:56.449 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:11:56.449 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:11:56.450 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:11:56.452 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:11:56.452 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:11:56.453 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:11:56.454 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:11:56.454 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:11:56.457 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:12:14.801 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:12:14.801 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:12:14.801 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:12:14.801 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:12:14.803 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:12:14.804 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:12:14.804 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:12:14.805 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:12:14.805 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:12:14.805 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:12:14.805 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:12:14.807 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:12:14.808 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:12:14.808 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:12:14.810 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:14:39.410 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:14:39.411 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:14:39.411 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:14:39.411 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:14:39.413 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:14:39.413 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:14:39.415 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:14:39.415 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:14:39.415 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:14:39.415 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:14:39.417 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:14:39.417 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:14:39.418 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:14:39.418 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:14:39.421 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:15:09.490 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:15:09.490 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:15:09.491 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:15:09.491 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:15:09.531 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:15:09.531 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:15:09.531 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:15:09.531 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:15:09.533 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:15:09.533 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:15:09.533 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:15:09.535 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:15:09.535 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:15:09.536 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:15:09.539 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:19:11.282 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:19:11.283 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:19:11.283 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:19:11.284 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:19:11.284 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:19:11.284 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:19:11.284 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:19:11.285 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:19:11.287 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:19:11.289 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:19:11.289 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:19:11.290 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:19:11.291 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:19:11.291 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:19:11.294 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:21:47.530 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:21:47.531 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:21:47.532 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:21:47.532 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:21:47.532 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:21:47.534 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:21:47.535 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:21:47.535 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:21:47.537 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:21:47.539 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:21:47.540 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:21:47.541 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:21:47.542 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:21:47.542 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:21:47.545 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:23:14.542 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:23:14.543 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:23:14.543 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:23:14.543 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:23:14.545 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:23:14.546 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:23:14.548 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:23:14.548 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:23:14.549 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:23:14.552 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:23:14.552 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:23:14.553 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:23:14.554 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:23:14.554 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:23:14.556 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:26:00.770 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:26:00.770 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:26:00.770 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:26:00.770 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:26:00.771 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:26:00.771 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:26:00.775 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:26:00.776 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:26:00.776 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:26:00.776 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:26:00.777 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:26:00.777 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:26:00.778 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:26:00.778 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:26:00.780 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:28:00.525 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:28:00.526 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:28:00.526 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:28:00.526 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:28:00.527 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:28:00.527 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:28:00.527 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:28:00.527 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:28:00.528 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:28:00.528 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:28:00.528 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:28:00.529 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:28:00.530 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:28:00.530 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:28:00.532 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:36:16.149 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:36:16.149 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:36:16.150 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:36:16.150 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:36:16.150 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:36:16.151 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:36:16.151 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:36:16.151 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:36:16.151 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:36:16.151 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:36:16.153 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:36:16.154 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:36:16.155 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:36:16.155 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:36:16.157 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:38:17.389 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:38:17.390 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:38:17.391 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:38:17.392 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:38:17.392 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:38:17.393 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:38:17.393 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:38:17.395 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:38:17.395 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:38:17.395 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:38:17.396 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:38:17.396 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:38:17.396 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:38:17.397 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:38:17.400 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:39:58.293 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:39:58.293 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:39:58.294 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:39:58.295 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:39:58.295 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:39:58.297 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:39:58.326 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:39:58.327 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:39:58.327 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:39:58.327 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:39:58.329 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:39:58.329 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:39:58.332 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:39:58.332 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:39:58.334 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:40:07.475 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:40:07.476 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:40:07.476 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:40:07.482 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:40:07.482 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:40:07.482 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:40:07.482 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:40:07.482 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:40:07.482 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:40:07.483 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:40:07.486 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:40:07.486 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:40:07.487 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:40:07.488 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:40:07.490 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:40:53.588 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:40:53.588 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:40:53.598 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:40:53.598 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:40:53.598 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:40:53.598 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:40:53.600 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:40:53.600 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:40:53.600 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:40:53.600 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:40:53.612 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:40:53.613 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:40:53.614 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:40:53.614 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:40:53.616 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:41:50.947 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:41:50.948 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:41:50.949 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:41:50.950 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:41:50.950 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:41:50.950 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:41:50.950 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:41:50.952 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:41:50.953 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:41:50.952 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:41:50.953 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:41:50.955 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:41:50.956 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:41:50.957 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:41:50.959 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:45:51.274 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:45:51.274 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:45:51.276 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:45:51.278 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:45:51.279 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:45:51.282 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:45:51.282 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:45:51.283 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:45:51.284 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:45:51.284 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:45:51.284 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:45:51.286 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:45:51.286 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:45:51.287 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:45:51.289 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:46:16.616 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:46:16.617 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:46:16.618 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:46:16.620 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:46:16.620 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:46:16.620 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:46:16.620 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:46:16.621 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:46:16.621 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:46:16.623 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:46:16.624 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:46:16.625 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:46:16.625 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:46:16.625 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:46:16.627 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:47:27.936 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:47:27.936 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:47:27.938 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:47:27.938 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:47:27.938 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:47:27.938 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:47:27.939 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:47:27.940 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:47:27.940 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:47:27.942 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:47:27.942 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:47:27.943 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:47:27.944 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:47:27.945 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:47:27.948 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:47:44.524 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:47:44.525 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:47:44.526 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:47:44.526 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:47:44.526 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:47:44.560 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:47:44.561 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:47:44.561 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:47:44.561 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:47:44.561 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:47:44.562 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:47:44.562 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:47:44.562 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:47:44.564 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:47:44.564 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:48:17.492 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:48:17.493 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:48:17.493 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:48:17.494 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:48:17.494 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:48:17.494 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:48:17.494 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:48:17.498 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:48:17.498 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:48:17.498 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:48:17.498 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:48:17.499 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:48:17.500 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:48:17.501 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:48:17.503 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:49:42.819 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:49:42.819 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:49:42.820 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:49:42.862 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:49:42.862 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:49:42.863 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:49:42.863 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:49:42.864 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:49:42.864 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:49:42.864 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:49:42.865 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:49:42.865 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:49:42.869 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:49:42.869 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:49:42.872 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:51:30.326 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:51:30.326 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:51:30.327 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:51:30.327 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:51:30.329 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:51:30.329 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:51:30.329 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:51:30.330 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:51:30.331 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:51:30.332 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:51:30.332 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:51:30.333 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:51:30.334 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:51:30.334 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:51:30.337 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:51:30.442 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:51:30.442 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:51:30.443 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:51:30.443 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:51:30.443 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:51:30.444 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:51:30.447 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:51:30.448 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:51:30.450 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:51:30.451 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:51:30.451 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:51:30.453 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:51:30.454 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:51:30.455 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:51:30.457 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:51:50.285 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:51:50.285 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:51:50.285 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:51:50.285 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:51:50.286 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:51:50.286 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:51:50.287 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:51:50.287 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:51:50.289 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:51:50.301 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:51:50.301 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:51:50.302 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:51:50.303 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:51:50.303 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:51:50.305 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:52:13.493 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:52:13.494 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:52:13.494 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:52:13.495 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:52:13.494 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:52:13.496 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:52:13.496 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:52:13.497 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:52:13.497 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:52:13.498 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:52:13.498 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:52:13.500 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:52:13.501 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:52:13.501 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:52:13.503 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:52:44.591 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:52:44.592 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:52:44.593 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:52:44.594 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:52:44.594 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:52:44.594 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:52:44.594 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:52:44.595 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:52:44.595 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:52:44.596 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:52:44.596 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:52:44.598 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:52:44.625 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:52:44.625 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:52:44.627 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:53:28.366 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:53:28.366 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:53:28.368 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:53:28.369 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:53:28.369 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:53:28.369 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:53:28.369 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:53:28.370 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:53:28.370 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:53:28.371 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:53:28.371 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:53:28.372 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:53:28.373 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:53:28.373 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:53:28.374 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:53:55.371 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:53:55.371 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:53:55.371 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:53:55.372 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:53:55.372 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:53:55.372 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:53:55.373 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:53:55.373 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:53:55.375 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:53:55.378 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:53:55.378 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:53:55.379 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:53:55.380 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:53:55.381 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:53:55.405 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:57:17.455 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:57:17.455 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:57:17.455 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:57:17.455 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:57:17.455 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:57:17.456 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:57:17.456 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:57:17.457 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:57:17.457 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:57:17.458 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:57:17.458 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:57:17.459 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:57:17.460 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:57:17.460 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:57:17.465 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:57:29.480 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:57:29.481 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:57:29.482 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:57:29.482 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:57:29.483 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:57:29.484 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:57:29.484 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:57:29.485 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:57:29.486 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:57:29.486 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:57:29.486 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:57:29.487 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:57:29.488 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:57:29.488 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:57:29.490 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:58:38.348 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:58:38.348 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:58:38.349 DEBUG 2952 --- [http-nio-8080-exec-1] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:58:38.349 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:58:38.349 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:58:38.351 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:58:38.351 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:58:38.351 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:58:38.352 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:58:38.378 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:58:38.379 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:58:38.379 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:58:38.380 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:58:38.380 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:58:38.381 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:59:12.234 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:59:12.235 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:59:12.236 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:59:12.236 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:59:12.236 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:59:12.236 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:59:12.236 DEBUG 2952 --- [http-nio-8080-exec-10] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:59:12.237 DEBUG 2952 --- [http-nio-8080-exec-9] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:59:12.237 DEBUG 2952 --- [http-nio-8080-exec-5] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:59:12.237 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:59:12.237 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:59:12.238 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:59:12.239 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:59:12.239 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:59:12.240 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 22:59:43.366 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:59:43.366 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 22:59:43.367 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:59:43.368 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:59:43.369 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 22:59:43.369 DEBUG 2952 --- [http-nio-8080-exec-6] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 22:59:43.370 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 22:59:43.370 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 22:59:43.371 DEBUG 2952 --- [http-nio-8080-exec-7] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 22:59:43.383 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 22:59:43.383 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 22:59:43.384 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 22:59:43.385 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 22:59:43.385 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 22:59:43.387 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 23:00:32.783 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 23:00:32.784 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_website(String)
+2022-05-01 23:00:32.790 DEBUG 2952 --- [http-nio-8080-exec-2] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 3
+2022-05-01 23:00:32.791 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 23:00:32.791 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: my_info(String)
+2022-05-01 23:00:32.792 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : ==>  Preparing: SELECT COUNT(*) AS total FROM fx_blog
+2022-05-01 23:00:32.792 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : ==> Parameters: 
+2022-05-01 23:00:32.793 DEBUG 2952 --- [http-nio-8080-exec-3] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1
+2022-05-01 23:00:32.793 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.f.m.BlogMapper.selectPage_mpCount    : <==      Total: 1
+2022-05-01 23:00:32.794 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : ==>  Preparing: SELECT blog_uuid,blog_text,blog_type,blog_title,blog_image,blog_time,blog_count FROM fx_blog ORDER BY blog_time ASC LIMIT ?
+2022-05-01 23:00:32.794 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : ==> Parameters: 5(Long)
+2022-05-01 23:00:32.795 DEBUG 2952 --- [http-nio-8080-exec-8] c.e.fxblog.mapper.BlogMapper.selectPage  : <==      Total: 5
+2022-05-01 23:00:32.805 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==>  Preparing: SELECT meta_uuid,meta_key,meta_value FROM fx_meta WHERE (meta_key = ?)
+2022-05-01 23:00:32.806 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : ==> Parameters: setting(String)
+2022-05-01 23:00:32.807 DEBUG 2952 --- [http-nio-8080-exec-4] c.e.fxblog.mapper.MetaMapper.selectList  : <==      Total: 1

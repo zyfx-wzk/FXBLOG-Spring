@@ -10,6 +10,7 @@ import com.example.fxblog.entity.BlogEntity;
 import com.example.fxblog.entity.MetaEntity;
 import com.example.fxblog.mapper.BlogMapper;
 import com.example.fxblog.service.BlogService;
+import com.example.fxblog.utils.ImageUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,9 @@ import java.util.List;
 public class BlogServiceImpl implements BlogService {
     @Autowired
     private BlogMapper blogMapper;
+
+    @Autowired
+    private ImageUtil imageUtil;
 
     @Override
     public void addBlog(BlogEntity blogEntity) {
@@ -53,12 +57,13 @@ public class BlogServiceImpl implements BlogService {
         List<JSONObject> result = new ArrayList<>();
         for (BlogEntity blog : list) {
             //拼接文章简介
-            String[] text = blog.getBlogText().split("\r\n");
+            String image = blog.getBlogImage() == null ? imageUtil.getImageUrl() : blog.getBlogImage();
+            String[] text = blog.getBlogText().split(".\r\n");
             result.add(JSONUtil.createObj()
                     .putOnce("uuid", blog.getBlogUuid()).putOnce("title", blog.getBlogTitle())
                     .putOnce("text", text[0] + "\r\n" + text[1] + "\r\n" + text[3])
                     .putOnce("time", blog.getBlogTime()).putOnce("type", blog.getBlogType())
-                    .putOnce("count", blog.getBlogCount()));
+                    .putOnce("count", blog.getBlogCount()).putOnce("image", image));
         }
         return result;
     }

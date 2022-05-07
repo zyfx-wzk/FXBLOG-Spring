@@ -14,7 +14,9 @@ public interface MetaService {
 
     List<String> getMetaStringList(String key);
 
-    JSONObject getMetaValue(String key);
+    JSONObject getMetaJsonValue(String key);
+
+    String getMetaStringValue(String key);
 
     void addMetaValue(String key, List<String> list);
 

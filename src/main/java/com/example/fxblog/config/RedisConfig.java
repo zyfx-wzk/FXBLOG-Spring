@@ -1,15 +1,15 @@
 package com.example.fxblog.config;
 
-import com.alibaba.fastjson.parser.ParserConfig;
-import com.example.fxblog.other.FastjsonRedisSerializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
  * redis序列化配置
+ *
  * @Author 王志康
  * @Date 2022/2/17 22:37
  */
@@ -30,20 +30,14 @@ public class RedisConfig {
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
         RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
         redisTemplate.setConnectionFactory(redisConnectionFactory);
-
-        FastjsonRedisSerializer<Object> fastjsonRedisSerializer = new FastjsonRedisSerializer<>(Object.class);
-        //指定作用域白名单
-        ParserConfig.getGlobalInstance().addAccept("com.example");
-
+        Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<>(Object.class);
         // 设置值（value）的序列化采用FastJsonRedisSerializer。
-        redisTemplate.setValueSerializer(fastjsonRedisSerializer);
-        redisTemplate.setHashValueSerializer(fastjsonRedisSerializer);
+        redisTemplate.setValueSerializer(jackson2JsonRedisSerializer);
+        redisTemplate.setHashValueSerializer(jackson2JsonRedisSerializer);
         // 设置键（key）的序列化采用StringRedisSerializer。
         redisTemplate.setKeySerializer(new StringRedisSerializer());
         redisTemplate.setHashKeySerializer(new StringRedisSerializer());
-
         redisTemplate.afterPropertiesSet();
         return redisTemplate;
-
     }
 }

@@ -43,7 +43,8 @@ public class BlogServiceImpl implements BlogService {
         blogMapper.updateById(blogEntity);
         return JSONUtil.createObj()
                 .putOnce("title", blogEntity.getBlogTitle()).putOnce("text", blogEntity.getBlogText())
-                .putOnce("time", blogEntity.getBlogTime()).putOnce("count", blogEntity.getBlogCount());
+                .putOnce("time", blogEntity.getBlogTime()).putOnce("count", blogEntity.getBlogCount())
+                .putOnce("image", blogEntity.getBlogImage());
     }
 
     @Override
@@ -52,12 +53,12 @@ public class BlogServiceImpl implements BlogService {
         IPage<BlogEntity> iPage = new Page<>();
         iPage.setCurrent(page).setSize(size);
         QueryWrapper<BlogEntity> queryWrapper = new QueryWrapper<>();
-        queryWrapper.orderByAsc("blog_time");
+        queryWrapper.orderByDesc("blog_time");
         List<BlogEntity> list = blogMapper.selectPage(iPage, queryWrapper).getRecords();
         List<JSONObject> result = new ArrayList<>();
         for (BlogEntity blog : list) {
             //拼接文章简介
-            String image = blog.getBlogImage() == null ? imageUtil.getImageUrl() : blog.getBlogImage();
+            String image = blog.getBlogImage() == null ? imageUtil.getImage() : blog.getBlogImage();
             String[] text = blog.getBlogText().split(".\r\n");
             result.add(JSONUtil.createObj()
                     .putOnce("uuid", blog.getBlogUuid()).putOnce("title", blog.getBlogTitle())

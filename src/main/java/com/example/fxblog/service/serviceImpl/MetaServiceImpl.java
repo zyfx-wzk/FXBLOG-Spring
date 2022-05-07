@@ -67,10 +67,20 @@ public class MetaServiceImpl implements MetaService {
     }
 
     /**
-     * 获取元数据-对象
+     * 获取元数据-String
      */
     @Override
-    public JSONObject getMetaValue(String key) {
+    public String getMetaStringValue(String key) {
+        List<MetaEntity> list = metaMapper.selectList(getValue(key));
+        verifyList(list);
+        return list.get(0).getMetaValue();
+    }
+
+    /**
+     * 获取元数据-JSON
+     */
+    @Override
+    public JSONObject getMetaJsonValue(String key) {
         List<MetaEntity> list = metaMapper.selectList(getValue(key));
         verifyList(list);
         return JSONUtil.parseObj(list.get(0).getMetaValue());

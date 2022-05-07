@@ -19,7 +19,7 @@ import java.util.Set;
 @Slf4j
 @Component
 public class ImageUtil {
-    public static final String IMAGE_URL_LIST = "Image_Url_List";
+    public static final String IMAGE_URL_LIST = "Image_List";
     public static final String IMAGE_URL = "image_url";
 
     private final MetaService metaService;
@@ -30,7 +30,7 @@ public class ImageUtil {
     ImageUtil(RedisUtil redisUtil, MetaService metaService) {
         this.redisUtil = redisUtil;
         this.metaService = metaService;
-        setImageUrlList();
+        setImageList();
     }
 
     /**
@@ -38,10 +38,10 @@ public class ImageUtil {
      *
      * @return 当前缓存数量
      */
-    public long setImageUrlList() {
-        delImageUrlList();
+    public long setImageList() {
+        delImageList();
         List<String> list = metaService.getMetaStringList(IMAGE_URL);
-        redisUtil.setAdd(IMAGE_URL_LIST, list.toArray());
+        redisUtil.setAdd(IMAGE_URL_LIST, 0, list.toArray());
         listLength = redisUtil.setSize(IMAGE_URL_LIST);
         log.info("图片列表加载完成,当前Redis缓存中共" + listLength + "张图片");
         return listLength;
@@ -50,21 +50,21 @@ public class ImageUtil {
     /**
      * 删除图片缓存
      */
-    public void delImageUrlList() {
+    public void delImageList() {
         redisUtil.remove(IMAGE_URL_LIST);
     }
 
     /**
      * 获取随机图片
      */
-    public String getImageUrl() {
+    public String getImage() {
         return (String) redisUtil.setValue(IMAGE_URL_LIST);
     }
 
     /**
      * 获取随机图片列表
      */
-    public List<String> getImageUrlList(int count) {
+    public List<String> getImageList(int count) {
         List<String> result = new ArrayList<>();
         if (count <= listLength) {
             Set<Object> set = redisUtil.setValueSet(IMAGE_URL_LIST, count);

@@ -43,12 +43,13 @@ public class RsaInterceptor implements HandlerInterceptor {
                 BodyRequsetWrapper requsetWrapper = (BodyRequsetWrapper) request;
                 //由于通用JSON传输的格式问题,需要对加密数据进行包装
                 try {
-                    JSONObject json = JSONUtil.parseObj((requsetWrapper).getBody());
+                    JSONObject json = JSONUtil.parseObj(requsetWrapper.getBody());
+                    log.info(json.toString());
                     String data = rsaUtil.decrypt(json.getStr("data"));
                     log.info(data);
                     requsetWrapper.setBody(data);
                 } catch (Exception e) {
-                    throw new ReturnException("加密数据疑似被篡改,无法进行解码",ResultCode.DECODING_ERROR);
+                    throw new ReturnException("加密数据疑似被篡改,无法进行解码", ResultCode.DECODING_ERROR);
                 }
             }
         }

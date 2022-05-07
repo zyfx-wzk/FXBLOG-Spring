@@ -78,7 +78,7 @@ public class MetaController {
                     return CommonResult.surress(metaService.getMetaJsonList(key));
                 }
                 case "value": {
-                    return CommonResult.surress(metaService.getMetaValue(key));
+                    return CommonResult.surress(metaService.getMetaJsonValue(key));
                 }
                 default:
             }

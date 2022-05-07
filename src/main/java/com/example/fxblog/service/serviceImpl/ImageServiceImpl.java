@@ -24,7 +24,7 @@ public class ImageServiceImpl implements ImageService {
      */
     @Override
     public String getImage() {
-        return imageUtil.getImageUrl();
+        return imageUtil.getImage();
     }
 
     /**
@@ -33,7 +33,7 @@ public class ImageServiceImpl implements ImageService {
      */
     @Override
     public List<String> getImage(int count) {
-        return imageUtil.getImageUrlList(count);
+        return imageUtil.getImageList(count);
     }
 
     /**
@@ -41,6 +41,6 @@ public class ImageServiceImpl implements ImageService {
      */
     @Override
     public long updateImage() {
-        return imageUtil.setImageUrlList();
+        return imageUtil.setImageList();
     }
 }

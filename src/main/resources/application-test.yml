@@ -19,6 +19,7 @@ spring:
     port: 6379
     # 连接超时时间
     timeout: 5000
+    password: zyfx123456
   mvc:
     static-path-pattern: /**
   # jackson统一时间处理

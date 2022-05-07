@@ -1,13 +1,11 @@
 package com.example.fxblog.service.serviceImpl;
 
-import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.fxblog.entity.BlogEntity;
-import com.example.fxblog.entity.MetaEntity;
 import com.example.fxblog.mapper.BlogMapper;
 import com.example.fxblog.service.BlogService;
 import com.example.fxblog.utils.ImageUtil;
@@ -56,13 +54,18 @@ public class BlogServiceImpl implements BlogService {
         queryWrapper.orderByDesc("blog_time");
         List<BlogEntity> list = blogMapper.selectPage(iPage, queryWrapper).getRecords();
         List<JSONObject> result = new ArrayList<>();
+        log.info(String.valueOf(list.size()));
         for (BlogEntity blog : list) {
             //拼接文章简介
             String image = blog.getBlogImage() == null ? imageUtil.getImage() : blog.getBlogImage();
-            String[] text = blog.getBlogText().split(".\r\n");
+            String[] str = blog.getBlogText().split(".\r\n");
+            StringBuilder text = new StringBuilder();
+            for (int i = 0; i < str.length && i < 3; i++) {
+                text.append(str[i]).append("\r\n");
+            }
             result.add(JSONUtil.createObj()
                     .putOnce("uuid", blog.getBlogUuid()).putOnce("title", blog.getBlogTitle())
-                    .putOnce("text", text[0] + "\r\n" + text[1] + "\r\n" + text[3])
+                    .putOnce("text", text.toString())
                     .putOnce("time", blog.getBlogTime()).putOnce("type", blog.getBlogType())
                     .putOnce("count", blog.getBlogCount()).putOnce("image", image));
         }

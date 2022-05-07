@@ -19,25 +19,25 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         //跨域拦截
-        registry.addInterceptor(corsInterceptor()).addPathPatterns("/**");
+        registry.addInterceptor(getCorsInterceptor()).addPathPatterns("/**");
         //登录拦截
-        registry.addInterceptor(tokenInterceptor()).addPathPatterns("/**");
+        registry.addInterceptor(getTokenInterceptor()).addPathPatterns("/**");
         //数据加密拦截
-        registry.addInterceptor(rsaInterceptor()).addPathPatterns("/**");
+        registry.addInterceptor(getRsaInterceptor()).addPathPatterns("/**");
     }
 
     @Bean
-    public RsaInterceptor rsaInterceptor() {
+    public RsaInterceptor getRsaInterceptor() {
         return new RsaInterceptor();
     }
 
     @Bean
-    public TokenInterceptor tokenInterceptor() {
+    public TokenInterceptor getTokenInterceptor() {
         return new TokenInterceptor();
     }
 
     @Bean
-    public CorsInterceptor corsInterceptor() {
+    public CorsInterceptor getCorsInterceptor() {
         return new CorsInterceptor();
     }
 }

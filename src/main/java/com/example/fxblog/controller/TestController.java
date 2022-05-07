@@ -25,6 +25,6 @@ public class TestController {
     @NeedToken
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public CommonResult test() {
-        return CommonResult.surress("Test");
+        return CommonResult.surress("Hello World");
     }
 }

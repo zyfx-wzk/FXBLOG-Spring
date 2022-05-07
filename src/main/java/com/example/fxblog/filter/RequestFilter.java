@@ -2,6 +2,8 @@ package com.example.fxblog.filter;
 
 import com.example.fxblog.other.BodyRequsetWrapper;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.catalina.connector.Request;
+import org.apache.catalina.connector.RequestFacade;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

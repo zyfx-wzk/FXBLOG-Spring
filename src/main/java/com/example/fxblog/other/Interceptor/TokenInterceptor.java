@@ -30,7 +30,7 @@ public class TokenInterceptor implements HandlerInterceptor {
             return true;
         }
         Method method = ((HandlerMethod) handler).getMethod();
-        //若有Passtoken注解,则跳过检查
+        //若有NeedToken注解,则进行检查
         if (method.isAnnotationPresent(NeedToken.class)) {
             NeedToken needToken = method.getAnnotation(NeedToken.class);
             if (needToken.required()) {
